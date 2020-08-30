@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Flags Quiz</string>
+    <string name="app_name" translatable="false">Flags Quiz</string>
+    <string name="please_enter_name">Please enter your name.</string>
+    <string name="what_flag_question">What is the country of this flag?</string>
+    <string name="welcome">Welcome</string>
+    <string name="name">Name</string>
+    <string name="start">Start</string>
+    <string name="country_flag_content">Country Flag</string>
+    <string name="submit">Submit</string>
 </resources>
