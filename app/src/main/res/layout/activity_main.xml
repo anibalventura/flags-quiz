@@ -100,7 +100,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/start"
+                android:text="@string/btn_start"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"

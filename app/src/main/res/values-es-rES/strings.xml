@@ -4,7 +4,9 @@
     <string name="what_flag_question">Cual es la bandera de este país?</string>
     <string name="welcome">Bienvenido</string>
     <string name="name">Nombre</string>
-    <string name="start">Iniciar</string>
+    <string name="btn_start">Iniciar</string>
     <string name="country_flag_content">Bandera del país</string>
-    <string name="submit">Enviar</string>
+    <string name="btn_finish">Finalizar</string>
+    <string name="btn_submit">Enviar</string>
+    <string name="btn_next_question">Siguiente Pregunta</string>
 </resources>
