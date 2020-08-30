@@ -13,7 +13,14 @@
         android:versionCode="1"
         android:versionName="1.0.0">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.QuizQuestionsActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"
             android:windowSoftInputMode="adjustResize">
