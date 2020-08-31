@@ -9,4 +9,7 @@
     <string name="btn_finish">Finalizar</string>
     <string name="btn_submit">Enviar</string>
     <string name="btn_next_question">Siguiente Pregunta</string>
+    <string name="congrats">Felicidades!</string>
+    <string name="trophy_content">Imagen de Trofeo</string>
+    <string name="total_score">Tu puntuacion es %1$d de %2$d.</string>
 </resources>

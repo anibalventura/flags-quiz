@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.anibalventura.flagsquiz.R
+import com.anibalventura.flagsquiz.data.CONSTANTS
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +27,8 @@ class MainActivity : AppCompatActivity() {
                     .show()
             } else {
                 val intent = Intent(this, QuizQuestionsActivity::class.java)
+                intent.putExtra(CONSTANTS.USER_NAME, etName.text.toString())
                 startActivity(intent)
-                finish()
             }
         }
     }

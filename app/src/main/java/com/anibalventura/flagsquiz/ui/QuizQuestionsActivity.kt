@@ -1,10 +1,10 @@
 package com.anibalventura.flagsquiz.ui
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.anibalventura.flagsquiz.R
@@ -16,11 +16,15 @@ class QuizQuestionsActivity : AppCompatActivity() {
 
     private var currentPosition: Int = 1
     private var questionList: ArrayList<Question>? = null
+    private var userName: String? = null
     private var selectedOptionPosition: Int = 0
+    private var correctAnswers: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
+
+        userName = intent.getStringExtra(CONSTANTS.USER_NAME)
 
         questionList = CONSTANTS.getQuestions()
 
@@ -103,33 +107,41 @@ class QuizQuestionsActivity : AppCompatActivity() {
         }
     }
 
-    private fun submitAnswer() = if (selectedOptionPosition == 0) {
-        currentPosition++
+    private fun submitAnswer() {
+        if (selectedOptionPosition == 0) {
+            currentPosition++
 
-        when {
-            currentPosition <= questionList!!.size -> {
-                setQuestion()
+            when {
+                currentPosition <= questionList!!.size -> {
+                    setQuestion()
+                }
+                else -> {
+                    val intent = Intent(this, ResultActivity::class.java)
+                    intent.putExtra(CONSTANTS.USER_NAME, userName)
+                    intent.putExtra(CONSTANTS.CORRECT_ANSWERS, correctAnswers)
+                    intent.putExtra(CONSTANTS.TOTAL_QUESTIONS, questionList!!.size)
+                    startActivity(intent)
+                    finish()
+                }
             }
-            else -> {
-                Toast.makeText(this, "You have completed the Quiz", Toast.LENGTH_SHORT)
-                    .show()
-            }
-        }
 
-    } else {
-        val question = questionList?.get(currentPosition - 1)
-        if (question!!.correctAnswer != selectedOptionPosition) {
-            answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
-        }
-        answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
-
-        if (currentPosition == questionList!!.size) {
-            btnSubmit.text = getString(R.string.btn_finish)
         } else {
-            btnSubmit.text = getString(R.string.btn_next_question)
-        }
+            val question = questionList?.get(currentPosition - 1)
+            if (question!!.correctAnswer != selectedOptionPosition) {
+                answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
+            } else {
+                correctAnswers++
+            }
+            answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 
-        selectedOptionPosition = 0
+            if (currentPosition == questionList!!.size) {
+                btnSubmit.text = getString(R.string.btn_finish)
+            } else {
+                btnSubmit.text = getString(R.string.btn_next_question)
+            }
+
+            selectedOptionPosition = 0
+        }
     }
 }
 
