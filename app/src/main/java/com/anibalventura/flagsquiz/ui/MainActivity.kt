@@ -1,34 +1,65 @@
 package com.anibalventura.flagsquiz.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavDestination
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.CONSTANTS
-import kotlinx.android.synthetic.main.activity_main.*
+import com.anibalventura.flagsquiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(
+            this,
+            R.layout.activity_main
+        )
+
+        setupNavigation()
+    }
+
+    /**
+     * Called when the hamburger menu or back button are pressed on the Toolbar
+     *
+     * Delegate this to Navigation.
+     */
+    override fun onSupportNavigateUp() =
+        navigateUp(findNavController(R.id.navHostFragment), binding.drawerLayout)
+
+    /**
+     * Setup Navigation for this Activity
+     */
+    private fun setupNavigation() {
+        // first find the nav controller
+        val navController = findNavController(R.id.navHostFragment)
+
+        setSupportActionBar(binding.toolbar)
+
+        // then setup the action bar, tell it about the DrawerLayout
+        setupActionBarWithNavController(navController, binding.drawerLayout)
 
 
-        // Hide the notification bar.
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        // finally setup the left drawer (called a NavigationView)
+        binding.navigationView.setupWithNavController(navController)
 
-        btnStart.setOnClickListener {
-            // Show a Toast message when don't have a user name
-            if (etName.text.toString().isEmpty()) {
-                Toast.makeText(this, getString(R.string.please_enter_name), Toast.LENGTH_SHORT)
-                    .show()
-            } else {
-                val intent = Intent(this, QuizQuestionsActivity::class.java)
-                intent.putExtra(CONSTANTS.USER_NAME, etName.text.toString())
-                startActivity(intent)
+        navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
+            val toolBar = supportActionBar ?: return@addOnDestinationChangedListener
+            when (destination.id) {
+                R.id.home -> {
+                    toolBar.setDisplayShowTitleEnabled(false)
+                }
+                else -> {
+                    toolBar.setDisplayShowTitleEnabled(true)
+                }
             }
         }
     }

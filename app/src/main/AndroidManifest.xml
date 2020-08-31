@@ -12,29 +12,9 @@
         android:theme="@style/AppTheme"
         android:versionCode="1"
         android:versionName="1.0.0">
-        <activity
-            android:name=".ui.ResultActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.QuizQuestionsActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme"
-            android:windowSoftInputMode="adjustResize">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
