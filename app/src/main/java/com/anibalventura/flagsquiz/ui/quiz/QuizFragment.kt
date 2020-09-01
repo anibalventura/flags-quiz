@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -24,6 +25,7 @@ class QuizFragment : Fragment() {
     private var selectedOptionPosition: Int = 0
     private var correctAnswers: Int = 0
     private var lives: Int = 2
+    private var next: Boolean = false
 
     private lateinit var binding: FragmentQuizBinding
 
@@ -79,11 +81,9 @@ class QuizFragment : Fragment() {
 
         defaultOptionsView()
 
-        if (currentPosition == questionList!!.size) {
-            binding.btnSubmit.text = getString(R.string.btn_finish)
-        } else {
-            binding.btnSubmit.text = getString(R.string.btn_submit)
-        }
+        binding.btnSubmit.text = getString(R.string.btn_submit)
+
+        next = false
 
         binding.progressBar.progress = currentPosition
         binding.tvProgressBar.text =
@@ -95,6 +95,11 @@ class QuizFragment : Fragment() {
         binding.tvOptionTwo.text = question.optionTwo
         binding.tvOptionThree.text = question.optionThree
         binding.tvOptionFour.text = question.optionFour
+
+        binding.tvOptionOne.isClickable = true
+        binding.tvOptionTwo.isClickable = true
+        binding.tvOptionThree.isClickable = true
+        binding.tvOptionFour.isClickable = true
     }
 
     /*
@@ -124,6 +129,7 @@ class QuizFragment : Fragment() {
             defaultOptionsView()
 
             selectedOptionPosition = selectionOptionNum
+            next = true
 
             tv.setTextColor((Color.parseColor("#363A43")))
             tv.setTypeface(tv.typeface, Typeface.BOLD)
@@ -150,7 +156,9 @@ class QuizFragment : Fragment() {
     }
 
     private fun submitAnswer(view: View) {
-        if (selectedOptionPosition == 0) {
+        if (!next) {
+            Toast.makeText(requireContext(), "Please select an option", Toast.LENGTH_SHORT).show()
+        } else if (selectedOptionPosition == 0) {
             currentPosition++
 
             when {
@@ -177,12 +185,20 @@ class QuizFragment : Fragment() {
             if (question!!.correctAnswer != selectedOptionPosition) {
                 answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
                 lives--
+                when (lives) {
+                    1 -> binding.ivLiveOne.visibility = View.GONE
+                    0 -> binding.ivLiveTwo.visibility = View.GONE
+                }
             } else {
                 correctAnswers++
             }
 
             // Check for correct answer
             answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+            binding.tvOptionOne.isClickable = false
+            binding.tvOptionTwo.isClickable = false
+            binding.tvOptionThree.isClickable = false
+            binding.tvOptionFour.isClickable = false
 
             if (currentPosition == questionList!!.size) {
                 binding.btnSubmit.text = getString(R.string.btn_finish)
