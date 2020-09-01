@@ -20,14 +20,20 @@ import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
 
 class QuizFragment : Fragment() {
 
-    private var currentPosition: Int = 1 // Default and the first question position
+    // Use DataBinding.
+    private lateinit var binding: FragmentQuizBinding
+
+    // Questions from database.
     private var questionList: ArrayList<Question>? = null
+
+    // Quiz.
+    private var currentPosition: Int = 1 // Default and the first question position
     private var selectedOptionPosition: Int = 0
     private var correctAnswers: Int = 0
-    private var lives: Int = 2
-    private var next: Boolean = false
+    private var submitQuestion: Boolean = false
 
-    private lateinit var binding: FragmentQuizBinding
+    // Lives count.
+    private var lives: Int = 2
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,10 +41,13 @@ class QuizFragment : Fragment() {
     ): View? {
 
         /**
-         * Inflate the layout for this fragment
+         * Inflate the layout for this fragment.
          */
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_quiz, container, false)
-        // Set ViewModel and ViewModelFactory
+
+        /**
+         * Set ViewModel and ViewModelFactory.
+         */
         val viewModelFactory =
             QuizViewModelFactory(requireContext(), requireNotNull(activity).application)
         val viewModel: QuizViewModel =
@@ -56,15 +65,19 @@ class QuizFragment : Fragment() {
          */
         binding.lifecycleOwner = viewLifecycleOwner
 
-
+        // Get the selected category.
         questionList = CONSTANTS.getQuestions()
+
+        // Set the current question.
         setQuestion()
 
+        // get option selected.
         selectedOptionsView(binding.tvOptionOne, 1)
         selectedOptionsView(binding.tvOptionTwo, 2)
         selectedOptionsView(binding.tvOptionThree, 3)
         selectedOptionsView(binding.tvOptionFour, 4)
 
+        // Submit the answer.
         binding.btnSubmit.setOnClickListener {
             submitAnswer(it)
         }
@@ -79,16 +92,15 @@ class QuizFragment : Fragment() {
         // Getting the question from the list with the help of current position.
         val question = questionList!![currentPosition - 1]
 
+        // Reset the view to default.
         defaultOptionsView()
 
-        binding.btnSubmit.text = getString(R.string.btn_submit)
-
-        next = false
-
+        // Set the progress
         binding.progressBar.progress = currentPosition
         binding.tvProgressBar.text =
             getString(R.string.progress, currentPosition, binding.progressBar.max)
 
+        // Set the view to the current question.
         binding.tvQuestion.text = question.question
         binding.ivFlag.setImageResource(question.image)
         binding.tvOptionOne.text = question.optionOne
@@ -96,14 +108,21 @@ class QuizFragment : Fragment() {
         binding.tvOptionThree.text = question.optionThree
         binding.tvOptionFour.text = question.optionFour
 
+        // Enable to select an option.
         binding.tvOptionOne.isClickable = true
         binding.tvOptionTwo.isClickable = true
         binding.tvOptionThree.isClickable = true
         binding.tvOptionFour.isClickable = true
+
+        // Reset the button to "Submit".
+        binding.btnSubmit.text = getString(R.string.btn_submit)
+
+        // Cannot submit question if a option is not selected.
+        submitQuestion = false
     }
 
     /*
-     * Set the view of selected option view.
+     * Set the view of options to default.
      */
     private fun defaultOptionsView() {
         val options = ArrayList<TextView>()
@@ -122,15 +141,19 @@ class QuizFragment : Fragment() {
     }
 
     /**
-     * Set default options view when the new question is loaded or when the answer is reselected.
+     * Set the option view to selected.
      */
     private fun selectedOptionsView(tv: TextView, selectionOptionNum: Int) {
         tv.setOnClickListener {
             defaultOptionsView()
 
+            // Get the selected option.
             selectedOptionPosition = selectionOptionNum
-            next = true
 
+            // When option is selected can submit the question.
+            submitQuestion = true
+
+            // Set the option view to selected.
             tv.setTextColor((Color.parseColor("#363A43")))
             tv.setTypeface(tv.typeface, Typeface.BOLD)
             tv.background = ContextCompat.getDrawable(
@@ -140,7 +163,7 @@ class QuizFragment : Fragment() {
     }
 
     /*
-     * Highlight the answer is wrong or right.
+     * Highlight the answer for wrong or right.
      */
     private fun answerView(answer: Int, drawableView: Int) {
         when (answer) {
@@ -155,76 +178,76 @@ class QuizFragment : Fragment() {
         }
     }
 
+    /*
+     * Submit the answer.
+     */
     private fun submitAnswer(view: View) {
-        if (!next) {
-            Toast.makeText(
+        when {
+            // Show a toast if trying to submit question without an option.
+            !submitQuestion -> Toast.makeText(
                 requireContext(),
                 getString(R.string.please_select_option),
                 Toast.LENGTH_SHORT
             ).show()
-        } else if (selectedOptionPosition == 0) {
-            currentPosition++
 
-            when {
-                currentPosition <= questionList!!.size -> {
-                    setQuestion()
-                }
-                else -> {
-                    view.findNavController()
-                        .navigate(
-                            QuizFragmentDirections.actionQuizFragmentToWonFragment(
-                                correctAnswers,
-                                questionList!!.size
-                            )
+            // When pass to another question.
+            selectedOptionPosition == 0 -> {
+                currentPosition++
+
+                when {
+                    currentPosition <= questionList!!.size -> setQuestion()
+                    else -> view.findNavController().navigate(
+                        QuizFragmentDirections.actionQuizFragmentToWonFragment(
+                            correctAnswers,
+                            questionList!!.size
                         )
+                    )
                 }
             }
-        } else if (lives == 0) {
-            view.findNavController()
+
+            // Show loseFragment when lives get to 0.
+            lives == 0 -> view.findNavController()
                 .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment())
-        } else {
-            val question = questionList?.get(currentPosition - 1)
 
-            // Check if the answer is wrong
-            if (question!!.correctAnswer != selectedOptionPosition) {
-                answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
-                lives--
-                when (lives) {
-                    1 -> binding.ivLiveOne.visibility = View.GONE
-                    0 -> binding.ivLiveTwo.visibility = View.GONE
+            // When option selected check for correct or wrong answer.
+            else -> {
+                // Get question.
+                val question = questionList?.get(currentPosition - 1)
+
+                // If option wrong.
+                if (question!!.correctAnswer != selectedOptionPosition) {
+                    // Mark selected view to wrong.
+                    answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
+
+                    // Decrease lives.
+                    lives--
+                    when (lives) {
+                        1 -> binding.ivLiveOne.visibility = View.GONE
+                        0 -> binding.ivLiveTwo.visibility = View.GONE
+                    }
+                } else {
+                    correctAnswers++
                 }
-            } else {
-                correctAnswers++
+
+                // Always check for correct answer.
+                answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+
+                // When submit answer cannot change options.
+                binding.tvOptionOne.isClickable = false
+                binding.tvOptionTwo.isClickable = false
+                binding.tvOptionThree.isClickable = false
+                binding.tvOptionFour.isClickable = false
+
+                // When the questions are over, button Submit change to finish.
+                if (currentPosition == questionList!!.size) {
+                    binding.btnSubmit.text = getString(R.string.btn_finish)
+                } else {
+                    binding.btnSubmit.text = getString(R.string.btn_submit)
+                }
+
+                // Reset selected option for pass to another question.
+                selectedOptionPosition = 0
             }
-
-            // Check for correct answer
-            answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
-            binding.tvOptionOne.isClickable = false
-            binding.tvOptionTwo.isClickable = false
-            binding.tvOptionThree.isClickable = false
-            binding.tvOptionFour.isClickable = false
-
-            if (currentPosition == questionList!!.size) {
-                binding.btnSubmit.text = getString(R.string.btn_finish)
-            } else {
-                binding.btnSubmit.text = getString(R.string.btn_next_question)
-            }
-
-            selectedOptionPosition = 0
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
