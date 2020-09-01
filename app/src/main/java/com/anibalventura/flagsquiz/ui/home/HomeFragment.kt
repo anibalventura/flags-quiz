@@ -1,8 +1,6 @@
 package com.anibalventura.flagsquiz.ui.home
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,22 +19,24 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Use DataBindingUtil.inflate to inflate and return the titleFragment in onCreateView
+        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_home, container, false
         )
 
-        binding.playButton.setOnClickListener { view: View ->
+        /**
+         * Specify the fragment view as the lifecycle owner of the binding.
+         * This is used so that the binding can observe LiveData updates
+         */
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        val args = HomeFragmentArgs.fromBundle(requireArguments())
+
+        binding.textView.text = args.name
+
+        binding.btnStart.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
-        }
-
-        binding.rulesButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_rulesFragment)
-        }
-
-        binding.aboutButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_aboutFragment)
+                .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment())
         }
 
         return binding.root
