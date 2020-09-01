@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.lose
+package com.anibalventura.flagsquiz.ui.over
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
 
-class LoseFragment : Fragment() {
+class OverFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -20,7 +20,7 @@ class LoseFragment : Fragment() {
 
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_lose, container, false
+            inflater, R.layout.fragment_over, container, false
         )
 
         return binding.root

@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.data
+package com.anibalventura.flagsquiz.data.local.db
 
 /*
  * All the data for every question in the quiz.

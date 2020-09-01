@@ -14,8 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.CONSTANTS
-import com.anibalventura.flagsquiz.data.Question
+import com.anibalventura.flagsquiz.data.local.db.CONSTANTS
+import com.anibalventura.flagsquiz.data.local.db.Question
 import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
 import com.anibalventura.flagsquiz.ui.won.WonFragment
 

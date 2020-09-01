@@ -15,7 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <Button
             android:id="@+id/btnStart"
             android:layout_width="wrap_content"

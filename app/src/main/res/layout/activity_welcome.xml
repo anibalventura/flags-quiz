@@ -3,18 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="quizViewModel"
-            type="com.anibalventura.flagsquiz.ui.quiz.QuizViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/ic_background"
-        tools:context=".ui.welcome.WelcomeFragment">
+        tools:context=".ui.welcome.WelcomeActivity">
 
         <TextView
             android:id="@+id/tvAppName"
@@ -23,7 +16,7 @@
             android:layout_marginBottom="24dp"
             android:text="@string/app_name"
             android:textColor="@android:color/white"
-            android:textSize="24sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/cvWelcome"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +94,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/btnStart"
+                    android:id="@+id/btnContinue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"

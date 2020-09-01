@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/quizFragment"
@@ -38,29 +38,17 @@
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
-        <argument
-            android:name="name"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/loseFragment"
-        android:name="com.anibalventura.flagsquiz.ui.lose.LoseFragment"
+        android:name="com.anibalventura.flagsquiz.ui.over.OverFragment"
         android:label="LoseFragment"
-        tools:layout="@layout/fragment_lose">
+        tools:layout="@layout/fragment_over">
         <action
             android:id="@+id/action_loseFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
             android:id="@+id/action_loseFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.anibalventura.flagsquiz.ui.welcome.WelcomeFragment"
-        android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome">
-        <action
-            android:id="@+id/action_welcomeFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

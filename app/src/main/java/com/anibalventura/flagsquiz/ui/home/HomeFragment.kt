@@ -8,11 +8,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
+import com.anibalventura.flagsquiz.data.local.SharedPreferences
 import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+
+    // Initialize SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,9 +34,10 @@ class HomeFragment : Fragment() {
          */
         binding.lifecycleOwner = viewLifecycleOwner
 
-        val args = HomeFragmentArgs.fromBundle(requireArguments())
+        // Get the current context for SharedPreferences
+        sharedPreferences = SharedPreferences(requireContext())
 
-        binding.textView.text = args.name
+        binding.textView.text = sharedPreferences.getString("user_name", "")
 
         binding.btnStart.setOnClickListener { view: View ->
             view.findNavController()
