@@ -13,17 +13,21 @@ import com.anibalventura.flagsquiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    // Initialize DataBiding for this activity.
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Use DataBinding to set the activity view.
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        // Setup navigation.
         setupNavigation()
     }
 
     /**
-     * Called when the hamburger menu or back button are pressed on the Toolbar
+     * Called when the hamburger menu or back button are pressed on the Toolbar.
      *
      * Delegate this to Navigation.
      */
@@ -31,18 +35,19 @@ class MainActivity : AppCompatActivity() {
         navigateUp(findNavController(R.id.navHostFragment), binding.drawerLayout)
 
     /**
-     * Setup Navigation for this Activity
+     * Setup Navigation for this Activity.
      */
     private fun setupNavigation() {
-        // first find the nav controller
-        val navController = findNavController(R.id.navHostFragment)
-
+        // Set the toolbar.
         setSupportActionBar(binding.toolbar)
 
-        // then setup the action bar, tell it about the DrawerLayout
+        // Find the nav controller.
+        val navController = findNavController(R.id.navHostFragment)
+
+        // Setup the action bar, tell it about the DrawerLayout.
         setupActionBarWithNavController(navController, binding.drawerLayout)
 
-        // finally setup the left drawer (called a NavigationView)
+        // Setup the left drawer (called a NavigationView).
         binding.navigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->

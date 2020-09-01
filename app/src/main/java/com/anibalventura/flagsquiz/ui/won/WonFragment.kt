@@ -59,7 +59,7 @@ class WonFragment : Fragment() {
 
         binding.btnResultFinish.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToQuizFragment())
+                .navigate(WonFragmentDirections.actionWonFragmentToHomeFragment())
         }
 
         return binding.root
