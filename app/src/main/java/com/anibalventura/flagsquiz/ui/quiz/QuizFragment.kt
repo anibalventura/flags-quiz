@@ -157,7 +157,11 @@ class QuizFragment : Fragment() {
 
     private fun submitAnswer(view: View) {
         if (!next) {
-            Toast.makeText(requireContext(), "Please select an option", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.please_select_option),
+                Toast.LENGTH_SHORT
+            ).show()
         } else if (selectedOptionPosition == 0) {
             currentPosition++
 

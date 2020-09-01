@@ -16,4 +16,5 @@
     <string name="option_rules">Reglas</string>
     <string name="option_about">Acerca de</string>
     <string name="option_settings">Configuraciones</string>
+    <string name="please_select_option">Por favor seleccionar una opcion.</string>
 </resources>
