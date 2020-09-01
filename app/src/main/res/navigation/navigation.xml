@@ -17,6 +17,9 @@
             android:id="@+id/action_quizFragment_to_loseFragment"
             app:destination="@id/loseFragment"
             app:popUpTo="@id/homeFragment" />
+        <argument
+            android:name="continent"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/wonFragment"

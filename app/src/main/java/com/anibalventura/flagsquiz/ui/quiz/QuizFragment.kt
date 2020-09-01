@@ -14,7 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.local.db.CONSTANTS
+import com.anibalventura.flagsquiz.data.local.db.AMERICA
+import com.anibalventura.flagsquiz.data.local.db.EUROPE
 import com.anibalventura.flagsquiz.data.local.db.Question
 import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
 
@@ -24,7 +25,7 @@ class QuizFragment : Fragment() {
     private lateinit var binding: FragmentQuizBinding
 
     // Questions from database.
-    private var questionList: ArrayList<Question>? = null
+    private var questionList: MutableList<Question>? = mutableListOf()
 
     // Quiz.
     private var currentPosition: Int = 1 // Default and the first question position
@@ -54,24 +55,28 @@ class QuizFragment : Fragment() {
             ViewModelProvider(this, viewModelFactory).get(QuizViewModel::class.java)
 
         /**
-         * Set the viewModel for DataBinding - this allows the bound layout access
-         * to all the data in the ViewModel
+         * Set the viewModel for DataBinding.
+         * This allows the bound layout access to all the data in the ViewModel.
          */
         binding.quizViewModel = viewModel
 
         /**
          * Specify the fragment view as the lifecycle owner of the binding.
-         * This is used so that the binding can observe LiveData updates
+         * This is used so that the binding can observe LiveData updates.
          */
         binding.lifecycleOwner = viewLifecycleOwner
 
         // Get the selected category.
-        questionList = CONSTANTS.getQuestions()
+        val args = QuizFragmentArgs.fromBundle(requireArguments())
+        when (args.continent) {
+            "EUROPE" -> questionList = EUROPE.getQuestions()
+            "AMERICA" -> questionList = AMERICA.getQuestions()
+        }
 
         // Set the current question.
         setQuestion()
 
-        // get option selected.
+        // Get option selected.
         selectedOptionsView(binding.tvOptionOne, 1)
         selectedOptionsView(binding.tvOptionTwo, 2)
         selectedOptionsView(binding.tvOptionThree, 3)
@@ -89,6 +94,8 @@ class QuizFragment : Fragment() {
      * Setting the question to UI components.
      */
     private fun setQuestion() {
+        questionList?.shuffle()
+
         // Getting the question from the list with the help of current position.
         val question = questionList!![currentPosition - 1]
 
