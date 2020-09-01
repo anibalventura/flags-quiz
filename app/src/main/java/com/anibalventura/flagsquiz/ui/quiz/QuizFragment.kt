@@ -1,6 +1,5 @@
 package com.anibalventura.flagsquiz.ui.quiz
 
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -17,15 +16,14 @@ import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.data.local.db.CONSTANTS
 import com.anibalventura.flagsquiz.data.local.db.Question
 import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
-import com.anibalventura.flagsquiz.ui.won.WonFragment
 
 class QuizFragment : Fragment() {
 
     private var currentPosition: Int = 1 // Default and the first question position
     private var questionList: ArrayList<Question>? = null
-    private var userName: String? = null
     private var selectedOptionPosition: Int = 0
     private var correctAnswers: Int = 0
+    private var lives: Int = 2
 
     private lateinit var binding: FragmentQuizBinding
 
@@ -88,7 +86,8 @@ class QuizFragment : Fragment() {
         }
 
         binding.progressBar.progress = currentPosition
-//        binding.tvProgressBar.text = getString(R.string.progress, currentPosition, progressBar.max)
+        binding.tvProgressBar.text =
+            getString(R.string.progress, currentPosition, binding.progressBar.max)
 
         binding.tvQuestion.text = question.question
         binding.ivFlag.setImageResource(question.image)
@@ -159,21 +158,25 @@ class QuizFragment : Fragment() {
                     setQuestion()
                 }
                 else -> {
-                    val intent = Intent(requireContext(), WonFragment::class.java)
-                    intent.putExtra(CONSTANTS.USER_NAME, userName)
-                    intent.putExtra(CONSTANTS.CORRECT_ANSWERS, correctAnswers)
-                    intent.putExtra(CONSTANTS.TOTAL_QUESTIONS, questionList!!.size)
                     view.findNavController()
-                        .navigate(QuizFragmentDirections.actionQuizFragmentToWonFragment())
+                        .navigate(
+                            QuizFragmentDirections.actionQuizFragmentToWonFragment(
+                                correctAnswers,
+                                questionList!!.size
+                            )
+                        )
                 }
             }
-
+        } else if (lives == 0) {
+            view.findNavController()
+                .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment())
         } else {
             val question = questionList?.get(currentPosition - 1)
 
             // Check if the answer is wrong
             if (question!!.correctAnswer != selectedOptionPosition) {
                 answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
+                lives--
             } else {
                 correctAnswers++
             }

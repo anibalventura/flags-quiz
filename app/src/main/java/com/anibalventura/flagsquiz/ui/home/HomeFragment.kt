@@ -13,18 +13,13 @@ import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
-
-    // Initialize SharedPreferences
-    private lateinit var sharedPreferences: SharedPreferences
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView
-        binding = DataBindingUtil.inflate(
+        val binding: FragmentHomeBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_home, container, false
         )
 
@@ -34,11 +29,14 @@ class HomeFragment : Fragment() {
          */
         binding.lifecycleOwner = viewLifecycleOwner
 
-        // Get the current context for SharedPreferences
-        sharedPreferences = SharedPreferences(requireContext())
+        // Get and set the current context for SharedPreferences.
+        val sharedPreferences: SharedPreferences = SharedPreferences(requireContext())
 
-        binding.textView.text = sharedPreferences.getString("user_name", "")
+        // Get and ser the current username.
+        val userName = sharedPreferences.getString("user_name", "")
+        binding.textView.text = userName
 
+        // Start the fragment quiz.
         binding.btnStart.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment())

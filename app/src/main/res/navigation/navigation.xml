@@ -29,6 +29,14 @@
         <action
             android:id="@+id/action_wonFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="correntAnswers"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="totalQuestions"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"

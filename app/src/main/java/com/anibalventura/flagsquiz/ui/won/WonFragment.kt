@@ -1,20 +1,15 @@
 package com.anibalventura.flagsquiz.ui.won
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.local.db.CONSTANTS
+import com.anibalventura.flagsquiz.data.local.SharedPreferences
 import com.anibalventura.flagsquiz.databinding.FragmentWonBinding
-import com.anibalventura.flagsquiz.ui.quiz.QuizFragment
-import com.anibalventura.flagsquiz.ui.quiz.QuizViewModel
-import com.anibalventura.flagsquiz.ui.quiz.QuizViewModelFactory
 
 class WonFragment : Fragment() {
 
@@ -25,22 +20,10 @@ class WonFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        /**
-         * Inflate the layout for this fragment
-         */
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_won, container, false)
-        // Set ViewModel and ViewModelFactory
-        val viewModelFactory =
-            QuizViewModelFactory(requireContext(), requireNotNull(activity).application)
-        val viewModel: QuizViewModel =
-            ViewModelProvider(this, viewModelFactory).get(QuizViewModel::class.java)
-
-
-        /**
-         * Set the viewModel for DataBinding - this allows the bound layout access
-         * to all the data in the ViewModel
-         */
-        binding.quizViewModel = viewModel
+        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView
+        binding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_won, container, false
+        )
 
         /**
          * Specify the fragment view as the lifecycle owner of the binding.
@@ -48,15 +31,19 @@ class WonFragment : Fragment() {
          */
         binding.lifecycleOwner = viewLifecycleOwner
 
+        // Set and get the current context for SharedPreferences.
+        val sharedPreferences: SharedPreferences = SharedPreferences(requireContext())
 
-        val intent = Intent(requireContext(), QuizFragment::class.java)
-        val username = intent.getStringExtra(CONSTANTS.USER_NAME)
-        binding.tvResultUsername.text = username
+        // Get and ser the current username.
+        val userName = sharedPreferences.getString("user_name", "")
+        binding.tvResultUsername.text = userName
 
-        val correctAnswers = intent.getIntExtra(CONSTANTS.CORRECT_ANSWERS, 0)
-        val totalQuestions = intent.getIntExtra(CONSTANTS.TOTAL_QUESTIONS, 0)
-        binding.tvResultScore.text = getString(R.string.total_score, correctAnswers, totalQuestions)
+        // Get and set the score of the quiz.
+        val args = WonFragmentArgs.fromBundle(requireArguments())
+        binding.tvResultScore.text =
+            getString(R.string.total_score, args.correntAnswers, args.totalQuestions)
 
+        // Back to the home fragment.
         binding.btnResultFinish.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(WonFragmentDirections.actionWonFragmentToHomeFragment())

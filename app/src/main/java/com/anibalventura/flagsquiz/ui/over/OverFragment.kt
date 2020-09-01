@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
+import com.anibalventura.flagsquiz.databinding.FragmentOverBinding
 
 class OverFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentOverBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
