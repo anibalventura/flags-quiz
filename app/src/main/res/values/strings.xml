@@ -20,4 +20,6 @@
     <string name="please_select_option">Please select an option.</string>
     <string name="heart_content">Heart Icon</string>
     <string name="please_select_continent">Please select a continent.</string>
+    <string name="continent_europe">Europe</string>
+    <string name="continent_america">America</string>
 </resources>

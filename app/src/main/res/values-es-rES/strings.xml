@@ -17,4 +17,8 @@
     <string name="option_about">Acerca de</string>
     <string name="option_settings">Configuraciones</string>
     <string name="please_select_option">Por favor seleccionar una opcion.</string>
+    <string name="heart_content">Icono de Corazon</string>
+    <string name="please_select_continent">Por favor seleccionar un continente.</string>
+    <string name="continent_europe">Europa</string>
+    <string name="continent_america">America</string>
 </resources>

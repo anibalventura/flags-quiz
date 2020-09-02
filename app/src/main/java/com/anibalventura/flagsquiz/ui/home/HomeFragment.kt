@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         // Get and set the current context for SharedPreferences.
-        val sharedPreferences: SharedPreferences = SharedPreferences(requireContext())
+        val sharedPreferences = SharedPreferences(requireContext())
 
         // Get and ser the current username.
         val userName = sharedPreferences.getString("user_name", "")
@@ -56,6 +56,29 @@ class HomeFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    /*
+     * Submit the answer.
+     */
+    private fun startQuiz(view: View) {
+        when (selectedContinent) {
+            1 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment("EUROPE"))
+                selectedContinent = 0
+            }
+            2 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment("AMERICA"))
+                selectedContinent = 0
+            }
+            else -> Toast.makeText(
+                requireContext(),
+                getString(R.string.please_select_continent),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     /**
@@ -82,39 +105,13 @@ class HomeFragment : Fragment() {
      * Set the view of options to default.
      */
     private fun defaultOptionsView() {
-        val options = ArrayList<TextView>()
-        options.add(0, binding.tvEurope)
-        options.add(1, binding.tvAmerica)
-
+        val options: MutableList<TextView> = mutableListOf(binding.tvEurope, binding.tvAmerica)
         for (option in options) {
             option.setTextColor((Color.parseColor("#7A8089")))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(
                 requireContext(), R.drawable.default_option_border_bg
             )
-        }
-    }
-
-    /*
-     * Submit the answer.
-     */
-    private fun startQuiz(view: View) {
-        when (selectedContinent) {
-            0 -> Toast.makeText(
-                requireContext(),
-                getString(R.string.please_select_continent),
-                Toast.LENGTH_SHORT
-            ).show()
-            1 -> {
-                view.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment("EUROPE"))
-                selectedContinent = 0
-            }
-            2 -> {
-                view.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment("AMERICA"))
-                selectedContinent = 0
-            }
         }
     }
 }
