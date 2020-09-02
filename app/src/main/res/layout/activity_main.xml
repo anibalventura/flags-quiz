@@ -19,17 +19,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/primaryDarkColor"
-                android:theme="@style/AppTheme">
-
-                <TextView
-                    android:id="@+id/toolbarTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textColor="@color/secondaryTextColor"
-                    android:textSize="22sp" />
-
-            </androidx.appcompat.widget.Toolbar>
+                android:theme="@style/AppTheme"
+                app:titleTextColor="@android:color/white" />
 
             <fragment
                 android:id="@+id/navHostFragment"

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -28,19 +29,20 @@ class QuizFragment : Fragment() {
      * Quiz.
      */
     // Questions.
-    private var questions: MutableList<Question> = mutableListOf() // Questions from database.
+    private lateinit var questions: MutableList<Question> // Questions from database.
     private lateinit var currentQuestion: Question
     private var indexQuestion: Int = 0
     private var submitQuestion: Boolean = false
-    private val numQuestions = 10
+    private val numQuestions = 3
 
     // Answers.
     private lateinit var answers: MutableList<String>
+    private lateinit var answersView: MutableList<TextView>
     private var indexAnswer: Int = 0
     private var correctAnswers: Int = 0
 
     // Lives count.
-    private var lives: Int = 4
+    private var lives: Int = 3
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +52,11 @@ class QuizFragment : Fragment() {
         /**
          * Inflate the layout for this fragment.
          */
+        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_quiz, container, false)
+        // Specify the fragment view as the lifecycle owner of the binding.
+        // This is used so that the binding can observe LiveData updates.
+        binding.lifecycleOwner = viewLifecycleOwner
 
         /**
          * Set ViewModel and ViewModelFactory.
@@ -59,45 +65,48 @@ class QuizFragment : Fragment() {
             QuizViewModelFactory(requireContext(), requireNotNull(activity).application)
         val viewModel: QuizViewModel =
             ViewModelProvider(this, viewModelFactory).get(QuizViewModel::class.java)
-
-        /**
-         * Set the viewModel for DataBinding.
-         * This allows the bound layout access to all the data in the ViewModel.
-         */
+        // Set the viewModel for DataBinding.
+        // This allows the bound layout access to all the data in the ViewModel.
         binding.quizViewModel = viewModel
 
-        /**
-         * Specify the fragment view as the lifecycle owner of the binding.
-         * This is used so that the binding can observe LiveData updates.
+        /*
+         * Initiate the quiz.
          */
-        binding.lifecycleOwner = viewLifecycleOwner
-
+        // Get answer views.
+        answersView = mutableListOf(
+            binding.tvAnswerOne,
+            binding.tvAnswerTwo,
+            binding.tvAnswerThree,
+            binding.tvAnswerFour
+        )
+        // Get selected continent for questions.
         selectedContinent()
-
-        // Get option selected.
-        indexAnswerView(binding.tvOptionOne, 0)
-        indexAnswerView(binding.tvOptionTwo, 1)
-        indexAnswerView(binding.tvOptionThree, 2)
-        indexAnswerView(binding.tvOptionFour, 3)
-
         // Submit the answer.
-        binding.btnSubmit.setOnClickListener {
-            submitAnswer(it)
-        }
+        binding.btnSubmit.setOnClickListener { submitAnswer(it) }
 
         return binding.root
     }
 
     /*
      * Get selected continent from HomeFragment with SafeArgs.
+     * And set title fragment.
      */
     private fun selectedContinent() {
         val args = QuizFragmentArgs.fromBundle(requireArguments())
         when (args.continent) {
-            "EUROPE" -> questions = EUROPE.getQuestions()
-            "AMERICA" -> questions = AMERICA.getQuestions()
+            getString(R.string.continent_europe) -> {
+                questions = EUROPE.getQuestions()
+                (activity as AppCompatActivity).supportActionBar?.title =
+                    getString(R.string.continent_europe)
+            }
+            getString(R.string.continent_america) -> {
+                questions = AMERICA.getQuestions()
+                (activity as AppCompatActivity).supportActionBar?.title =
+                    getString(R.string.continent_america)
+            }
         }
         setQuestion()
+        selectedAnswerView()
     }
 
     /**
@@ -122,16 +131,10 @@ class QuizFragment : Fragment() {
         // Set the view to the current question.
         binding.tvQuestion.text = currentQuestion.question
         binding.ivFlag.setImageResource(currentQuestion.image)
-        val options: MutableList<TextView> = mutableListOf(
-            binding.tvOptionOne,
-            binding.tvOptionTwo,
-            binding.tvOptionThree,
-            binding.tvOptionFour
-        )
-        for ((index, option) in options.withIndex()) {
-            option.text = answers[index]
+        for ((index, answer) in answersView.withIndex()) {
+            answer.text = answers[index]
             // Enable to select an option.
-            option.isClickable = true
+            answer.isClickable = true
         }
 
         // Reset the button to "Submit".
@@ -149,17 +152,10 @@ class QuizFragment : Fragment() {
     }
 
     /*
-     * Set the view of options to default.
+     * Set the view of answersView to default.
      */
     private fun defaultAnswerView() {
-        val answers: MutableList<TextView> = mutableListOf(
-            binding.tvOptionOne,
-            binding.tvOptionTwo,
-            binding.tvOptionThree,
-            binding.tvOptionFour
-        )
-
-        for (answer in answers) {
+        for (answer in answersView) {
             answer.setTextColor((Color.parseColor("#7A8089")))
             answer.typeface = Typeface.DEFAULT
             answer.background = ContextCompat.getDrawable(
@@ -169,23 +165,29 @@ class QuizFragment : Fragment() {
     }
 
     /**
-     * Set the option view to selected.
+     * Get the selected index answer and set the view.
      */
-    private fun indexAnswerView(tv: TextView, selectionOptionNum: Int) {
-        tv.setOnClickListener {
-            defaultAnswerView()
+    private fun selectedAnswerView() {
+        for ((index, answer) in answersView.withIndex()) {
+            answer.setOnClickListener {
+                defaultAnswerView()
 
-            // Set the option view to selected.
-            tv.setTextColor((Color.parseColor("#363A43")))
-            tv.setTypeface(tv.typeface, Typeface.BOLD)
-            tv.background =
-                ContextCompat.getDrawable(requireContext(), R.drawable.selected_option_border_bg)
+                // Set the option view to selected.
+                answer.setTextColor((Color.parseColor("#363A43")))
+                answer.setTypeface(answer.typeface, Typeface.BOLD)
+                answer.background =
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.selected_option_border_bg
+                    )
 
-            // Get the selected option.
-            indexAnswer = selectionOptionNum
-
-            // When option is selected can submit the question.
-            submitQuestion = true
+                // Get the selected option.
+                indexAnswer = index
+                // Enable to select an option.
+                answer.isClickable = true
+                // Can pass to another question.
+                submitQuestion = true
+            }
         }
     }
 
@@ -193,15 +195,11 @@ class QuizFragment : Fragment() {
      * Highlight the answer for wrong or right.
      */
     private fun highlightAnswerView(answer: String, drawableView: Int) {
-        when (answer) {
-            answers[0] -> binding.tvOptionOne.background =
-                ContextCompat.getDrawable(requireContext(), drawableView)
-            answers[1] -> binding.tvOptionTwo.background =
-                ContextCompat.getDrawable(requireContext(), drawableView)
-            answers[2] -> binding.tvOptionThree.background =
-                ContextCompat.getDrawable(requireContext(), drawableView)
-            answers[3] -> binding.tvOptionFour.background =
-                ContextCompat.getDrawable(requireContext(), drawableView)
+        for ((index) in answersView.withIndex()) {
+            when (answer) {
+                answers[index] -> answersView[index].background =
+                    ContextCompat.getDrawable(requireContext(), drawableView)
+            }
         }
     }
 
@@ -210,8 +208,7 @@ class QuizFragment : Fragment() {
      */
     private fun submitAnswer(view: View) {
         when {
-
-            lives <= 1 -> view.findNavController()
+            lives <= 0 -> view.findNavController()
                 .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment())
 
             // Show a toast if trying to submit question without an option.
@@ -222,10 +219,14 @@ class QuizFragment : Fragment() {
             ).show()
 
             // When pass to another question.
-            indexAnswer == 4 -> {
+            // The number 5 is used because there is no index 5, so can continue the quiz.
+            indexAnswer == 5 -> {
                 indexQuestion++
                 when {
-                    indexQuestion < numQuestions -> setQuestion()
+                    indexQuestion < numQuestions -> {
+                        setQuestion()
+                        selectedAnswerView()
+                    }
                     else -> view.findNavController().navigate(
                         QuizFragmentDirections.actionQuizFragmentToWonFragment(
                             correctAnswers,
@@ -245,9 +246,9 @@ class QuizFragment : Fragment() {
                     // Decrease lives.
                     lives--
                     when (lives) {
-                        3 -> binding.ivLiveOne.visibility = View.GONE
-                        2 -> binding.ivLiveTwo.visibility = View.GONE
-                        1 -> binding.ivLiveThree.visibility = View.GONE
+                        2 -> binding.ivLiveOne.visibility = View.GONE
+                        1 -> binding.ivLiveTwo.visibility = View.GONE
+                        0 -> binding.ivLiveThree.visibility = View.GONE
                     }
                 } else {
                     correctAnswers++
@@ -259,27 +260,21 @@ class QuizFragment : Fragment() {
                     R.drawable.correct_option_border_bg
                 )
 
-                // When submit answer cannot change options.
-                val options: MutableList<TextView> = mutableListOf(
-                    binding.tvOptionOne,
-                    binding.tvOptionTwo,
-                    binding.tvOptionThree,
-                    binding.tvOptionFour
-                )
-                for (option in options) {
-                    option.isClickable = true
+                // When submit answer cannot change answersView.
+                for (answer in answersView) {
+                    answer.isClickable = false
                 }
 
                 // When the questions are over, button Submit change to finish.
                 when {
-                    indexQuestion == numQuestions -> binding.btnSubmit.text =
-                        getString(R.string.btn_finish)
-                    lives == 1 -> binding.btnSubmit.text = getString(R.string.btn_finish)
+                    indexQuestion + 1 == numQuestions ->
+                        binding.btnSubmit.text = getString(R.string.btn_finish)
+                    lives == 0 -> binding.btnSubmit.text = getString(R.string.btn_finish)
                     else -> binding.btnSubmit.text = getString(R.string.btn_next_question)
                 }
 
                 // Reset selected option for pass to another question.
-                indexAnswer = 4
+                indexAnswer = 5
             }
         }
     }

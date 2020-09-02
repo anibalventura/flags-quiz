@@ -13,6 +13,7 @@ import com.anibalventura.flagsquiz.databinding.FragmentWonBinding
 
 class WonFragment : Fragment() {
 
+    // Use DataBinding.
     private lateinit var binding: FragmentWonBinding
 
     override fun onCreateView(
@@ -20,26 +21,31 @@ class WonFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView
+        /**
+         * Inflate the layout for this fragment.
+         */
+        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_won, container, false
         )
-
-        /**
-         * Specify the fragment view as the lifecycle owner of the binding.
-         * This is used so that the binding can observe LiveData updates
-         */
+        // Specify the fragment view as the lifecycle owner of the binding.
+        // This is used so that the binding can observe LiveData updates.
         binding.lifecycleOwner = viewLifecycleOwner
 
-        // Set and get the current context for SharedPreferences.
-        val sharedPreferences: SharedPreferences = SharedPreferences(requireContext())
+        /*
+         * SharedPreferences.
+         */
+        // Get and set the current context for SharedPreferences.
+        val sharedPreferences = SharedPreferences(requireContext())
+        // Get and set the current username.
+        binding.tvResultUsername.text = sharedPreferences.getString("user_name", "")
 
-        // Get and ser the current username.
-        val userName = sharedPreferences.getString("user_name", "")
-        binding.tvResultUsername.text = userName
-
-        // Get and set the score of the quiz.
+        /*
+         * SafeArgs.
+         */
+        // Get the arguments from the WonFragment, passed from QuizFragment.
         val args = WonFragmentArgs.fromBundle(requireArguments())
+        // Set the score view with the arguments.
         binding.tvResultScore.text =
             getString(R.string.total_score, args.correntAnswers, args.totalQuestions)
 

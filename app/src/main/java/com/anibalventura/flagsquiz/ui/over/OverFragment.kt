@@ -11,6 +11,7 @@ import com.anibalventura.flagsquiz.databinding.FragmentOverBinding
 
 class OverFragment : Fragment() {
 
+    // Use DataBinding.
     private lateinit var binding: FragmentOverBinding
 
     override fun onCreateView(
@@ -18,10 +19,16 @@ class OverFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView
+        /**
+         * Inflate the layout for this fragment.
+         */
+        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_over, container, false
         )
+        // Specify the fragment view as the lifecycle owner of the binding.
+        // This is used so that the binding can observe LiveData updates.
+        binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
     }

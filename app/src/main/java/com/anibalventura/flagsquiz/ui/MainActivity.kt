@@ -3,7 +3,6 @@ package com.anibalventura.flagsquiz.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -13,7 +12,7 @@ import com.anibalventura.flagsquiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    // Initialize DataBiding for this activity.
+    // Use DataBinding.
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +27,11 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Called when the hamburger menu or back button are pressed on the Toolbar.
-     *
      * Delegate this to Navigation.
      */
-    override fun onSupportNavigateUp() =
-        navigateUp(findNavController(R.id.navHostFragment), binding.drawerLayout)
+    override fun onSupportNavigateUp() = navigateUp(
+        findNavController(R.id.navHostFragment), binding.drawerLayout
+    )
 
     /**
      * Setup Navigation for this Activity.
@@ -49,17 +48,5 @@ class MainActivity : AppCompatActivity() {
 
         // Setup the left drawer (called a NavigationView).
         binding.navigationView.setupWithNavController(navController)
-
-        navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
-            val toolBar = supportActionBar ?: return@addOnDestinationChangedListener
-            when (destination.id) {
-                R.id.homeFragment -> {
-                    toolBar.setDisplayShowTitleEnabled(false)
-                }
-                else -> {
-                    toolBar.setDisplayShowTitleEnabled(true)
-                }
-            }
-        }
     }
 }

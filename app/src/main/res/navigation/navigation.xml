@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/wonFragment"
         android:name="com.anibalventura.flagsquiz.ui.won.WonFragment"
-        android:label="WonFragment"
+        android:label="You Won!"
         tools:layout="@layout/fragment_won">
         <action
             android:id="@+id/action_wonFragment_to_quizFragment"
@@ -34,17 +34,17 @@
             app:destination="@id/homeFragment" />
         <argument
             android:name="correntAnswers"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
         <argument
             android:name="totalQuestions"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.anibalventura.flagsquiz.ui.home.HomeFragment"
-        android:label="HomeFragment"
+        android:label="Flags Quiz"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
@@ -62,7 +62,7 @@
     <fragment
         android:id="@+id/loseFragment"
         android:name="com.anibalventura.flagsquiz.ui.over.OverFragment"
-        android:label="LoseFragment"
+        android:label="Sorry You Lose!"
         tools:layout="@layout/fragment_over">
         <action
             android:id="@+id/action_loseFragment_to_homeFragment"
@@ -74,7 +74,7 @@
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.anibalventura.flagsquiz.ui.rules.RulesFragment"
-        android:label="RulesFragment"
+        android:label="Rules"
         tools:layout="@layout/fragment_rules">
         <action
             android:id="@+id/action_rulesFragment_to_homeFragment"
@@ -83,7 +83,7 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.anibalventura.flagsquiz.ui.about.AboutFragment"
-        android:label="AboutFragment"
+        android:label="About"
         tools:layout="@layout/fragment_about">
         <action
             android:id="@+id/action_aboutFragment_to_homeFragment"
@@ -92,7 +92,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.anibalventura.flagsquiz.ui.settings.SettingsFragment"
-        android:label="SettingsFragment"
+        android:label="Settings"
         tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_homeFragment"

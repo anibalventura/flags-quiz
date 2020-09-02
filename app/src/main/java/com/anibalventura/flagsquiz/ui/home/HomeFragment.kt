@@ -21,6 +21,7 @@ class HomeFragment : Fragment() {
     // Use DataBinding.
     private lateinit var binding: FragmentHomeBinding
 
+    private lateinit var optionsView: MutableList<TextView>
     private var selectedContinent: Int = 0
 
     override fun onCreateView(
@@ -28,76 +29,54 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView
+        /**
+         * Inflate the layout for this fragment.
+         */
+        // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_home, container, false
         )
-
-        /**
-         * Specify the fragment view as the lifecycle owner of the binding.
-         * This is used so that the binding can observe LiveData updates
-         */
+        // Specify the fragment view as the lifecycle owner of the binding.
+        // This is used so that the binding can observe LiveData updates.
         binding.lifecycleOwner = viewLifecycleOwner
 
+        /*
+         * SharedPreferences.
+         */
         // Get and set the current context for SharedPreferences.
         val sharedPreferences = SharedPreferences(requireContext())
+        // Get and set the current username.
+        binding.textView.text = sharedPreferences.getString("user_name", "")
 
-        // Get and ser the current username.
-        val userName = sharedPreferences.getString("user_name", "")
-        binding.textView.text = userName
+        optionsView = mutableListOf(binding.tvEurope, binding.tvAmerica)
 
         // Get option selected.
-        selectedOptionsView(binding.tvEurope, 1)
-        selectedOptionsView(binding.tvAmerica, 2)
+        selectedOptionsView()
 
         // Start the fragment quiz.
-        binding.btnStart.setOnClickListener { view: View ->
-            startQuiz(view)
-        }
+        binding.btnStart.setOnClickListener { startQuiz(it) }
 
         return binding.root
-    }
-
-    /*
-     * Submit the answer.
-     */
-    private fun startQuiz(view: View) {
-        when (selectedContinent) {
-            1 -> {
-                view.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment("EUROPE"))
-                selectedContinent = 0
-            }
-            2 -> {
-                view.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment("AMERICA"))
-                selectedContinent = 0
-            }
-            else -> Toast.makeText(
-                requireContext(),
-                getString(R.string.please_select_continent),
-                Toast.LENGTH_SHORT
-            ).show()
-        }
     }
 
     /**
      * Set the option view to selected.
      */
-    private fun selectedOptionsView(tv: TextView, selectionContinent: Int) {
-        tv.setOnClickListener {
+    private fun selectedOptionsView() {
+        for ((index, answer) in optionsView.withIndex()) {
+            answer.setOnClickListener {
+                defaultOptionsView()
 
-            defaultOptionsView()
+                // Get the selected option.
+                selectedContinent = index + 1
 
-            // Get the selected option.
-            selectedContinent = selectionContinent
-
-            // Set the option view to selected.
-            tv.setTextColor((Color.parseColor("#363A43")))
-            tv.setTypeface(tv.typeface, Typeface.BOLD)
-            tv.background = ContextCompat.getDrawable(
-                requireContext(), R.drawable.selected_option_border_bg
-            )
+                // Set the option view to selected.
+                answer.setTextColor((Color.parseColor("#363A43")))
+                answer.setTypeface(answer.typeface, Typeface.BOLD)
+                answer.background = ContextCompat.getDrawable(
+                    requireContext(), R.drawable.selected_option_border_bg
+                )
+            }
         }
     }
 
@@ -105,13 +84,36 @@ class HomeFragment : Fragment() {
      * Set the view of options to default.
      */
     private fun defaultOptionsView() {
-        val options: MutableList<TextView> = mutableListOf(binding.tvEurope, binding.tvAmerica)
-        for (option in options) {
+        for (option in optionsView) {
             option.setTextColor((Color.parseColor("#7A8089")))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(
                 requireContext(), R.drawable.default_option_border_bg
             )
+        }
+    }
+
+    /*
+     * Start quiz on selected continent.
+     * Pass the selected continent via SafeArgs to QuizFragment.
+     */
+    private fun startQuiz(view: View) {
+        when (selectedContinent) {
+            1 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_europe)))
+                selectedContinent = 0
+            }
+            2 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_america)))
+                selectedContinent = 0
+            }
+            else -> Toast.makeText(
+                requireContext(),
+                getString(R.string.please_select_continent),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

@@ -84,7 +84,7 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/tvOptionTwo"
+                    android:id="@+id/tvAnswerTwo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -95,11 +95,11 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOptionOne"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAnswerOne"
                     tools:text="Australia" />
 
                 <TextView
-                    android:id="@+id/tvOptionFour"
+                    android:id="@+id/tvAnswerFour"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -110,11 +110,11 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOptionThree"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAnswerThree"
                     tools:text="Austria" />
 
                 <TextView
-                    android:id="@+id/tvOptionThree"
+                    android:id="@+id/tvAnswerThree"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -125,7 +125,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOptionTwo"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAnswerTwo"
                     tools:text="Armenia" />
 
                 <TextView
@@ -176,7 +176,7 @@
                     tools:text="0/10" />
 
                 <TextView
-                    android:id="@+id/tvOptionOne"
+                    android:id="@+id/tvAnswerOne"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
@@ -201,7 +201,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOptionFour" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvAnswerFour" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>

@@ -13,12 +13,14 @@ import com.anibalventura.flagsquiz.ui.MainActivity
 
 class WelcomeActivity : AppCompatActivity() {
 
+    // Use DataBinding.
+    private lateinit var binding: ActivityWelcomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Use DataBinding to set the activity view.
-        val binding: ActivityWelcomeBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_welcome)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome)
 
         // Hide the status bar.
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN

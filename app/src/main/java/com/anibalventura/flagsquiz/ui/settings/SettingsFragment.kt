@@ -10,15 +10,25 @@ import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
+
+    // Use DataBinding.
+    private lateinit var binding: FragmentSettingsBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        /**
+         * Inflate the layout for this fragment.
+         */
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
-        val binding = DataBindingUtil.inflate<FragmentSettingsBinding>(
+        binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_settings, container, false
         )
+        // Specify the fragment view as the lifecycle owner of the binding.
+        // This is used so that the binding can observe LiveData updates.
+        binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
     }
