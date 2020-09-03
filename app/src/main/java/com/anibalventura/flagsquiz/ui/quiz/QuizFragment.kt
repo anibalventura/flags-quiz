@@ -15,9 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.local.db.AMERICA
-import com.anibalventura.flagsquiz.data.local.db.EUROPE
-import com.anibalventura.flagsquiz.data.local.db.Question
+import com.anibalventura.flagsquiz.data.local.db.*
 import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
 
 class QuizFragment : Fragment() {
@@ -33,7 +31,7 @@ class QuizFragment : Fragment() {
     private lateinit var currentQuestion: Question
     private var indexQuestion: Int = 0
     private var submitQuestion: Boolean = false
-    private val numQuestions = 3
+    private val numQuestions = 10
 
     // Answers.
     private lateinit var answers: MutableList<String>
@@ -94,15 +92,35 @@ class QuizFragment : Fragment() {
     private fun selectedContinent() {
         val args = QuizFragmentArgs.fromBundle(requireArguments())
         when (args.continent) {
+            getString(R.string.continent_africa) -> {
+                questions = Africa.getQuestions()
+                (activity as AppCompatActivity).supportActionBar?.title =
+                    getString(R.string.continent_africa)
+            }
+            getString(R.string.continent_asia) -> {
+                questions = Asia.getQuestions()
+                (activity as AppCompatActivity).supportActionBar?.title =
+                    getString(R.string.continent_asia)
+            }
             getString(R.string.continent_europe) -> {
-                questions = EUROPE.getQuestions()
+                questions = Europe.getQuestions()
                 (activity as AppCompatActivity).supportActionBar?.title =
                     getString(R.string.continent_europe)
             }
-            getString(R.string.continent_america) -> {
-                questions = AMERICA.getQuestions()
+            getString(R.string.continent_north_america) -> {
+                questions = NorthAmerica.getQuestions()
                 (activity as AppCompatActivity).supportActionBar?.title =
-                    getString(R.string.continent_america)
+                    getString(R.string.continent_north_america)
+            }
+            getString(R.string.continent_oceania) -> {
+                questions = Oceania.getQuestions()
+                (activity as AppCompatActivity).supportActionBar?.title =
+                    getString(R.string.continent_oceania)
+            }
+            getString(R.string.continent_south_america) -> {
+                questions = SouthAmerica.getQuestions()
+                (activity as AppCompatActivity).supportActionBar?.title =
+                    getString(R.string.continent_south_america)
             }
         }
         setQuestion()
@@ -129,7 +147,6 @@ class QuizFragment : Fragment() {
             getString(R.string.progress, indexQuestion.plus(1), numQuestions)
 
         // Set the view to the current question.
-        binding.tvQuestion.text = currentQuestion.question
         binding.ivFlag.setImageResource(currentQuestion.image)
         for ((index, answer) in answersView.withIndex()) {
             answer.text = answers[index]
@@ -144,11 +161,14 @@ class QuizFragment : Fragment() {
         submitQuestion = false
     }
 
+    /*
+     * Get a random question and answer position.
+     */
     private fun randomizeQuestions() {
+        // Change order.
         questions.shuffle()
         // Get question.
         currentQuestion = questions[indexQuestion]
-        // TODO: Remove current question.
     }
 
     /*
@@ -270,7 +290,7 @@ class QuizFragment : Fragment() {
                     indexQuestion + 1 == numQuestions ->
                         binding.btnSubmit.text = getString(R.string.btn_finish)
                     lives == 0 -> binding.btnSubmit.text = getString(R.string.btn_finish)
-                    else -> binding.btnSubmit.text = getString(R.string.btn_next_question)
+                    else -> binding.btnSubmit.text = getString(R.string.btn_next_flag)
                 }
 
                 // Reset selected option for pass to another question.

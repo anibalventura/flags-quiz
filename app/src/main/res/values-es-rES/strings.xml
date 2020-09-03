@@ -8,7 +8,7 @@
     <string name="country_flag_content">Bandera del país</string>
     <string name="btn_finish">Finalizar</string>
     <string name="btn_submit">Enviar</string>
-    <string name="btn_next_question">Siguiente Pregunta</string>
+    <string name="btn_next_flag">Siguiente Bandera</string>
     <string name="congrats">Felicidades!</string>
     <string name="trophy_content">Imagen de Trofeo</string>
     <string name="total_score">Tu puntuacion es %1$d de %2$d.</string>
@@ -20,5 +20,10 @@
     <string name="heart_content">Icono de Corazon</string>
     <string name="please_select_continent">Por favor seleccionar un continente.</string>
     <string name="continent_europe">Europa</string>
-    <string name="continent_america">America</string>
+    <string name="continent_africa">Africa</string>
+    <string name="continent_asia">Asia</string>
+    <string name="continent_north_america">Norte America</string>
+    <string name="continent_oceania">Oceania</string>
+    <string name="continent_south_america">Sur America</string>
+    <string name="country_af_botswana">Botswana</string>
 </resources>

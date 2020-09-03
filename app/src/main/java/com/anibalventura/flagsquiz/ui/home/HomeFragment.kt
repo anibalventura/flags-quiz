@@ -48,7 +48,14 @@ class HomeFragment : Fragment() {
         // Get and set the current username.
         binding.textView.text = sharedPreferences.getString("user_name", "")
 
-        optionsView = mutableListOf(binding.tvEurope, binding.tvAmerica)
+        optionsView = mutableListOf(
+            binding.tvAfrica,
+            binding.tvAsia,
+            binding.tvEurope,
+            binding.tvNorthAmerica,
+            binding.tvOceania,
+            binding.tvSouthAmerica
+        )
 
         // Get option selected.
         selectedOptionsView()
@@ -101,12 +108,32 @@ class HomeFragment : Fragment() {
         when (selectedContinent) {
             1 -> {
                 view.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_europe)))
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_africa)))
                 selectedContinent = 0
             }
             2 -> {
                 view.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_america)))
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_asia)))
+                selectedContinent = 0
+            }
+            3 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_europe)))
+                selectedContinent = 0
+            }
+            4 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_north_america)))
+                selectedContinent = 0
+            }
+            5 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_oceania)))
+                selectedContinent = 0
+            }
+            6 -> {
+                view.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_south_america)))
                 selectedContinent = 0
             }
             else -> Toast.makeText(
