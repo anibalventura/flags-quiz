@@ -483,7 +483,7 @@ object Africa {
             Question(
                 R.drawable.af_zambia_flag,
                 listOf(
-                    app.getString(R.string.zambia),
+                    app.getString(R.string.country_af_zambia),
                     app.getString(R.string.country_af_swaziland),
                     app.getString(R.string.country_af_niger),
                     app.getString(R.string.country_af_tunisia)
