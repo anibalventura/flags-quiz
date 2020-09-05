@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primaryColor">#1976d2</color>
-    <color name="primaryDarkColor">#004ba0</color>
+    <color name="primaryDarkColor">#1976d2</color>
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#FFFFFF</color>
-    <color name="icons">@color/primaryColor</color>
-    <color name="mainTextView">#363A43</color>
+    <color name="quizBgRight">#B300FF0A</color>
+    <color name="quizBgWrong">#B3FF0000</color>
 </resources>

@@ -1,10 +1,10 @@
-package com.anibalventura.flagsquiz.data.local
+package com.anibalventura.flagsquiz.data.local.sharedpref
 
 import android.content.Context
 
 class SharedPreferences(context: Context) {
 
-    private val sharedPreferences = context.getSharedPreferences("preferences", 0)
+    private val sharedPreferences = context.getSharedPreferences(CONST.PREFERENCES, 0)
 
     /**
      * Boolean values

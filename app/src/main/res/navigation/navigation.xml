@@ -28,10 +28,12 @@
         tools:layout="@layout/fragment_won">
         <action
             android:id="@+id/action_wonFragment_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/action_wonFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
         <argument
             android:name="correntAnswers"
             android:defaultValue="0"
@@ -40,6 +42,9 @@
             android:name="totalQuestions"
             android:defaultValue="0"
             app:argType="integer" />
+        <argument
+            android:name="selectedContinent"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -49,15 +54,6 @@
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_rulesFragment"
-            app:destination="@id/rulesFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loseFragment"
@@ -66,10 +62,12 @@
         tools:layout="@layout/fragment_over">
         <action
             android:id="@+id/action_loseFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/action_loseFragment_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/rulesFragment"
@@ -91,11 +89,10 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.anibalventura.flagsquiz.ui.settings.SettingsFragment"
-        android:label="Settings"
-        tools:layout="@layout/fragment_settings">
+        android:name="com.anibalventura.flagsquiz.SettingsFragment"
+        android:label="SettingsFragment">
         <action
-            android:id="@+id/action_settingsFragment_to_homeFragment"
+            android:id="@+id/action_settingsFragment4_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

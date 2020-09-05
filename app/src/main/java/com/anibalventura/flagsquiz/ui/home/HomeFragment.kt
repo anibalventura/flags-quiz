@@ -1,19 +1,17 @@
 package com.anibalventura.flagsquiz.ui.home
 
-import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
+import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.anibalventura.flagsquiz.App.Companion.showToast
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.local.SharedPreferences
+import com.anibalventura.flagsquiz.data.local.sharedpref.CONST
+import com.anibalventura.flagsquiz.data.local.sharedpref.SharedPreferences
 import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -21,7 +19,8 @@ class HomeFragment : Fragment() {
     // Use DataBinding.
     private lateinit var binding: FragmentHomeBinding
 
-    private lateinit var optionsView: MutableList<TextView>
+    // Selected option.
+    private lateinit var optionsView: MutableList<CardView>
     private var selectedContinent: Int = 0
 
     override fun onCreateView(
@@ -44,24 +43,22 @@ class HomeFragment : Fragment() {
          * SharedPreferences.
          */
         // Get and set the current context for SharedPreferences.
-        val sharedPreferences = SharedPreferences(requireContext())
+        val sharedPref = SharedPreferences(requireContext())
         // Get and set the current username.
-        binding.textView.text = sharedPreferences.getString("user_name", "")
+        val name = sharedPref.getString(CONST.USER_NAME, "")
+        binding.tvWelcome.text = getString(R.string.home_welcome, name)
 
         optionsView = mutableListOf(
-            binding.tvAfrica,
-            binding.tvAsia,
-            binding.tvEurope,
-            binding.tvNorthAmerica,
-            binding.tvOceania,
-            binding.tvSouthAmerica
+            binding.cvAfrica,
+            binding.cvAsia,
+            binding.cvEurope,
+            binding.cvNorthAmerica,
+            binding.cvOceania,
+            binding.cvSouthAmerica
         )
 
         // Get option selected.
         selectedOptionsView()
-
-        // Start the fragment quiz.
-        binding.btnStart.setOnClickListener { startQuiz(it) }
 
         return binding.root
     }
@@ -70,33 +67,14 @@ class HomeFragment : Fragment() {
      * Set the option view to selected.
      */
     private fun selectedOptionsView() {
-        for ((index, answer) in optionsView.withIndex()) {
-            answer.setOnClickListener {
-                defaultOptionsView()
+        for ((index, option) in optionsView.withIndex()) {
+            option.setOnClickListener {
 
                 // Get the selected option.
                 selectedContinent = index + 1
 
-                // Set the option view to selected.
-                answer.setTextColor((Color.parseColor("#363A43")))
-                answer.setTypeface(answer.typeface, Typeface.BOLD)
-                answer.background = ContextCompat.getDrawable(
-                    requireContext(), R.drawable.selected_option_border_bg
-                )
+                startQuiz(it)
             }
-        }
-    }
-
-    /*
-     * Set the view of options to default.
-     */
-    private fun defaultOptionsView() {
-        for (option in optionsView) {
-            option.setTextColor((Color.parseColor("#7A8089")))
-            option.typeface = Typeface.DEFAULT
-            option.background = ContextCompat.getDrawable(
-                requireContext(), R.drawable.default_option_border_bg
-            )
         }
     }
 
@@ -136,11 +114,7 @@ class HomeFragment : Fragment() {
                     .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_south_america)))
                 selectedContinent = 0
             }
-            else -> Toast.makeText(
-                requireContext(),
-                getString(R.string.please_select_continent),
-                Toast.LENGTH_SHORT
-            ).show()
+            else -> requireContext().showToast(getString(R.string.home_select_continent))
         }
     }
 }

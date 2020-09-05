@@ -6,7 +6,14 @@
         <item name="colorAccent">@color/primaryColor</item>
         <item name="android:statusBarColor">@color/primaryDarkColor</item>
         <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+        <item name="android:navigationBarColor">@color/primaryColor</item>
         <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_layout</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="android:navigationBarColor">@color/primaryColor</item>
+    </style>
 </resources>

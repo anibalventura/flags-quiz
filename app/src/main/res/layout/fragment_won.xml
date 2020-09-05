@@ -13,71 +13,75 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ic_background"
         tools:context=".ui.won.WonFragment">
 
         <ImageView
             android:id="@+id/ivResult"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="32dp"
-            android:contentDescription="@string/trophy_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/won_trophy_content"
             android:src="@drawable/ic_trophy"
+            app:layout_constraintBottom_toTopOf="@+id/tvResultCongrats"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/tvResultCongrats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/congrats"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
+            android:text="@string/won_congrats"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvResultScore"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivResult" />
-
-        <TextView
-            android:id="@+id/tvResultUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvResultCongrats"
-            tools:text="Username" />
 
         <TextView
             android:id="@+id/tvResultScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="@android:color/white"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnWonFinish"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvResultUsername"
-            tools:text="@string/total_score" />
+            app:layout_constraintTop_toBottomOf="@+id/tvResultCongrats"
+            tools:text="@string/won_total_score" />
 
         <Button
-            android:id="@+id/btnResultFinish"
+            android:id="@+id/btnWonFinish"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/btn_finish"
+            android:layout_marginBottom="8dp"
+            android:text="@string/quiz_btn_finish"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnPlayAgain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvResultScore" />
+
+        <Button
+            android:id="@+id/btnPlayAgain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Play Again"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnWonFinish" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

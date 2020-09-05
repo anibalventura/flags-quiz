@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.databinding.FragmentSettingsBinding
 
-class SettingsFragment : Fragment() {
+class SettingsFragment2 : Fragment() {
 
     // Use DataBinding.
     private lateinit var binding: FragmentSettingsBinding

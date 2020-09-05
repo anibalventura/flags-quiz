@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="please_enter_name">Por favor ingresa tu nombre.</string>
-    <string name="what_flag_question">Cual es la bandera de este país?</string>
-    <string name="welcome">Bienvenido</string>
-    <string name="name">Nombre</string>
-    <string name="btn_start">Iniciar</string>
+    <string name="welcome_enter_name">Por favor ingresa tu nombre.</string>
+    <string name="quiz_flag_question">Cual es la bandera de este país?</string>
+    <string name="welcome_welcome">Bienvenido</string>
+    <string name="welcome_name">Nombre</string>
     <string name="country_flag_content">Bandera del país.</string>
-    <string name="btn_finish">Finalizar</string>
-    <string name="btn_submit">Enviar</string>
-    <string name="btn_next_flag">Siguiente Bandera</string>
-    <string name="congrats">Felicidades!</string>
-    <string name="trophy_content">Imagen de Trofeo</string>
-    <string name="total_score">Tu puntuación es %1$d de %2$d.</string>
-    <string name="btn_continue">Continuar</string>
+    <string name="quiz_btn_finish">Finalizar</string>
+    <string name="quiz_btn_submit">Enviar</string>
+    <string name="quiz_btn_next_flag">Siguiente Bandera</string>
+    <string name="won_congrats">Felicidades %1$s!</string>
+    <string name="won_trophy_content">Imagen de Trofeo</string>
+    <string name="won_total_score">Tu puntuación es %1$d de %2$d.</string>
+    <string name="welcome_btn_continue">Continuar</string>
     <string name="option_rules">Reglas</string>
     <string name="option_about">Acerca de</string>
     <string name="option_settings">Configuraciones</string>
-    <string name="please_select_option">Por favor seleccionar una opción.</string>
-    <string name="heart_content">Icono de Corazón.</string>
-    <string name="please_select_continent">Por favor seleccionar un continente.</string>
+    <string name="quiz_select_option">Por favor seleccionar una opción.</string>
+    <string name="quiz_heart_content">Icono de Corazón.</string>
+    <string name="home_select_continent">Por favor seleccionar un continente.</string>
     <string name="continent_europe">Europa</string>
     <string name="continent_africa">África</string>
     <string name="continent_north_america">Norteamérica</string>
@@ -132,4 +131,12 @@
     <string name="country_sa_saint_vicente_and_grenadines">San Vicente y las Granadinas</string>
     <string name="country_sa_suriname">Surinam</string>
     <string name="country_sa_trinidad_and_tobago">Trinidad y Tobago</string>
+    <string name="home_welcome">Bienvenido %1$s</string>
+    <string name="theme_option">Tema</string>
+    <string name="about_option">Acerca de</string>
+    <string name="light_theme">Claro</string>
+    <string name="dark_theme">Oscuro</string>
+    <string name="system_default_theme">Predeterminado del sistema</string>
+    <string name="theme_dialog_title">Tema</string>
+    <string name="cancel_dialog_option">Cancelar</string>
 </resources>
