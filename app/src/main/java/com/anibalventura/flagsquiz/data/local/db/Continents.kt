@@ -1,10 +1,10 @@
 package com.anibalventura.flagsquiz.data.local.db
 
-import com.anibalventura.flagsquiz.App
+import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.R
 
 // getString working.
-val app = App.resourses!!
+val utils = Utils.resourses!!
 
 /*
  * Contains all the data for the Africa continent.
@@ -15,487 +15,487 @@ object Africa {
             Question(
                 R.drawable.af_algeria_flag,
                 listOf(
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_tunisia)
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_tunisia)
                 )
             ),
             Question(
                 R.drawable.af_angola_flag,
                 listOf(
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_tanzania),
-                    app.getString(R.string.country_af_south_sudan)
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_tanzania),
+                    utils.getString(R.string.country_af_south_sudan)
                 )
             ),
             Question(
                 R.drawable.af_benin_flag,
                 listOf(
-                    app.getString(R.string.country_af_benin),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_angola)
+                    utils.getString(R.string.country_af_benin),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_angola)
                 )
             ),
             Question(
                 R.drawable.af_botswana_flag,
                 listOf(
-                    app.getString(R.string.country_af_botswana),
-                    app.getString(R.string.country_af_tunisia),
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_south_sudan)
+                    utils.getString(R.string.country_af_botswana),
+                    utils.getString(R.string.country_af_tunisia),
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_south_sudan)
                 )
             ),
             Question(
                 R.drawable.af_burkina_faso_flag,
                 listOf(
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_algeria)
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_algeria)
                 )
             ),
             Question(
                 R.drawable.af_burundi_flag,
                 listOf(
-                    app.getString(R.string.country_af_burundi),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_libya)
+                    utils.getString(R.string.country_af_burundi),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_libya)
                 )
             ),
             Question(
                 R.drawable.af_cameroon_flag,
                 listOf(
-                    app.getString(R.string.country_af_cameroon),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_tunisia)
+                    utils.getString(R.string.country_af_cameroon),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_tunisia)
                 )
             ),
             Question(
                 R.drawable.af_cape_verde_flag,
                 listOf(
-                    app.getString(R.string.country_af_cape_verde),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_senegal)
+                    utils.getString(R.string.country_af_cape_verde),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_senegal)
                 )
             ),
             Question(
                 R.drawable.af_central_african_republic_flag,
                 listOf(
-                    app.getString(R.string.country_af_central_african_republic),
-                    app.getString(R.string.country_af_botswana),
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_zimbabwe)
+                    utils.getString(R.string.country_af_central_african_republic),
+                    utils.getString(R.string.country_af_botswana),
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
             Question(
                 R.drawable.af_chad_flag,
                 listOf(
-                    app.getString(R.string.country_af_chad),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_tunisia),
-                    app.getString(R.string.country_af_tanzania)
+                    utils.getString(R.string.country_af_chad),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_tunisia),
+                    utils.getString(R.string.country_af_tanzania)
                 )
             ),
             Question(
                 R.drawable.af_comoros_flag,
                 listOf(
-                    app.getString(R.string.country_af_comoros),
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_zimbabwe)
+                    utils.getString(R.string.country_af_comoros),
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
             Question(
                 R.drawable.af_congo_democratic_republic_of_the_flag,
                 listOf(
-                    app.getString(R.string.country_af_democatic_republic_congo),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_tunisia)
+                    utils.getString(R.string.country_af_democatic_republic_congo),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_tunisia)
                 )
             ),
             Question(
                 R.drawable.af_congo_republic_of_the_flag,
                 listOf(
-                    app.getString(R.string.country_af_republic_congo),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_cote_d_ivoire)
+                    utils.getString(R.string.country_af_republic_congo),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_cote_d_ivoire)
                 )
             ),
             Question(
                 R.drawable.af_cote_d_ivoire_flag,
                 listOf(
-                    app.getString(R.string.country_af_cote_d_ivoire),
-                    app.getString(R.string.country_af_botswana),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_zimbabwe)
+                    utils.getString(R.string.country_af_cote_d_ivoire),
+                    utils.getString(R.string.country_af_botswana),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
             Question(
                 R.drawable.af_djibouti_flag,
                 listOf(
-                    app.getString(R.string.country_af_djibouti),
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_tunisia),
-                    app.getString(R.string.country_af_angola)
+                    utils.getString(R.string.country_af_djibouti),
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_tunisia),
+                    utils.getString(R.string.country_af_angola)
                 )
             ),
             Question(
                 R.drawable.af_egypt_flag,
                 listOf(
-                    app.getString(R.string.country_af_egypt),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_burkina_faso)
+                    utils.getString(R.string.country_af_egypt),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_burkina_faso)
                 )
             ),
             Question(
                 R.drawable.af_equatorial_guinea_flag,
                 listOf(
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_tunisia)
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_tunisia)
                 )
             ),
             Question(
                 R.drawable.af_eritrea_flag,
                 listOf(
-                    app.getString(R.string.country_af_eritrea),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_tanzania)
+                    utils.getString(R.string.country_af_eritrea),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_tanzania)
                 )
             ),
             Question(
                 R.drawable.af_ethiopia_flag,
                 listOf(
-                    app.getString(R.string.country_af_ethiopia),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_burkina_faso)
+                    utils.getString(R.string.country_af_ethiopia),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_burkina_faso)
                 )
             ),
             Question(
                 R.drawable.af_gabon_flag,
                 listOf(
-                    app.getString(R.string.country_af_gabon),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_botswana)
+                    utils.getString(R.string.country_af_gabon),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_botswana)
                 )
             ),
             Question(
                 R.drawable.af_gambia_flag,
                 listOf(
-                    app.getString(R.string.country_af_gambia),
-                    app.getString(R.string.country_af_burkina_faso),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_ethiopia)
+                    utils.getString(R.string.country_af_gambia),
+                    utils.getString(R.string.country_af_burkina_faso),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_ethiopia)
                 )
             ),
             Question(
                 R.drawable.af_ghana_flag,
                 listOf(
-                    app.getString(R.string.country_af_ghana),
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_libya),
-                    app.getString(R.string.country_af_gambia)
+                    utils.getString(R.string.country_af_ghana),
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_libya),
+                    utils.getString(R.string.country_af_gambia)
                 )
             ),
             Question(
                 R.drawable.af_guinea_bissau_flag,
                 listOf(
-                    app.getString(R.string.country_af_guinea_bissau),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_zimbabwe)
+                    utils.getString(R.string.country_af_guinea_bissau),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
             Question(
                 R.drawable.af_guinea_flag,
                 listOf(
-                    app.getString(R.string.country_af_guinea),
-                    app.getString(R.string.country_af_ethiopia),
-                    app.getString(R.string.country_af_gambia),
-                    app.getString(R.string.country_af_angola)
+                    utils.getString(R.string.country_af_guinea),
+                    utils.getString(R.string.country_af_ethiopia),
+                    utils.getString(R.string.country_af_gambia),
+                    utils.getString(R.string.country_af_angola)
                 )
             ),
             Question(
                 R.drawable.af_kenya_flag,
                 listOf(
-                    app.getString(R.string.country_af_kenya),
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_botswana),
-                    app.getString(R.string.country_af_gambia)
+                    utils.getString(R.string.country_af_kenya),
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_botswana),
+                    utils.getString(R.string.country_af_gambia)
                 )
             ),
             Question(
                 R.drawable.af_lesotho_flag,
                 listOf(
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_kenya),
-                    app.getString(R.string.country_af_ethiopia),
-                    app.getString(R.string.country_af_gambia)
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_kenya),
+                    utils.getString(R.string.country_af_ethiopia),
+                    utils.getString(R.string.country_af_gambia)
                 )
             ),
             Question(
                 R.drawable.af_liberia_flag,
                 listOf(
-                    app.getString(R.string.country_af_liberia),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_kenya),
-                    app.getString(R.string.country_af_algeria)
+                    utils.getString(R.string.country_af_liberia),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_kenya),
+                    utils.getString(R.string.country_af_algeria)
                 )
             ),
             Question(
                 R.drawable.af_libya_flag,
                 listOf(
-                    app.getString(R.string.country_af_libya),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_gambia),
-                    app.getString(R.string.country_af_tanzania)
+                    utils.getString(R.string.country_af_libya),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_gambia),
+                    utils.getString(R.string.country_af_tanzania)
                 )
             ),
             Question(
                 R.drawable.af_madagascar_flag,
                 listOf(
-                    app.getString(R.string.country_af_madagascar),
-                    app.getString(R.string.country_af_ethiopia),
-                    app.getString(R.string.country_af_gambia),
-                    app.getString(R.string.country_af_kenya)
+                    utils.getString(R.string.country_af_madagascar),
+                    utils.getString(R.string.country_af_ethiopia),
+                    utils.getString(R.string.country_af_gambia),
+                    utils.getString(R.string.country_af_kenya)
                 )
             ),
             Question(
                 R.drawable.af_malawi_flag,
                 listOf(
-                    app.getString(R.string.country_af_malawi),
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_kenya)
+                    utils.getString(R.string.country_af_malawi),
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_kenya)
                 )
             ),
             Question(
                 R.drawable.af_mali_flag,
                 listOf(
-                    app.getString(R.string.country_af_mali),
-                    app.getString(R.string.country_af_ethiopia),
-                    app.getString(R.string.country_af_botswana),
-                    app.getString(R.string.country_af_algeria)
+                    utils.getString(R.string.country_af_mali),
+                    utils.getString(R.string.country_af_ethiopia),
+                    utils.getString(R.string.country_af_botswana),
+                    utils.getString(R.string.country_af_algeria)
                 )
             ),
             Question(
                 R.drawable.af_mauritania_flag,
                 listOf(
-                    app.getString(R.string.country_af_mauritania),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_kenya),
-                    app.getString(R.string.country_af_libya)
+                    utils.getString(R.string.country_af_mauritania),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_kenya),
+                    utils.getString(R.string.country_af_libya)
                 )
             ),
             Question(
                 R.drawable.af_mauritius_flag,
                 listOf(
-                    app.getString(R.string.country_af_mauritius),
-                    app.getString(R.string.country_af_ethiopia),
-                    app.getString(R.string.country_af_gambia),
-                    app.getString(R.string.country_af_kenya)
+                    utils.getString(R.string.country_af_mauritius),
+                    utils.getString(R.string.country_af_ethiopia),
+                    utils.getString(R.string.country_af_gambia),
+                    utils.getString(R.string.country_af_kenya)
                 )
             ),
             Question(
                 R.drawable.af_morocco_flag,
                 listOf(
-                    app.getString(R.string.country_af_morocco),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_cote_d_ivoire)
+                    utils.getString(R.string.country_af_morocco),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_cote_d_ivoire)
                 )
             ),
             Question(
                 R.drawable.af_mozambique_flag,
                 listOf(
-                    app.getString(R.string.country_af_mozambique),
-                    app.getString(R.string.country_af_gambia),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_kenya)
+                    utils.getString(R.string.country_af_mozambique),
+                    utils.getString(R.string.country_af_gambia),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_kenya)
                 )
             ),
             Question(
                 R.drawable.af_namibia_flag,
                 listOf(
-                    app.getString(R.string.country_af_namibia),
-                    app.getString(R.string.country_af_morocco),
-                    app.getString(R.string.country_af_gambia),
-                    app.getString(R.string.country_af_angola)
+                    utils.getString(R.string.country_af_namibia),
+                    utils.getString(R.string.country_af_morocco),
+                    utils.getString(R.string.country_af_gambia),
+                    utils.getString(R.string.country_af_angola)
                 )
             ),
             Question(
                 R.drawable.af_niger_flag,
                 listOf(
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_ethiopia),
-                    app.getString(R.string.country_af_botswana),
-                    app.getString(R.string.country_af_niger)
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_ethiopia),
+                    utils.getString(R.string.country_af_botswana),
+                    utils.getString(R.string.country_af_niger)
                 )
             ),
             Question(
                 R.drawable.af_nigeria_flag,
                 listOf(
-                    app.getString(R.string.country_af_nigeria),
-                    app.getString(R.string.country_af_morocco),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_equatorial_guinea)
+                    utils.getString(R.string.country_af_nigeria),
+                    utils.getString(R.string.country_af_morocco),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_equatorial_guinea)
                 )
             ),
             Question(
                 R.drawable.af_rwanda_flag,
                 listOf(
-                    app.getString(R.string.country_af_rwanda),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_angola)
+                    utils.getString(R.string.country_af_rwanda),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_angola)
                 )
             ),
             Question(
                 R.drawable.af_sao_tome_and_principe_flag,
                 listOf(
-                    app.getString(R.string.country_af_sao_tome_principe),
-                    app.getString(R.string.country_af_morocco),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_libya)
+                    utils.getString(R.string.country_af_sao_tome_principe),
+                    utils.getString(R.string.country_af_morocco),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_libya)
                 )
             ),
             Question(
                 R.drawable.af_senegal_flag,
                 listOf(
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_niger)
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_niger)
                 )
             ),
             Question(
                 R.drawable.af_seychelles_flag,
                 listOf(
-                    app.getString(R.string.country_af_seychelles),
-                    app.getString(R.string.country_af_morocco),
-                    app.getString(R.string.country_af_botswana),
-                    app.getString(R.string.country_af_angola)
+                    utils.getString(R.string.country_af_seychelles),
+                    utils.getString(R.string.country_af_morocco),
+                    utils.getString(R.string.country_af_botswana),
+                    utils.getString(R.string.country_af_angola)
                 )
             ),
             Question(
                 R.drawable.af_sierra_leone_flag,
                 listOf(
-                    app.getString(R.string.country_af_sierra_leone),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_morocco)
+                    utils.getString(R.string.country_af_sierra_leone),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_morocco)
                 )
             ),
             Question(
                 R.drawable.af_somalia_flag,
                 listOf(
-                    app.getString(R.string.country_af_somalia),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_algeria)
+                    utils.getString(R.string.country_af_somalia),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_algeria)
                 )
             ),
             Question(
                 R.drawable.af_south_africa_flag,
                 listOf(
-                    app.getString(R.string.country_af_south_africa),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_angola),
-                    app.getString(R.string.country_af_niger)
+                    utils.getString(R.string.country_af_south_africa),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_angola),
+                    utils.getString(R.string.country_af_niger)
                 )
             ),
             Question(
                 R.drawable.af_south_sudan_flag,
                 listOf(
-                    app.getString(R.string.country_af_south_sudan),
-                    app.getString(R.string.country_af_morocco),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_niger)
+                    utils.getString(R.string.country_af_south_sudan),
+                    utils.getString(R.string.country_af_morocco),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_niger)
                 )
             ),
             Question(
                 R.drawable.af_sudan_flag,
                 listOf(
-                    app.getString(R.string.country_af_sudan),
-                    app.getString(R.string.country_af_lesotho),
-                    app.getString(R.string.country_af_south_sudan),
-                    app.getString(R.string.country_af_morocco)
+                    utils.getString(R.string.country_af_sudan),
+                    utils.getString(R.string.country_af_lesotho),
+                    utils.getString(R.string.country_af_south_sudan),
+                    utils.getString(R.string.country_af_morocco)
                 )
             ),
             Question(
                 R.drawable.af_swaziland_flag,
                 listOf(
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_botswana)
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_botswana)
                 )
             ),
             Question(
                 R.drawable.af_tanzania_flag,
                 listOf(
-                    app.getString(R.string.country_af_tanzania),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_swaziland)
+                    utils.getString(R.string.country_af_tanzania),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_swaziland)
                 )
             ),
             Question(
                 R.drawable.af_togo_flag,
                 listOf(
-                    app.getString(R.string.country_af_togo),
-                    app.getString(R.string.country_af_south_sudan),
-                    app.getString(R.string.country_af_equatorial_guinea),
-                    app.getString(R.string.country_af_libya)
+                    utils.getString(R.string.country_af_togo),
+                    utils.getString(R.string.country_af_south_sudan),
+                    utils.getString(R.string.country_af_equatorial_guinea),
+                    utils.getString(R.string.country_af_libya)
                 )
             ),
             Question(
                 R.drawable.af_tunisia_flag,
                 listOf(
-                    app.getString(R.string.country_af_tunisia),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_algeria)
+                    utils.getString(R.string.country_af_tunisia),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_algeria)
                 )
             ),
             Question(
                 R.drawable.af_uganda_flag,
                 listOf(
-                    app.getString(R.string.country_af_uganda),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_south_sudan),
-                    app.getString(R.string.country_af_equatorial_guinea)
+                    utils.getString(R.string.country_af_uganda),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_south_sudan),
+                    utils.getString(R.string.country_af_equatorial_guinea)
                 )
             ),
             Question(
                 R.drawable.af_zambia_flag,
                 listOf(
-                    app.getString(R.string.country_af_zambia),
-                    app.getString(R.string.country_af_swaziland),
-                    app.getString(R.string.country_af_niger),
-                    app.getString(R.string.country_af_tunisia)
+                    utils.getString(R.string.country_af_zambia),
+                    utils.getString(R.string.country_af_swaziland),
+                    utils.getString(R.string.country_af_niger),
+                    utils.getString(R.string.country_af_tunisia)
                 )
             ),
             Question(
                 R.drawable.af_zimbabwe_flag,
                 listOf(
-                    app.getString(R.string.country_af_zimbabwe),
-                    app.getString(R.string.country_af_algeria),
-                    app.getString(R.string.country_af_senegal),
-                    app.getString(R.string.country_af_south_sudan)
+                    utils.getString(R.string.country_af_zimbabwe),
+                    utils.getString(R.string.country_af_algeria),
+                    utils.getString(R.string.country_af_senegal),
+                    utils.getString(R.string.country_af_south_sudan)
                 )
             )
         )
@@ -511,424 +511,424 @@ object Asia {
             Question(
                 R.drawable.as_afghanistan_flag,
                 listOf(
-                    app.getString(R.string.country_as_afghanistan),
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_uzbekistan)
+                    utils.getString(R.string.country_as_afghanistan),
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
             Question(
                 R.drawable.as_armenia_flag,
                 listOf(
-                    app.getString(R.string.country_as_armenia),
-                    app.getString(R.string.country_as_cyprus),
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_afghanistan)
+                    utils.getString(R.string.country_as_armenia),
+                    utils.getString(R.string.country_as_cyprus),
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_afghanistan)
                 )
             ),
             Question(
                 R.drawable.as_azerbaijan_flag,
                 listOf(
-                    app.getString(R.string.country_as_azerbaijan),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_iraq)
+                    utils.getString(R.string.country_as_azerbaijan),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_iraq)
                 )
             ),
             Question(
                 R.drawable.as_bahrain_flag,
                 listOf(
-                    app.getString(R.string.country_as_bahrain),
-                    app.getString(R.string.country_as_afghanistan),
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_uzbekistan)
+                    utils.getString(R.string.country_as_bahrain),
+                    utils.getString(R.string.country_as_afghanistan),
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
             Question(
                 R.drawable.as_bangladesh_flag,
                 listOf(
-                    app.getString(R.string.country_as_bangladesh),
-                    app.getString(R.string.country_as_iraq),
-                    app.getString(R.string.country_as_afghanistan),
-                    app.getString(R.string.country_as_mongolia)
+                    utils.getString(R.string.country_as_bangladesh),
+                    utils.getString(R.string.country_as_iraq),
+                    utils.getString(R.string.country_as_afghanistan),
+                    utils.getString(R.string.country_as_mongolia)
                 )
             ),
             Question(
                 R.drawable.as_bhutan_flag,
                 listOf(
-                    app.getString(R.string.country_as_bhutan),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_afghanistan)
+                    utils.getString(R.string.country_as_bhutan),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_afghanistan)
                 )
             ),
             Question(
                 R.drawable.as_brunei_flag,
                 listOf(
-                    app.getString(R.string.country_as_brunei),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_bhutan)
+                    utils.getString(R.string.country_as_brunei),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_bhutan)
                 )
             ),
             Question(
                 R.drawable.as_cambodia_flag,
                 listOf(
-                    app.getString(R.string.country_as_cambodia),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_afghanistan),
-                    app.getString(R.string.country_as_turkey)
+                    utils.getString(R.string.country_as_cambodia),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_afghanistan),
+                    utils.getString(R.string.country_as_turkey)
                 )
             ),
             Question(
                 R.drawable.as_china_flag,
                 listOf(
-                    app.getString(R.string.country_as_china),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_bhutan),
-                    app.getString(R.string.country_as_cyprus)
+                    utils.getString(R.string.country_as_china),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_bhutan),
+                    utils.getString(R.string.country_as_cyprus)
                 )
             ),
             Question(
                 R.drawable.as_cyprus_flag,
                 listOf(
-                    app.getString(R.string.country_as_cyprus),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_afghanistan),
-                    app.getString(R.string.country_as_uzbekistan)
+                    utils.getString(R.string.country_as_cyprus),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_afghanistan),
+                    utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
             Question(
                 R.drawable.as_india_flag,
                 listOf(
-                    app.getString(R.string.country_as_india),
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_india),
-                    app.getString(R.string.country_as_mongolia)
+                    utils.getString(R.string.country_as_india),
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_india),
+                    utils.getString(R.string.country_as_mongolia)
                 )
             ),
             Question(
                 R.drawable.as_indonesia_flag,
                 listOf(
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_iraq),
-                    app.getString(R.string.country_as_kuwait)
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_iraq),
+                    utils.getString(R.string.country_as_kuwait)
                 )
             ),
             Question(
                 R.drawable.as_iran_flag,
                 listOf(
-                    app.getString(R.string.country_as_iran),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_afghanistan)
+                    utils.getString(R.string.country_as_iran),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_afghanistan)
                 )
             ),
             Question(
                 R.drawable.as_iraq_flag,
                 listOf(
-                    app.getString(R.string.country_as_iraq),
-                    app.getString(R.string.country_as_cyprus),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_kazakhstan)
+                    utils.getString(R.string.country_as_iraq),
+                    utils.getString(R.string.country_as_cyprus),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_kazakhstan)
                 )
             ),
             Question(
                 R.drawable.as_israel_flag,
                 listOf(
-                    app.getString(R.string.country_as_israel),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_afghanistan),
-                    app.getString(R.string.country_as_uzbekistan)
+                    utils.getString(R.string.country_as_israel),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_afghanistan),
+                    utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
             Question(
                 R.drawable.as_japan_flag,
                 listOf(
-                    app.getString(R.string.country_as_japan),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_mongolia),
-                    app.getString(R.string.country_as_sri_lanka)
+                    utils.getString(R.string.country_as_japan),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_mongolia),
+                    utils.getString(R.string.country_as_sri_lanka)
                 )
             ),
             Question(
                 R.drawable.as_jordan_flag,
                 listOf(
-                    app.getString(R.string.country_as_jordan),
-                    app.getString(R.string.country_as_japan),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_cyprus)
+                    utils.getString(R.string.country_as_jordan),
+                    utils.getString(R.string.country_as_japan),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_cyprus)
                 )
             ),
             Question(
                 R.drawable.as_kazakhstan_flag,
                 listOf(
-                    app.getString(R.string.country_as_kazakhstan),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_japan),
-                    app.getString(R.string.country_as_iraq)
+                    utils.getString(R.string.country_as_kazakhstan),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_japan),
+                    utils.getString(R.string.country_as_iraq)
                 )
             ),
             Question(
                 R.drawable.as_kuwait_flag,
                 listOf(
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_japan)
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_japan)
                 )
             ),
             Question(
                 R.drawable.as_kyrgyzstan_flag,
                 listOf(
-                    app.getString(R.string.country_as_kyrgyzstan),
-                    app.getString(R.string.country_as_mongolia),
-                    app.getString(R.string.country_as_oman),
-                    app.getString(R.string.country_as_japan)
+                    utils.getString(R.string.country_as_kyrgyzstan),
+                    utils.getString(R.string.country_as_mongolia),
+                    utils.getString(R.string.country_as_oman),
+                    utils.getString(R.string.country_as_japan)
                 )
             ),
             Question(
                 R.drawable.as_laos_flag,
                 listOf(
-                    app.getString(R.string.country_as_laos),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_japan)
+                    utils.getString(R.string.country_as_laos),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_japan)
                 )
             ),
             Question(
                 R.drawable.as_lebanon_flag,
                 listOf(
-                    app.getString(R.string.country_as_lebanon),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_japan)
+                    utils.getString(R.string.country_as_lebanon),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_japan)
                 )
             ),
             Question(
                 R.drawable.as_malaysia_flag,
                 listOf(
-                    app.getString(R.string.country_as_malaysia),
-                    app.getString(R.string.country_as_cyprus),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_japan)
+                    utils.getString(R.string.country_as_malaysia),
+                    utils.getString(R.string.country_as_cyprus),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_japan)
                 )
             ),
             Question(
                 R.drawable.as_maldives_flag,
                 listOf(
-                    app.getString(R.string.country_as_maldives),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_oman),
-                    app.getString(R.string.country_as_maldives)
+                    utils.getString(R.string.country_as_maldives),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_oman),
+                    utils.getString(R.string.country_as_maldives)
                 )
             ),
             Question(
                 R.drawable.as_mongolia_flag,
                 listOf(
-                    app.getString(R.string.country_as_mongolia),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_maldives)
+                    utils.getString(R.string.country_as_mongolia),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_maldives)
                 )
             ),
             Question(
                 R.drawable.as_myanmar_flag,
                 listOf(
-                    app.getString(R.string.country_as_myanmar),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_oman),
-                    app.getString(R.string.country_as_maldives)
+                    utils.getString(R.string.country_as_myanmar),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_oman),
+                    utils.getString(R.string.country_as_maldives)
                 )
             ),
             Question(
                 R.drawable.as_nepal_flag,
                 listOf(
-                    app.getString(R.string.country_as_nepal),
-                    app.getString(R.string.country_as_myanmar),
-                    app.getString(R.string.country_as_mongolia),
-                    app.getString(R.string.country_as_maldives)
+                    utils.getString(R.string.country_as_nepal),
+                    utils.getString(R.string.country_as_myanmar),
+                    utils.getString(R.string.country_as_mongolia),
+                    utils.getString(R.string.country_as_maldives)
                 )
             ),
             Question(
                 R.drawable.as_north_korea_flag,
                 listOf(
-                    app.getString(R.string.country_as_north_korea),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_myanmar),
-                    app.getString(R.string.country_as_maldives)
+                    utils.getString(R.string.country_as_north_korea),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_myanmar),
+                    utils.getString(R.string.country_as_maldives)
                 )
             ),
             Question(
                 R.drawable.as_oman_flag,
                 listOf(
-                    app.getString(R.string.country_as_oman),
-                    app.getString(R.string.country_as_cyprus),
-                    app.getString(R.string.country_as_north_korea),
-                    app.getString(R.string.country_as_maldives)
+                    utils.getString(R.string.country_as_oman),
+                    utils.getString(R.string.country_as_cyprus),
+                    utils.getString(R.string.country_as_north_korea),
+                    utils.getString(R.string.country_as_maldives)
                 )
             ),
             Question(
                 R.drawable.as_pakistan_flag,
                 listOf(
-                    app.getString(R.string.country_as_pakistan),
-                    app.getString(R.string.country_as_myanmar),
-                    app.getString(R.string.country_as_maldives),
-                    app.getString(R.string.country_as_indonesia)
+                    utils.getString(R.string.country_as_pakistan),
+                    utils.getString(R.string.country_as_myanmar),
+                    utils.getString(R.string.country_as_maldives),
+                    utils.getString(R.string.country_as_indonesia)
                 )
             ),
             Question(
                 R.drawable.as_philippines_flag,
                 listOf(
-                    app.getString(R.string.country_as_philippines),
-                    app.getString(R.string.country_as_oman),
-                    app.getString(R.string.country_as_south_korea),
-                    app.getString(R.string.country_as_myanmar)
+                    utils.getString(R.string.country_as_philippines),
+                    utils.getString(R.string.country_as_oman),
+                    utils.getString(R.string.country_as_south_korea),
+                    utils.getString(R.string.country_as_myanmar)
                 )
             ),
             Question(
                 R.drawable.as_qatar_flag,
                 listOf(
-                    app.getString(R.string.country_as_qatar),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_maldives),
-                    app.getString(R.string.country_as_indonesia)
+                    utils.getString(R.string.country_as_qatar),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_maldives),
+                    utils.getString(R.string.country_as_indonesia)
                 )
             ),
             Question(
                 R.drawable.as_russia_flag,
                 listOf(
-                    app.getString(R.string.country_as_russia),
-                    app.getString(R.string.country_as_myanmar),
-                    app.getString(R.string.country_as_maldives),
-                    app.getString(R.string.country_as_iraq)
+                    utils.getString(R.string.country_as_russia),
+                    utils.getString(R.string.country_as_myanmar),
+                    utils.getString(R.string.country_as_maldives),
+                    utils.getString(R.string.country_as_iraq)
                 )
             ),
             Question(
                 R.drawable.as_saudi_arabia_flag,
                 listOf(
-                    app.getString(R.string.country_as_saudi_arabia),
-                    app.getString(R.string.country_as_russia),
-                    app.getString(R.string.country_as_south_korea),
-                    app.getString(R.string.country_as_indonesia)
+                    utils.getString(R.string.country_as_saudi_arabia),
+                    utils.getString(R.string.country_as_russia),
+                    utils.getString(R.string.country_as_south_korea),
+                    utils.getString(R.string.country_as_indonesia)
                 )
             ),
             Question(
                 R.drawable.as_singapore_flag,
                 listOf(
-                    app.getString(R.string.country_as_singapore),
-                    app.getString(R.string.country_as_saudi_arabia),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_myanmar)
+                    utils.getString(R.string.country_as_singapore),
+                    utils.getString(R.string.country_as_saudi_arabia),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_myanmar)
                 )
             ),
             Question(
                 R.drawable.as_south_korea_flag,
                 listOf(
-                    app.getString(R.string.country_as_south_korea),
-                    app.getString(R.string.country_as_saudi_arabia),
-                    app.getString(R.string.country_as_mongolia),
-                    app.getString(R.string.country_as_indonesia)
+                    utils.getString(R.string.country_as_south_korea),
+                    utils.getString(R.string.country_as_saudi_arabia),
+                    utils.getString(R.string.country_as_mongolia),
+                    utils.getString(R.string.country_as_indonesia)
                 )
             ),
             Question(
                 R.drawable.as_sri_lanka_flag,
                 listOf(
-                    app.getString(R.string.country_as_sri_lanka),
-                    app.getString(R.string.country_as_myanmar),
-                    app.getString(R.string.country_as_saudi_arabia),
-                    app.getString(R.string.country_as_oman)
+                    utils.getString(R.string.country_as_sri_lanka),
+                    utils.getString(R.string.country_as_myanmar),
+                    utils.getString(R.string.country_as_saudi_arabia),
+                    utils.getString(R.string.country_as_oman)
                 )
             ),
             Question(
                 R.drawable.as_syria_flag,
                 listOf(
-                    app.getString(R.string.country_as_syria),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_south_korea),
-                    app.getString(R.string.country_as_saudi_arabia)
+                    utils.getString(R.string.country_as_syria),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_south_korea),
+                    utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
             Question(
                 R.drawable.as_taiwan_flag,
                 listOf(
-                    app.getString(R.string.country_as_taiwan),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_syria)
+                    utils.getString(R.string.country_as_taiwan),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_syria)
                 )
             ),
             Question(
                 R.drawable.as_tajikistan_flag,
                 listOf(
-                    app.getString(R.string.country_as_tajikistan),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_oman),
-                    app.getString(R.string.country_as_saudi_arabia)
+                    utils.getString(R.string.country_as_tajikistan),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_oman),
+                    utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
             Question(
                 R.drawable.as_thailand_flag,
                 listOf(
-                    app.getString(R.string.country_as_thailand),
-                    app.getString(R.string.country_as_sri_lanka),
-                    app.getString(R.string.country_as_myanmar),
-                    app.getString(R.string.country_as_syria)
+                    utils.getString(R.string.country_as_thailand),
+                    utils.getString(R.string.country_as_sri_lanka),
+                    utils.getString(R.string.country_as_myanmar),
+                    utils.getString(R.string.country_as_syria)
                 )
             ),
             Question(
                 R.drawable.as_turkey_flag,
                 listOf(
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_thailand),
-                    app.getString(R.string.country_as_indonesia),
-                    app.getString(R.string.country_as_sri_lanka)
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_thailand),
+                    utils.getString(R.string.country_as_indonesia),
+                    utils.getString(R.string.country_as_sri_lanka)
                 )
             ),
             Question(
                 R.drawable.as_turkmenistan_flag,
                 listOf(
-                    app.getString(R.string.country_as_turkmenistan),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_thailand),
-                    app.getString(R.string.country_as_saudi_arabia)
+                    utils.getString(R.string.country_as_turkmenistan),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_thailand),
+                    utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
             Question(
                 R.drawable.as_united_arab_emirates_flag,
                 listOf(
-                    app.getString(R.string.country_as_united_arab_emirates),
-                    app.getString(R.string.country_as_cyprus),
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_saudi_arabia)
+                    utils.getString(R.string.country_as_united_arab_emirates),
+                    utils.getString(R.string.country_as_cyprus),
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
             Question(
                 R.drawable.as_uzbekistan_flag,
                 listOf(
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_iraq),
-                    app.getString(R.string.country_as_oman),
-                    app.getString(R.string.country_as_sri_lanka)
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_iraq),
+                    utils.getString(R.string.country_as_oman),
+                    utils.getString(R.string.country_as_sri_lanka)
                 )
             ),
             Question(
                 R.drawable.as_vietnam_flag,
                 listOf(
-                    app.getString(R.string.country_as_vietnam),
-                    app.getString(R.string.country_as_kuwait),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_iraq)
+                    utils.getString(R.string.country_as_vietnam),
+                    utils.getString(R.string.country_as_kuwait),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_iraq)
                 )
             ),
             Question(
                 R.drawable.as_yemen_flag,
                 listOf(
-                    app.getString(R.string.country_as_yemen),
-                    app.getString(R.string.country_as_turkey),
-                    app.getString(R.string.country_as_uzbekistan),
-                    app.getString(R.string.country_as_oman)
+                    utils.getString(R.string.country_as_yemen),
+                    utils.getString(R.string.country_as_turkey),
+                    utils.getString(R.string.country_as_uzbekistan),
+                    utils.getString(R.string.country_as_oman)
                 )
             )
         )
@@ -944,406 +944,406 @@ object Europe {
             Question(
                 R.drawable.eu_albania_flag,
                 listOf(
-                    app.getString(R.string.country_eu_albania),
-                    app.getString(R.string.country_eu_malta),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_latvia)
+                    utils.getString(R.string.country_eu_albania),
+                    utils.getString(R.string.country_eu_malta),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_latvia)
                 )
             ),
             Question(
                 R.drawable.eu_andorra_flag,
                 listOf(
-                    app.getString(R.string.country_eu_andorra),
-                    app.getString(R.string.country_eu_norway),
-                    app.getString(R.string.country_eu_kosovo),
-                    app.getString(R.string.country_eu_montenegro)
+                    utils.getString(R.string.country_eu_andorra),
+                    utils.getString(R.string.country_eu_norway),
+                    utils.getString(R.string.country_eu_kosovo),
+                    utils.getString(R.string.country_eu_montenegro)
                 )
             ),
             Question(
                 R.drawable.eu_austria_flag,
                 listOf(
-                    app.getString(R.string.country_eu_austria),
-                    app.getString(R.string.country_eu_vatican_city),
-                    app.getString(R.string.country_eu_hungary),
-                    app.getString(R.string.country_eu_norway)
+                    utils.getString(R.string.country_eu_austria),
+                    utils.getString(R.string.country_eu_vatican_city),
+                    utils.getString(R.string.country_eu_hungary),
+                    utils.getString(R.string.country_eu_norway)
                 )
             ),
             Question(
                 R.drawable.eu_belarus_flag,
                 listOf(
-                    app.getString(R.string.country_eu_belarus),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_malta)
+                    utils.getString(R.string.country_eu_belarus),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_malta)
                 )
             ),
             Question(
                 R.drawable.eu_belgium_flag,
                 listOf(
-                    app.getString(R.string.country_eu_belgium),
-                    app.getString(R.string.country_eu_spain),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_vatican_city)
+                    utils.getString(R.string.country_eu_belgium),
+                    utils.getString(R.string.country_eu_spain),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_vatican_city)
                 )
             ),
             Question(
                 R.drawable.eu_bosnia_and_herzegovina_flag,
                 listOf(
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_austria),
-                    app.getString(R.string.country_eu_belarus)
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_austria),
+                    utils.getString(R.string.country_eu_belarus)
                 )
             ),
             Question(
                 R.drawable.eu_bulgaria_flag,
                 listOf(
-                    app.getString(R.string.country_eu_bulgaria),
-                    app.getString(R.string.country_eu_norway),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_latvia)
+                    utils.getString(R.string.country_eu_bulgaria),
+                    utils.getString(R.string.country_eu_norway),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_latvia)
                 )
             ),
             Question(
                 R.drawable.eu_croatia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_croatia),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_vatican_city),
-                    app.getString(R.string.country_eu_bulgaria)
+                    utils.getString(R.string.country_eu_croatia),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_vatican_city),
+                    utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
             Question(
                 R.drawable.eu_czech_republic_flag,
                 listOf(
-                    app.getString(R.string.country_eu_czech_republic),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_montenegro),
-                    app.getString(R.string.country_eu_latvia)
+                    utils.getString(R.string.country_eu_czech_republic),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_montenegro),
+                    utils.getString(R.string.country_eu_latvia)
                 )
             ),
             Question(
                 R.drawable.eu_denmark_flag,
                 listOf(
-                    app.getString(R.string.country_eu_denmark),
-                    app.getString(R.string.country_eu_belarus),
-                    app.getString(R.string.country_eu_austria),
-                    app.getString(R.string.country_eu_bulgaria)
+                    utils.getString(R.string.country_eu_denmark),
+                    utils.getString(R.string.country_eu_belarus),
+                    utils.getString(R.string.country_eu_austria),
+                    utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
             Question(
                 R.drawable.eu_estonia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_estonia),
-                    app.getString(R.string.country_eu_norway),
-                    app.getString(R.string.country_eu_spain),
-                    app.getString(R.string.country_eu_vatican_city)
+                    utils.getString(R.string.country_eu_estonia),
+                    utils.getString(R.string.country_eu_norway),
+                    utils.getString(R.string.country_eu_spain),
+                    utils.getString(R.string.country_eu_vatican_city)
                 )
             ),
             Question(
                 R.drawable.eu_finland_flag,
                 listOf(
-                    app.getString(R.string.country_eu_finland),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_bulgaria)
+                    utils.getString(R.string.country_eu_finland),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
             Question(
                 R.drawable.eu_france_flag,
                 listOf(
-                    app.getString(R.string.country_eu_france),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_belarus)
+                    utils.getString(R.string.country_eu_france),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_belarus)
                 )
             ),
             Question(
                 R.drawable.eu_georgia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_georgia),
-                    app.getString(R.string.country_eu_austria),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_bulgaria)
+                    utils.getString(R.string.country_eu_georgia),
+                    utils.getString(R.string.country_eu_austria),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
             Question(
                 R.drawable.eu_germany_flag,
                 listOf(
-                    app.getString(R.string.country_eu_germany),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_vatican_city),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina)
+                    utils.getString(R.string.country_eu_germany),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_vatican_city),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
             Question(
                 R.drawable.eu_greece_flag,
                 listOf(
-                    app.getString(R.string.country_eu_greece),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_bulgaria)
+                    utils.getString(R.string.country_eu_greece),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
             Question(
                 R.drawable.eu_hungary_flag,
                 listOf(
-                    app.getString(R.string.country_eu_hungary),
-                    app.getString(R.string.country_eu_belarus),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_spain)
+                    utils.getString(R.string.country_eu_hungary),
+                    utils.getString(R.string.country_eu_belarus),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_spain)
                 )
             ),
             Question(
                 R.drawable.eu_iceland_flag,
                 listOf(
-                    app.getString(R.string.country_eu_iceland),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_bulgaria),
-                    app.getString(R.string.country_eu_vatican_city)
+                    utils.getString(R.string.country_eu_iceland),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_bulgaria),
+                    utils.getString(R.string.country_eu_vatican_city)
                 )
             ),
             Question(
                 R.drawable.eu_ireland_flag,
                 listOf(
-                    app.getString(R.string.country_eu_ireland),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_austria),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina)
+                    utils.getString(R.string.country_eu_ireland),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_austria),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
             Question(
                 R.drawable.eu_italy_flag,
                 listOf(
-                    app.getString(R.string.country_eu_italy),
-                    app.getString(R.string.country_eu_bulgaria),
-                    app.getString(R.string.country_eu_belarus),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina)
+                    utils.getString(R.string.country_eu_italy),
+                    utils.getString(R.string.country_eu_bulgaria),
+                    utils.getString(R.string.country_eu_belarus),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
             Question(
                 R.drawable.eu_kosovo_flag,
                 listOf(
-                    app.getString(R.string.country_eu_kosovo),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_ireland),
-                    app.getString(R.string.country_eu_latvia)
+                    utils.getString(R.string.country_eu_kosovo),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_ireland),
+                    utils.getString(R.string.country_eu_latvia)
                 )
             ),
             Question(
                 R.drawable.eu_latvia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_vatican_city),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_kosovo)
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_vatican_city),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_kosovo)
                 )
             ),
             Question(
                 R.drawable.eu_liechtenstein_flag,
                 listOf(
-                    app.getString(R.string.country_eu_liechtenstein),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_belarus),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina)
+                    utils.getString(R.string.country_eu_liechtenstein),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_belarus),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
             Question(
                 R.drawable.eu_lithuania_flag,
                 listOf(
-                    app.getString(R.string.country_eu_lithuania),
-                    app.getString(R.string.country_eu_ireland),
-                    app.getString(R.string.country_eu_kosovo),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina)
+                    utils.getString(R.string.country_eu_lithuania),
+                    utils.getString(R.string.country_eu_ireland),
+                    utils.getString(R.string.country_eu_kosovo),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
             Question(
                 R.drawable.eu_luxembourg_flag,
                 listOf(
-                    app.getString(R.string.country_eu_luxembourg),
-                    app.getString(R.string.country_eu_hungary),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_kosovo)
+                    utils.getString(R.string.country_eu_luxembourg),
+                    utils.getString(R.string.country_eu_hungary),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_kosovo)
                 )
             ),
             Question(
                 R.drawable.eu_macedonia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_macedonia),
-                    app.getString(R.string.country_eu_vatican_city),
-                    app.getString(R.string.country_eu_lithuania),
-                    app.getString(R.string.country_eu_belarus)
+                    utils.getString(R.string.country_eu_macedonia),
+                    utils.getString(R.string.country_eu_vatican_city),
+                    utils.getString(R.string.country_eu_lithuania),
+                    utils.getString(R.string.country_eu_belarus)
                 )
             ),
             Question(
                 R.drawable.eu_malta_flag,
                 listOf(
-                    app.getString(R.string.country_eu_malta),
-                    app.getString(R.string.country_eu_austria),
-                    app.getString(R.string.country_eu_ireland),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina)
+                    utils.getString(R.string.country_eu_malta),
+                    utils.getString(R.string.country_eu_austria),
+                    utils.getString(R.string.country_eu_ireland),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
             Question(
                 R.drawable.eu_moldova_flag,
                 listOf(
-                    app.getString(R.string.country_eu_moldova),
-                    app.getString(R.string.country_eu_poland),
-                    app.getString(R.string.country_eu_malta),
-                    app.getString(R.string.country_eu_lithuania)
+                    utils.getString(R.string.country_eu_moldova),
+                    utils.getString(R.string.country_eu_poland),
+                    utils.getString(R.string.country_eu_malta),
+                    utils.getString(R.string.country_eu_lithuania)
                 )
             ),
             Question(
                 R.drawable.eu_monaco_flag,
                 listOf(
-                    app.getString(R.string.country_eu_monaco),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_kosovo),
-                    app.getString(R.string.country_eu_lithuania)
+                    utils.getString(R.string.country_eu_monaco),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_kosovo),
+                    utils.getString(R.string.country_eu_lithuania)
                 )
             ),
             Question(
                 R.drawable.eu_montenegro_flag,
                 listOf(
-                    app.getString(R.string.country_eu_montenegro),
-                    app.getString(R.string.country_eu_belarus),
-                    app.getString(R.string.country_eu_ireland),
-                    app.getString(R.string.country_eu_poland)
+                    utils.getString(R.string.country_eu_montenegro),
+                    utils.getString(R.string.country_eu_belarus),
+                    utils.getString(R.string.country_eu_ireland),
+                    utils.getString(R.string.country_eu_poland)
                 )
             ),
             Question(
                 R.drawable.eu_netherlands_flag,
                 listOf(
-                    app.getString(R.string.country_eu_netherlands),
-                    app.getString(R.string.country_eu_lithuania),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_malta)
+                    utils.getString(R.string.country_eu_netherlands),
+                    utils.getString(R.string.country_eu_lithuania),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_malta)
                 )
             ),
             Question(
                 R.drawable.eu_norway_flag,
                 listOf(
-                    app.getString(R.string.country_eu_norway),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_austria),
-                    app.getString(R.string.country_eu_ireland)
+                    utils.getString(R.string.country_eu_norway),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_austria),
+                    utils.getString(R.string.country_eu_ireland)
                 )
             ),
             Question(
                 R.drawable.eu_poland_flag,
                 listOf(
-                    app.getString(R.string.country_eu_poland),
-                    app.getString(R.string.country_eu_kosovo),
-                    app.getString(R.string.country_eu_hungary),
-                    app.getString(R.string.country_eu_lithuania)
+                    utils.getString(R.string.country_eu_poland),
+                    utils.getString(R.string.country_eu_kosovo),
+                    utils.getString(R.string.country_eu_hungary),
+                    utils.getString(R.string.country_eu_lithuania)
                 )
             ),
             Question(
                 R.drawable.eu_portugal_flag,
                 listOf(
-                    app.getString(R.string.country_eu_portugal),
-                    app.getString(R.string.country_eu_norway),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_poland)
+                    utils.getString(R.string.country_eu_portugal),
+                    utils.getString(R.string.country_eu_norway),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_poland)
                 )
             ),
             Question(
                 R.drawable.eu_romania_flag,
                 listOf(
-                    app.getString(R.string.country_eu_romania),
-                    app.getString(R.string.country_eu_malta),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_ireland)
+                    utils.getString(R.string.country_eu_romania),
+                    utils.getString(R.string.country_eu_malta),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_ireland)
                 )
             ),
             Question(
                 R.drawable.eu_san_marino_flag,
                 listOf(
-                    app.getString(R.string.country_eu_san_marino),
-                    app.getString(R.string.country_eu_lithuania),
-                    app.getString(R.string.country_eu_norway),
-                    app.getString(R.string.country_eu_austria)
+                    utils.getString(R.string.country_eu_san_marino),
+                    utils.getString(R.string.country_eu_lithuania),
+                    utils.getString(R.string.country_eu_norway),
+                    utils.getString(R.string.country_eu_austria)
                 )
             ),
             Question(
                 R.drawable.eu_serbia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_serbia),
-                    app.getString(R.string.country_eu_kosovo),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_malta)
+                    utils.getString(R.string.country_eu_serbia),
+                    utils.getString(R.string.country_eu_kosovo),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_malta)
                 )
             ),
             Question(
                 R.drawable.eu_slovakia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_slovakia),
-                    app.getString(R.string.country_eu_lithuania),
-                    app.getString(R.string.country_eu_ireland),
-                    app.getString(R.string.country_eu_norway)
+                    utils.getString(R.string.country_eu_slovakia),
+                    utils.getString(R.string.country_eu_lithuania),
+                    utils.getString(R.string.country_eu_ireland),
+                    utils.getString(R.string.country_eu_norway)
                 )
             ),
             Question(
                 R.drawable.eu_slovenia_flag,
                 listOf(
-                    app.getString(R.string.country_eu_slovenia),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_poland)
+                    utils.getString(R.string.country_eu_slovenia),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_poland)
                 )
             ),
             Question(
                 R.drawable.eu_spain_flag,
                 listOf(
-                    app.getString(R.string.country_eu_spain),
-                    app.getString(R.string.country_eu_hungary),
-                    app.getString(R.string.country_eu_lithuania),
-                    app.getString(R.string.country_eu_kosovo)
+                    utils.getString(R.string.country_eu_spain),
+                    utils.getString(R.string.country_eu_hungary),
+                    utils.getString(R.string.country_eu_lithuania),
+                    utils.getString(R.string.country_eu_kosovo)
                 )
             ),
             Question(
                 R.drawable.eu_sweden_flag,
                 listOf(
-                    app.getString(R.string.country_eu_sweden),
-                    app.getString(R.string.country_eu_malta),
-                    app.getString(R.string.country_eu_poland),
-                    app.getString(R.string.country_eu_latvia)
+                    utils.getString(R.string.country_eu_sweden),
+                    utils.getString(R.string.country_eu_malta),
+                    utils.getString(R.string.country_eu_poland),
+                    utils.getString(R.string.country_eu_latvia)
                 )
             ),
             Question(
                 R.drawable.eu_switzerland_flag,
                 listOf(
-                    app.getString(R.string.country_eu_switzerland),
-                    app.getString(R.string.country_eu_bosnia_and_herzegovina),
-                    app.getString(R.string.country_eu_spain),
-                    app.getString(R.string.country_eu_ireland)
+                    utils.getString(R.string.country_eu_switzerland),
+                    utils.getString(R.string.country_eu_bosnia_and_herzegovina),
+                    utils.getString(R.string.country_eu_spain),
+                    utils.getString(R.string.country_eu_ireland)
                 )
             ),
             Question(
                 R.drawable.eu_ukraine_flag,
                 listOf(
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_lithuania),
-                    app.getString(R.string.country_eu_latvia),
-                    app.getString(R.string.country_eu_norway)
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_lithuania),
+                    utils.getString(R.string.country_eu_latvia),
+                    utils.getString(R.string.country_eu_norway)
                 )
             ),
             Question(
                 R.drawable.eu_united_kingdom_flag,
                 listOf(
-                    app.getString(R.string.country_eu_united_kingdom),
-                    app.getString(R.string.country_eu_kosovo),
-                    app.getString(R.string.country_eu_malta),
-                    app.getString(R.string.country_eu_poland)
+                    utils.getString(R.string.country_eu_united_kingdom),
+                    utils.getString(R.string.country_eu_kosovo),
+                    utils.getString(R.string.country_eu_malta),
+                    utils.getString(R.string.country_eu_poland)
                 )
             ),
             Question(
                 R.drawable.eu_vatican_city_flag,
                 listOf(
-                    app.getString(R.string.country_eu_vatican_city),
-                    app.getString(R.string.country_eu_poland),
-                    app.getString(R.string.country_eu_ukraine),
-                    app.getString(R.string.country_eu_norway)
+                    utils.getString(R.string.country_eu_vatican_city),
+                    utils.getString(R.string.country_eu_poland),
+                    utils.getString(R.string.country_eu_ukraine),
+                    utils.getString(R.string.country_eu_norway)
                 )
             )
         )
@@ -1359,172 +1359,172 @@ object NorthAmerica {
             Question(
                 R.drawable.na_antigua_and_barbuda_flag,
                 listOf(
-                    app.getString(R.string.country_na_antigua_and_barbuda),
-                    app.getString(R.string.country_na_jamaica),
-                    app.getString(R.string.country_na_dominican_republic),
-                    app.getString(R.string.country_na_el_salvador)
+                    utils.getString(R.string.country_na_antigua_and_barbuda),
+                    utils.getString(R.string.country_na_jamaica),
+                    utils.getString(R.string.country_na_dominican_republic),
+                    utils.getString(R.string.country_na_el_salvador)
                 )
             ),
             Question(
                 R.drawable.na_bahamas_flag,
                 listOf(
-                    app.getString(R.string.country_na_bahamas),
-                    app.getString(R.string.country_na_usa),
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_grenada)
+                    utils.getString(R.string.country_na_bahamas),
+                    utils.getString(R.string.country_na_usa),
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_grenada)
                 )
             ),
             Question(
                 R.drawable.na_barbados_flag,
                 listOf(
-                    app.getString(R.string.country_na_barbados),
-                    app.getString(R.string.country_na_antigua_and_barbuda),
-                    app.getString(R.string.country_na_el_salvador),
-                    app.getString(R.string.country_na_honduras)
+                    utils.getString(R.string.country_na_barbados),
+                    utils.getString(R.string.country_na_antigua_and_barbuda),
+                    utils.getString(R.string.country_na_el_salvador),
+                    utils.getString(R.string.country_na_honduras)
                 )
             ),
             Question(
                 R.drawable.na_belize_flag,
                 listOf(
-                    app.getString(R.string.country_na_belize),
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_usa),
-                    app.getString(R.string.country_na_el_salvador)
+                    utils.getString(R.string.country_na_belize),
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_usa),
+                    utils.getString(R.string.country_na_el_salvador)
                 )
             ),
             Question(
                 R.drawable.na_canada_flag,
                 listOf(
-                    app.getString(R.string.country_na_canada),
-                    app.getString(R.string.country_na_jamaica),
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_antigua_and_barbuda)
+                    utils.getString(R.string.country_na_canada),
+                    utils.getString(R.string.country_na_jamaica),
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_antigua_and_barbuda)
                 )
             ),
             Question(
                 R.drawable.na_costa_rica_flag,
                 listOf(
-                    app.getString(R.string.country_na_costa_rica),
-                    app.getString(R.string.country_na_dominican_republic),
-                    app.getString(R.string.country_na_usa),
-                    app.getString(R.string.country_na_cuba)
+                    utils.getString(R.string.country_na_costa_rica),
+                    utils.getString(R.string.country_na_dominican_republic),
+                    utils.getString(R.string.country_na_usa),
+                    utils.getString(R.string.country_na_cuba)
                 )
             ),
             Question(
                 R.drawable.na_cuba_flag,
                 listOf(
-                    app.getString(R.string.country_na_cuba),
-                    app.getString(R.string.country_na_jamaica),
-                    app.getString(R.string.country_na_costa_rica),
-                    app.getString(R.string.country_na_el_salvador)
+                    utils.getString(R.string.country_na_cuba),
+                    utils.getString(R.string.country_na_jamaica),
+                    utils.getString(R.string.country_na_costa_rica),
+                    utils.getString(R.string.country_na_el_salvador)
                 )
             ),
             Question(
                 R.drawable.na_dominica_flag,
                 listOf(
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_antigua_and_barbuda),
-                    app.getString(R.string.country_na_usa),
-                    app.getString(R.string.country_na_honduras)
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_antigua_and_barbuda),
+                    utils.getString(R.string.country_na_usa),
+                    utils.getString(R.string.country_na_honduras)
                 )
             ),
             Question(
                 R.drawable.na_dominican_republic_flag,
                 listOf(
-                    app.getString(R.string.country_na_dominican_republic),
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_honduras),
-                    app.getString(R.string.country_na_costa_rica)
+                    utils.getString(R.string.country_na_dominican_republic),
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_honduras),
+                    utils.getString(R.string.country_na_costa_rica)
                 )
             ),
             Question(
                 R.drawable.na_el_salvador_flag,
                 listOf(
-                    app.getString(R.string.country_na_el_salvador),
-                    app.getString(R.string.country_na_antigua_and_barbuda),
-                    app.getString(R.string.country_na_jamaica),
-                    app.getString(R.string.country_na_dominica)
+                    utils.getString(R.string.country_na_el_salvador),
+                    utils.getString(R.string.country_na_antigua_and_barbuda),
+                    utils.getString(R.string.country_na_jamaica),
+                    utils.getString(R.string.country_na_dominica)
                 )
             ),
             Question(
                 R.drawable.na_grenada_flag,
                 listOf(
-                    app.getString(R.string.country_na_grenada),
-                    app.getString(R.string.country_na_el_salvador),
-                    app.getString(R.string.country_na_usa),
-                    app.getString(R.string.country_na_costa_rica)
+                    utils.getString(R.string.country_na_grenada),
+                    utils.getString(R.string.country_na_el_salvador),
+                    utils.getString(R.string.country_na_usa),
+                    utils.getString(R.string.country_na_costa_rica)
                 )
             ),
             Question(
                 R.drawable.na_guatemala_flag,
                 listOf(
-                    app.getString(R.string.country_na_guatemala),
-                    app.getString(R.string.country_na_cuba),
-                    app.getString(R.string.country_na_el_salvador),
-                    app.getString(R.string.country_na_antigua_and_barbuda)
+                    utils.getString(R.string.country_na_guatemala),
+                    utils.getString(R.string.country_na_cuba),
+                    utils.getString(R.string.country_na_el_salvador),
+                    utils.getString(R.string.country_na_antigua_and_barbuda)
                 )
             ),
             Question(
                 R.drawable.na_haiti_flag,
                 listOf(
-                    app.getString(R.string.country_na_haiti),
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_honduras),
-                    app.getString(R.string.country_na_el_salvador)
+                    utils.getString(R.string.country_na_haiti),
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_honduras),
+                    utils.getString(R.string.country_na_el_salvador)
                 )
             ),
             Question(
                 R.drawable.na_honduras_flag,
                 listOf(
-                    app.getString(R.string.country_na_honduras),
-                    app.getString(R.string.country_na_costa_rica),
-                    app.getString(R.string.country_na_dominican_republic),
-                    app.getString(R.string.country_na_usa)
+                    utils.getString(R.string.country_na_honduras),
+                    utils.getString(R.string.country_na_costa_rica),
+                    utils.getString(R.string.country_na_dominican_republic),
+                    utils.getString(R.string.country_na_usa)
                 )
             ),
             Question(
                 R.drawable.na_jamaica_flag,
                 listOf(
-                    app.getString(R.string.country_na_jamaica),
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_antigua_and_barbuda),
-                    app.getString(R.string.country_na_el_salvador)
+                    utils.getString(R.string.country_na_jamaica),
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_antigua_and_barbuda),
+                    utils.getString(R.string.country_na_el_salvador)
                 )
             ),
             Question(
                 R.drawable.na_mexico_flag,
                 listOf(
-                    app.getString(R.string.country_na_mexico),
-                    app.getString(R.string.country_na_costa_rica),
-                    app.getString(R.string.country_na_cuba),
-                    app.getString(R.string.country_na_dominica)
+                    utils.getString(R.string.country_na_mexico),
+                    utils.getString(R.string.country_na_costa_rica),
+                    utils.getString(R.string.country_na_cuba),
+                    utils.getString(R.string.country_na_dominica)
                 )
             ),
             Question(
                 R.drawable.na_nicaragua_flag,
                 listOf(
-                    app.getString(R.string.country_na_nicaragua),
-                    app.getString(R.string.country_na_jamaica),
-                    app.getString(R.string.country_na_costa_rica),
-                    app.getString(R.string.country_na_el_salvador)
+                    utils.getString(R.string.country_na_nicaragua),
+                    utils.getString(R.string.country_na_jamaica),
+                    utils.getString(R.string.country_na_costa_rica),
+                    utils.getString(R.string.country_na_el_salvador)
                 )
             ),
             Question(
                 R.drawable.na_saint_kitts_and_nevis_flag,
                 listOf(
-                    app.getString(R.string.country_na_saint_kitts_and_nevis),
-                    app.getString(R.string.country_na_antigua_and_barbuda),
-                    app.getString(R.string.country_na_dominica),
-                    app.getString(R.string.country_na_usa)
+                    utils.getString(R.string.country_na_saint_kitts_and_nevis),
+                    utils.getString(R.string.country_na_antigua_and_barbuda),
+                    utils.getString(R.string.country_na_dominica),
+                    utils.getString(R.string.country_na_usa)
                 )
             ),
             Question(
                 R.drawable.na_united_states_of_america_flag,
                 listOf(
-                    app.getString(R.string.country_na_usa),
-                    app.getString(R.string.country_na_costa_rica),
-                    app.getString(R.string.country_na_el_salvador),
-                    app.getString(R.string.country_na_dominica)
+                    utils.getString(R.string.country_na_usa),
+                    utils.getString(R.string.country_na_costa_rica),
+                    utils.getString(R.string.country_na_el_salvador),
+                    utils.getString(R.string.country_na_dominica)
                 )
             )
         )
@@ -1540,136 +1540,136 @@ object Oceania {
             Question(
                 R.drawable.oc_australia_flag,
                 listOf(
-                    app.getString(R.string.country_oc_australia),
-                    app.getString(R.string.country_oc_palau),
-                    app.getString(R.string.country_oc_east_timor),
-                    app.getString(R.string.country_oc_tonga)
+                    utils.getString(R.string.country_oc_australia),
+                    utils.getString(R.string.country_oc_palau),
+                    utils.getString(R.string.country_oc_east_timor),
+                    utils.getString(R.string.country_oc_tonga)
                 )
             ),
             Question(
                 R.drawable.oc_east_timor_flag,
                 listOf(
-                    app.getString(R.string.country_oc_east_timor),
-                    app.getString(R.string.country_oc_kiribati),
-                    app.getString(R.string.country_oc_nauru),
-                    app.getString(R.string.country_oc_papua_new_guinea)
+                    utils.getString(R.string.country_oc_east_timor),
+                    utils.getString(R.string.country_oc_kiribati),
+                    utils.getString(R.string.country_oc_nauru),
+                    utils.getString(R.string.country_oc_papua_new_guinea)
                 )
             ),
             Question(
                 R.drawable.oc_fiji_flag,
                 listOf(
-                    app.getString(R.string.country_oc_fiji),
-                    app.getString(R.string.country_oc_new_zealand),
-                    app.getString(R.string.country_oc_australia),
-                    app.getString(R.string.country_oc_niue)
+                    utils.getString(R.string.country_oc_fiji),
+                    utils.getString(R.string.country_oc_new_zealand),
+                    utils.getString(R.string.country_oc_australia),
+                    utils.getString(R.string.country_oc_niue)
                 )
             ),
             Question(
                 R.drawable.oc_kiribati_flag,
                 listOf(
-                    app.getString(R.string.country_oc_kiribati),
-                    app.getString(R.string.country_oc_east_timor),
-                    app.getString(R.string.country_oc_tonga),
-                    app.getString(R.string.country_oc_nauru)
+                    utils.getString(R.string.country_oc_kiribati),
+                    utils.getString(R.string.country_oc_east_timor),
+                    utils.getString(R.string.country_oc_tonga),
+                    utils.getString(R.string.country_oc_nauru)
                 )
             ),
             Question(
                 R.drawable.oc_marshall_islands_flag,
                 listOf(
-                    app.getString(R.string.country_oc_marshall_islands),
-                    app.getString(R.string.country_oc_papua_new_guinea),
-                    app.getString(R.string.country_oc_new_zealand),
-                    app.getString(R.string.country_oc_fiji)
+                    utils.getString(R.string.country_oc_marshall_islands),
+                    utils.getString(R.string.country_oc_papua_new_guinea),
+                    utils.getString(R.string.country_oc_new_zealand),
+                    utils.getString(R.string.country_oc_fiji)
                 )
             ),
             Question(
                 R.drawable.oc_micronesia_flag,
                 listOf(
-                    app.getString(R.string.country_oc_micronesia),
-                    app.getString(R.string.country_oc_east_timor),
-                    app.getString(R.string.country_oc_australia),
-                    app.getString(R.string.country_oc_nauru)
+                    utils.getString(R.string.country_oc_micronesia),
+                    utils.getString(R.string.country_oc_east_timor),
+                    utils.getString(R.string.country_oc_australia),
+                    utils.getString(R.string.country_oc_nauru)
                 )
             ),
             Question(
                 R.drawable.oc_nauru_flag,
                 listOf(
-                    app.getString(R.string.country_oc_nauru),
-                    app.getString(R.string.country_oc_tonga),
-                    app.getString(R.string.country_oc_new_zealand),
-                    app.getString(R.string.country_oc_east_timor)
+                    utils.getString(R.string.country_oc_nauru),
+                    utils.getString(R.string.country_oc_tonga),
+                    utils.getString(R.string.country_oc_new_zealand),
+                    utils.getString(R.string.country_oc_east_timor)
                 )
             ),
             Question(
                 R.drawable.oc_new_zealand_flag,
                 listOf(
-                    app.getString(R.string.country_oc_new_zealand),
-                    app.getString(R.string.country_oc_papua_new_guinea),
-                    app.getString(R.string.country_oc_kiribati),
-                    app.getString(R.string.country_oc_fiji)
+                    utils.getString(R.string.country_oc_new_zealand),
+                    utils.getString(R.string.country_oc_papua_new_guinea),
+                    utils.getString(R.string.country_oc_kiribati),
+                    utils.getString(R.string.country_oc_fiji)
                 )
             ),
             Question(
                 R.drawable.oc_niue_flag,
                 listOf(
-                    app.getString(R.string.country_oc_niue),
-                    app.getString(R.string.country_oc_nauru),
-                    app.getString(R.string.country_oc_tonga),
-                    app.getString(R.string.country_oc_palau)
+                    utils.getString(R.string.country_oc_niue),
+                    utils.getString(R.string.country_oc_nauru),
+                    utils.getString(R.string.country_oc_tonga),
+                    utils.getString(R.string.country_oc_palau)
                 )
             ),
             Question(
                 R.drawable.oc_palau_flag,
                 listOf(
-                    app.getString(R.string.country_oc_palau),
-                    app.getString(R.string.country_oc_niue),
-                    app.getString(R.string.country_oc_tonga),
-                    app.getString(R.string.country_oc_new_zealand)
+                    utils.getString(R.string.country_oc_palau),
+                    utils.getString(R.string.country_oc_niue),
+                    utils.getString(R.string.country_oc_tonga),
+                    utils.getString(R.string.country_oc_new_zealand)
                 )
             ),
             Question(
                 R.drawable.oc_papua_new_guinea_flag,
                 listOf(
-                    app.getString(R.string.country_oc_papua_new_guinea),
-                    app.getString(R.string.country_oc_nauru),
-                    app.getString(R.string.country_oc_east_timor),
-                    app.getString(R.string.country_oc_australia)
+                    utils.getString(R.string.country_oc_papua_new_guinea),
+                    utils.getString(R.string.country_oc_nauru),
+                    utils.getString(R.string.country_oc_east_timor),
+                    utils.getString(R.string.country_oc_australia)
                 )
             ),
             Question(
                 R.drawable.oc_samoa_flag,
                 listOf(
-                    app.getString(R.string.country_oc_samoa),
-                    app.getString(R.string.country_oc_fiji),
-                    app.getString(R.string.country_oc_kiribati),
-                    app.getString(R.string.country_oc_papua_new_guinea)
+                    utils.getString(R.string.country_oc_samoa),
+                    utils.getString(R.string.country_oc_fiji),
+                    utils.getString(R.string.country_oc_kiribati),
+                    utils.getString(R.string.country_oc_papua_new_guinea)
                 )
             ),
             Question(
                 R.drawable.oc_solomon_islands_flag,
                 listOf(
-                    app.getString(R.string.country_oc_solomon_islands),
-                    app.getString(R.string.country_oc_nauru),
-                    app.getString(R.string.country_oc_new_zealand),
-                    app.getString(R.string.country_oc_palau)
+                    utils.getString(R.string.country_oc_solomon_islands),
+                    utils.getString(R.string.country_oc_nauru),
+                    utils.getString(R.string.country_oc_new_zealand),
+                    utils.getString(R.string.country_oc_palau)
                 )
             ),
             Question(
                 R.drawable.oc_tonga_flag,
                 listOf(
-                    app.getString(R.string.country_oc_tonga),
-                    app.getString(R.string.country_oc_east_timor),
-                    app.getString(R.string.country_oc_kiribati),
-                    app.getString(R.string.country_oc_fiji)
+                    utils.getString(R.string.country_oc_tonga),
+                    utils.getString(R.string.country_oc_east_timor),
+                    utils.getString(R.string.country_oc_kiribati),
+                    utils.getString(R.string.country_oc_fiji)
                 )
             ),
             Question(
                 R.drawable.oc_tuvalu_flag,
                 listOf(
-                    app.getString(R.string.country_oc_tuvalu),
-                    app.getString(R.string.country_oc_papua_new_guinea),
-                    app.getString(R.string.country_oc_tonga),
-                    app.getString(R.string.country_oc_new_zealand)
+                    utils.getString(R.string.country_oc_tuvalu),
+                    utils.getString(R.string.country_oc_papua_new_guinea),
+                    utils.getString(R.string.country_oc_tonga),
+                    utils.getString(R.string.country_oc_new_zealand)
                 )
             )
         )
@@ -1685,145 +1685,145 @@ object SouthAmerica {
             Question(
                 R.drawable.sa_argentina_flag,
                 listOf(
-                    app.getString(R.string.country_sa_argentina),
-                    app.getString(R.string.country_sa_bolivia),
-                    app.getString(R.string.country_sa_trinidad_and_tobago),
-                    app.getString(R.string.country_sa_uruguay)
+                    utils.getString(R.string.country_sa_argentina),
+                    utils.getString(R.string.country_sa_bolivia),
+                    utils.getString(R.string.country_sa_trinidad_and_tobago),
+                    utils.getString(R.string.country_sa_uruguay)
                 )
             ),
             Question(
                 R.drawable.sa_bolivia_flag,
                 listOf(
-                    app.getString(R.string.country_sa_bolivia),
-                    app.getString(R.string.country_sa_saint_lucia),
-                    app.getString(R.string.country_sa_venezuela),
-                    app.getString(R.string.country_sa_colombia)
+                    utils.getString(R.string.country_sa_bolivia),
+                    utils.getString(R.string.country_sa_saint_lucia),
+                    utils.getString(R.string.country_sa_venezuela),
+                    utils.getString(R.string.country_sa_colombia)
                 )
             ),
             Question(
                 R.drawable.sa_brazil_flag,
                 listOf(
-                    app.getString(R.string.country_sa_brazil),
-                    app.getString(R.string.country_sa_saint_lucia),
-                    app.getString(R.string.country_sa_uruguay),
-                    app.getString(R.string.country_sa_argentina)
+                    utils.getString(R.string.country_sa_brazil),
+                    utils.getString(R.string.country_sa_saint_lucia),
+                    utils.getString(R.string.country_sa_uruguay),
+                    utils.getString(R.string.country_sa_argentina)
                 )
             ),
             Question(
                 R.drawable.sa_chile_flag,
                 listOf(
-                    app.getString(R.string.country_sa_chile),
-                    app.getString(R.string.country_sa_trinidad_and_tobago),
-                    app.getString(R.string.country_sa_guyana),
-                    app.getString(R.string.country_sa_brazil)
+                    utils.getString(R.string.country_sa_chile),
+                    utils.getString(R.string.country_sa_trinidad_and_tobago),
+                    utils.getString(R.string.country_sa_guyana),
+                    utils.getString(R.string.country_sa_brazil)
                 )
             ),
             Question(
                 R.drawable.sa_colombia_flag,
                 listOf(
-                    app.getString(R.string.country_sa_colombia),
-                    app.getString(R.string.country_sa_uruguay),
-                    app.getString(R.string.country_sa_venezuela),
-                    app.getString(R.string.country_sa_chile)
+                    utils.getString(R.string.country_sa_colombia),
+                    utils.getString(R.string.country_sa_uruguay),
+                    utils.getString(R.string.country_sa_venezuela),
+                    utils.getString(R.string.country_sa_chile)
                 )
             ),
             Question(
                 R.drawable.sa_ecuador_flag,
                 listOf(
-                    app.getString(R.string.country_sa_ecuador),
-                    app.getString(R.string.country_sa_trinidad_and_tobago),
-                    app.getString(R.string.country_sa_bolivia),
-                    app.getString(R.string.country_sa_uruguay)
+                    utils.getString(R.string.country_sa_ecuador),
+                    utils.getString(R.string.country_sa_trinidad_and_tobago),
+                    utils.getString(R.string.country_sa_bolivia),
+                    utils.getString(R.string.country_sa_uruguay)
                 )
             ),
             Question(
                 R.drawable.sa_guyana_flag,
                 listOf(
-                    app.getString(R.string.country_sa_guyana),
-                    app.getString(R.string.country_sa_brazil),
-                    app.getString(R.string.country_sa_chile),
-                    app.getString(R.string.country_sa_argentina)
+                    utils.getString(R.string.country_sa_guyana),
+                    utils.getString(R.string.country_sa_brazil),
+                    utils.getString(R.string.country_sa_chile),
+                    utils.getString(R.string.country_sa_argentina)
                 )
             ),
             Question(
                 R.drawable.sa_panama_flag,
                 listOf(
-                    app.getString(R.string.country_sa_panama),
-                    app.getString(R.string.country_sa_trinidad_and_tobago),
-                    app.getString(R.string.country_sa_brazil),
-                    app.getString(R.string.country_sa_uruguay)
+                    utils.getString(R.string.country_sa_panama),
+                    utils.getString(R.string.country_sa_trinidad_and_tobago),
+                    utils.getString(R.string.country_sa_brazil),
+                    utils.getString(R.string.country_sa_uruguay)
                 )
             ),
             Question(
                 R.drawable.sa_paraguay_flag,
                 listOf(
-                    app.getString(R.string.country_sa_paraguay),
-                    app.getString(R.string.country_sa_chile),
-                    app.getString(R.string.country_sa_colombia),
-                    app.getString(R.string.country_sa_venezuela)
+                    utils.getString(R.string.country_sa_paraguay),
+                    utils.getString(R.string.country_sa_chile),
+                    utils.getString(R.string.country_sa_colombia),
+                    utils.getString(R.string.country_sa_venezuela)
                 )
             ),
             Question(
                 R.drawable.sa_peru_flag,
                 listOf(
-                    app.getString(R.string.country_sa_peru),
-                    app.getString(R.string.country_sa_trinidad_and_tobago),
-                    app.getString(R.string.country_sa_uruguay),
-                    app.getString(R.string.country_sa_brazil)
+                    utils.getString(R.string.country_sa_peru),
+                    utils.getString(R.string.country_sa_trinidad_and_tobago),
+                    utils.getString(R.string.country_sa_uruguay),
+                    utils.getString(R.string.country_sa_brazil)
                 )
             ),
             Question(
                 R.drawable.sa_saint_lucia_flag,
                 listOf(
-                    app.getString(R.string.country_sa_saint_lucia),
-                    app.getString(R.string.country_sa_chile),
-                    app.getString(R.string.country_sa_colombia),
-                    app.getString(R.string.country_sa_argentina)
+                    utils.getString(R.string.country_sa_saint_lucia),
+                    utils.getString(R.string.country_sa_chile),
+                    utils.getString(R.string.country_sa_colombia),
+                    utils.getString(R.string.country_sa_argentina)
                 )
             ),
             Question(
                 R.drawable.sa_saint_vincent_and_the_grenadines_flag,
                 listOf(
-                    app.getString(R.string.country_sa_saint_vicente_and_grenadines),
-                    app.getString(R.string.country_sa_venezuela),
-                    app.getString(R.string.country_sa_saint_lucia),
-                    app.getString(R.string.country_sa_brazil)
+                    utils.getString(R.string.country_sa_saint_vicente_and_grenadines),
+                    utils.getString(R.string.country_sa_venezuela),
+                    utils.getString(R.string.country_sa_saint_lucia),
+                    utils.getString(R.string.country_sa_brazil)
                 )
             ),
             Question(
                 R.drawable.sa_suriname_flag,
                 listOf(
-                    app.getString(R.string.country_sa_suriname),
-                    app.getString(R.string.country_sa_chile),
-                    app.getString(R.string.country_sa_bolivia),
-                    app.getString(R.string.country_sa_saint_lucia)
+                    utils.getString(R.string.country_sa_suriname),
+                    utils.getString(R.string.country_sa_chile),
+                    utils.getString(R.string.country_sa_bolivia),
+                    utils.getString(R.string.country_sa_saint_lucia)
                 )
             ),
             Question(
                 R.drawable.sa_trinidad_and_tobago_flag,
                 listOf(
-                    app.getString(R.string.country_sa_trinidad_and_tobago),
-                    app.getString(R.string.country_sa_colombia),
-                    app.getString(R.string.country_sa_brazil),
-                    app.getString(R.string.country_sa_argentina)
+                    utils.getString(R.string.country_sa_trinidad_and_tobago),
+                    utils.getString(R.string.country_sa_colombia),
+                    utils.getString(R.string.country_sa_brazil),
+                    utils.getString(R.string.country_sa_argentina)
                 )
             ),
             Question(
                 R.drawable.sa_uruguay_flag,
                 listOf(
-                    app.getString(R.string.country_sa_uruguay),
-                    app.getString(R.string.country_sa_bolivia),
-                    app.getString(R.string.country_sa_chile),
-                    app.getString(R.string.country_sa_saint_lucia)
+                    utils.getString(R.string.country_sa_uruguay),
+                    utils.getString(R.string.country_sa_bolivia),
+                    utils.getString(R.string.country_sa_chile),
+                    utils.getString(R.string.country_sa_saint_lucia)
                 )
             ),
             Question(
                 R.drawable.sa_venezuela_flag,
                 listOf(
-                    app.getString(R.string.country_sa_venezuela),
-                    app.getString(R.string.country_sa_argentina),
-                    app.getString(R.string.country_sa_trinidad_and_tobago),
-                    app.getString(R.string.country_sa_saint_lucia)
+                    utils.getString(R.string.country_sa_venezuela),
+                    utils.getString(R.string.country_sa_argentina),
+                    utils.getString(R.string.country_sa_trinidad_and_tobago),
+                    utils.getString(R.string.country_sa_saint_lucia)
                 )
             )
         )

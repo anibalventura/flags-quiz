@@ -139,4 +139,6 @@
     <string name="system_default_theme">Predeterminado del sistema</string>
     <string name="theme_dialog_title">Tema</string>
     <string name="cancel_dialog_option">Cancelar</string>
+    <string name="home_select_start">Seleccionar un continente para iniciar:</string>
+    <string name="quiz_play_again">Jugar de Nuevo</string>
 </resources>

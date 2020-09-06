@@ -1,8 +1,0 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <EditTextPreference
-        android:dialogTitle="Change Name"
-        android:key="changeName"
-        android:summary="Click to show a text entry dialog"
-        android:title="Change Name" />
-</PreferenceScreen>

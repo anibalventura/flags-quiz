@@ -1,12 +1,13 @@
 <resources>
-    <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
+    <!-- Theme Preference -->
+    <string-array name="settings_list_themes_titles">
+        <item>@string/light_theme</item>
+        <item>@string/dark_theme</item>
+        <item>@string/system_default_theme</item>
     </string-array>
-
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
+    <string-array name="settings_list_themes_values">
+        <item>1</item>
+        <item>2</item>
+        <item>0</item>
     </string-array>
 </resources>

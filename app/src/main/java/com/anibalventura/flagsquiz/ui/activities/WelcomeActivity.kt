@@ -1,16 +1,14 @@
-package com.anibalventura.flagsquiz.ui.welcome
+package com.anibalventura.flagsquiz.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.anibalventura.flagsquiz.App.Companion.showToast
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.local.sharedpref.CONST
-import com.anibalventura.flagsquiz.data.local.sharedpref.SharedPreferences
+import com.anibalventura.flagsquiz.Utils
+import com.anibalventura.flagsquiz.Utils.Companion.showToast
+import com.anibalventura.flagsquiz.data.local.CONST
 import com.anibalventura.flagsquiz.databinding.ActivityWelcomeBinding
-import com.anibalventura.flagsquiz.ui.MainActivity
-
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -35,13 +33,11 @@ class WelcomeActivity : AppCompatActivity() {
     private fun continueToHome() {
         // Show a Toast message when don't have a user name.
         if (binding.etName.text.toString().isEmpty()) {
-            showToast(getString(R.string.welcome_enter_name))
+            showToast(this, getString(R.string.welcome_enter_name))
         } else {
-            // Initialize SharedPreferences.
-            val sharedPref = SharedPreferences(this)
             // Get and save the userName on sharedPref.
             val userName = binding.etName.text.toString()
-            sharedPref.putString(CONST.USER_NAME, userName)
+            Utils.sharedPref(this).edit().putString(CONST.USER_NAME, userName).apply()
 
             // Start the MainActivity and finish the WelcomeActivity.
             val intent = Intent(this, MainActivity::class.java)
@@ -49,7 +45,7 @@ class WelcomeActivity : AppCompatActivity() {
             finish()
 
             // Don't show more this activity.
-            sharedPref.putBoolean(CONST.START_ACT, true)
+            Utils.sharedPref(this).edit().putBoolean(CONST.START_ACT, true).apply()
         }
     }
 }

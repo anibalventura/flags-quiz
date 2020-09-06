@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.anibalventura.flagsquiz.ui.quiz.QuizFragment"
+        android:name="com.anibalventura.flagsquiz.ui.fragments.QuizFragment"
         tools:layout="@layout/fragment_quiz">
         <action
             android:id="@+id/action_quizFragment_to_wonFragment"
-            app:destination="@id/wonFragment"
+            app:destination="@id/quizWonFragment"
             app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/action_quizFragment_to_loseFragment"
-            app:destination="@id/loseFragment"
+            app:destination="@id/quizOverFragment"
             app:popUpTo="@id/homeFragment" />
         <argument
             android:name="continent"
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/wonFragment"
-        android:name="com.anibalventura.flagsquiz.ui.won.WonFragment"
+        android:id="@+id/quizWonFragment"
+        android:name="com.anibalventura.flagsquiz.ui.fragments.QuizWonFragment"
         android:label="You Won!"
-        tools:layout="@layout/fragment_won">
+        tools:layout="@layout/fragment_quiz_won">
         <action
             android:id="@+id/action_wonFragment_to_quizFragment"
             app:destination="@id/quizFragment"
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.anibalventura.flagsquiz.ui.home.HomeFragment"
+        android:name="com.anibalventura.flagsquiz.ui.fragments.HomeFragment"
         android:label="Flags Quiz"
         tools:layout="@layout/fragment_home">
         <action
@@ -56,10 +56,10 @@
             app:destination="@id/quizFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loseFragment"
-        android:name="com.anibalventura.flagsquiz.ui.over.OverFragment"
+        android:id="@+id/quizOverFragment"
+        android:name="com.anibalventura.flagsquiz.ui.fragments.QuizOverFragment"
         android:label="Sorry You Lose!"
-        tools:layout="@layout/fragment_over">
+        tools:layout="@layout/fragment_quiz_over">
         <action
             android:id="@+id/action_loseFragment_to_homeFragment"
             app:destination="@id/homeFragment"
@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/rulesFragment"
-        android:name="com.anibalventura.flagsquiz.ui.rules.RulesFragment"
+        android:name="com.anibalventura.flagsquiz.ui.fragments.RulesFragment"
         android:label="Rules"
         tools:layout="@layout/fragment_rules">
         <action
@@ -80,19 +80,15 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.anibalventura.flagsquiz.ui.about.AboutFragment"
+        android:name="com.anibalventura.flagsquiz.ui.fragments.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about">
         <action
             android:id="@+id/action_aboutFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.anibalventura.flagsquiz.SettingsFragment"
-        android:label="SettingsFragment">
-        <action
-            android:id="@+id/action_settingsFragment4_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.anibalventura.flagsquiz.ui.activities.SettingsActivity"
+        android:label="@string/option_settings" />
 </navigation>

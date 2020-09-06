@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.settings
+package com.anibalventura.flagsquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.databinding.FragmentSettingsBinding
+import com.anibalventura.flagsquiz.databinding.FragmentAboutBinding
 
-class SettingsFragment2 : Fragment() {
+class AboutFragment : Fragment() {
 
     // Use DataBinding.
-    private lateinit var binding: FragmentSettingsBinding
+    private lateinit var binding: FragmentAboutBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +24,7 @@ class SettingsFragment2 : Fragment() {
          */
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_settings, container, false
+            inflater, R.layout.fragment_about, container, false
         )
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates.

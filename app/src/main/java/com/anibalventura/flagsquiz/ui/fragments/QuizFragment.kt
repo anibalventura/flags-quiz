@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.quiz
+package com.anibalventura.flagsquiz.ui.fragments
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -10,10 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.anibalventura.flagsquiz.App.Companion.showToast
 import com.anibalventura.flagsquiz.R
+import com.anibalventura.flagsquiz.Utils.Companion.showToast
 import com.anibalventura.flagsquiz.data.local.db.*
 import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
 
@@ -54,17 +53,6 @@ class QuizFragment : Fragment() {
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates.
         binding.lifecycleOwner = viewLifecycleOwner
-
-        /**
-         * Set ViewModel and ViewModelFactory.
-         */
-        val viewModelFactory =
-            QuizViewModelFactory(requireContext(), requireNotNull(activity).application)
-        val viewModel: QuizViewModel =
-            ViewModelProvider(this, viewModelFactory).get(QuizViewModel::class.java)
-        // Set the viewModel for DataBinding.
-        // This allows the bound layout access to all the data in the ViewModel.
-        binding.quizViewModel = viewModel
 
         /*
          * Initiate the quiz.
@@ -230,7 +218,7 @@ class QuizFragment : Fragment() {
                 .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment())
 
             // Show a toast if trying to submit question without an option.
-            !submitQuestion -> requireContext().showToast(getString(R.string.quiz_select_option))
+            !submitQuestion -> showToast(requireContext(), getString(R.string.quiz_select_option))
 
             // When pass to another question.
             // The number 5 is used because there is no index 5, so can continue the quiz.

@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.home
+package com.anibalventura.flagsquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,10 @@ import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.anibalventura.flagsquiz.App.Companion.showToast
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.local.sharedpref.CONST
-import com.anibalventura.flagsquiz.data.local.sharedpref.SharedPreferences
+import com.anibalventura.flagsquiz.Utils
+import com.anibalventura.flagsquiz.Utils.Companion.showToast
+import com.anibalventura.flagsquiz.data.local.CONST
 import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -42,10 +42,8 @@ class HomeFragment : Fragment() {
         /*
          * SharedPreferences.
          */
-        // Get and set the current context for SharedPreferences.
-        val sharedPref = SharedPreferences(requireContext())
         // Get and set the current username.
-        val name = sharedPref.getString(CONST.USER_NAME, "")
+        val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
         binding.tvWelcome.text = getString(R.string.home_welcome, name)
 
         optionsView = mutableListOf(
@@ -61,6 +59,13 @@ class HomeFragment : Fragment() {
         selectedOptionsView()
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Get and set the current username.
+        val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
+        binding.tvWelcome.text = getString(R.string.home_welcome, name)
     }
 
     /**
@@ -114,7 +119,7 @@ class HomeFragment : Fragment() {
                     .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_south_america)))
                 selectedContinent = 0
             }
-            else -> requireContext().showToast(getString(R.string.home_select_continent))
+            else -> showToast(requireContext(), getString(R.string.home_select_continent))
         }
     }
 }

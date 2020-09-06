@@ -1,11 +1,13 @@
-package com.anibalventura.flagsquiz.data.local.sharedpref
+package com.anibalventura.flagsquiz.data.local
 
 class CONST {
     companion object {
+        // Shared Preferences
         const val PREFERENCES = "preferences"
         const val USER_NAME = "user_name"
-        const val START_ACT = "start_act"
         const val THEME = "theme"
-        const val CHECKED_THEME = "checked_theme"
+
+        // Quiz.
+        const val START_ACT = "start_act"
     }
 }

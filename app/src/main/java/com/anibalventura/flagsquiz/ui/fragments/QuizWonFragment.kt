@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.won
+package com.anibalventura.flagsquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,14 +8,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.data.local.sharedpref.CONST
-import com.anibalventura.flagsquiz.data.local.sharedpref.SharedPreferences
-import com.anibalventura.flagsquiz.databinding.FragmentWonBinding
+import com.anibalventura.flagsquiz.Utils
+import com.anibalventura.flagsquiz.data.local.CONST
+import com.anibalventura.flagsquiz.databinding.FragmentQuizWonBinding
 
-class WonFragment : Fragment() {
+class QuizWonFragment : Fragment() {
 
     // Use DataBinding.
-    private lateinit var binding: FragmentWonBinding
+    private lateinit var binding: FragmentQuizWonBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +27,7 @@ class WonFragment : Fragment() {
          */
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_won, container, false
+            inflater, R.layout.fragment_quiz_won, container, false
         )
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates.
@@ -36,17 +36,15 @@ class WonFragment : Fragment() {
         /*
          * SharedPreferences.
          */
-        // Get and set the current context for SharedPreferences.
-        val sharedPref = SharedPreferences(requireContext())
         // Get and set the current username.
-        val username = sharedPref.getString(CONST.USER_NAME, "")
+        val username = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
         binding.tvResultCongrats.text = getString(R.string.won_congrats, username)
 
         /*
          * SafeArgs.
          */
         // Get the arguments from the WonFragment, passed from QuizFragment.
-        val args = WonFragmentArgs.fromBundle(requireArguments())
+        val args = QuizWonFragmentArgs.fromBundle(requireArguments())
         // Set the score view with the arguments.
         binding.tvResultScore.text =
             getString(R.string.won_total_score, args.correntAnswers, args.totalQuestions)
@@ -54,7 +52,7 @@ class WonFragment : Fragment() {
         // Back to the HomeFragment.
         binding.btnWonFinish.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToHomeFragment())
+                .navigate(QuizWonFragmentDirections.actionWonFragmentToHomeFragment())
         }
 
         // Back to the QuizFragment
@@ -68,20 +66,20 @@ class WonFragment : Fragment() {
      * Pass the selected continent via SafeArgs to QuizFragment.
      */
     private fun startQuiz(view: View) {
-        val args = WonFragmentArgs.fromBundle(requireArguments())
+        val args = QuizWonFragmentArgs.fromBundle(requireArguments())
         when (args.selectedContinent) {
             getString(R.string.continent_africa) -> view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_africa)))
+                .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_africa)))
             getString(R.string.continent_asia) -> view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_asia)))
+                .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_asia)))
             getString(R.string.continent_europe) -> view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_europe)))
+                .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_europe)))
             getString(R.string.continent_north_america) -> view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_north_america)))
+                .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_north_america)))
             getString(R.string.continent_oceania) -> view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_oceania)))
+                .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_oceania)))
             getString(R.string.continent_south_america) -> view.findNavController()
-                .navigate(WonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_south_america)))
+                .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_south_america)))
         }
     }
 }
