@@ -11,9 +11,6 @@ import com.anibalventura.flagsquiz.databinding.FragmentRulesBinding
 
 class RulesFragment : Fragment() {
 
-    // Use DataBinding.
-    private lateinit var binding: FragmentRulesBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,9 +20,8 @@ class RulesFragment : Fragment() {
          * Inflate the layout for this fragment.
          */
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_rules, container, false
-        )
+        val binding: FragmentRulesBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_rules, container, false)
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates.
         binding.lifecycleOwner = viewLifecycleOwner

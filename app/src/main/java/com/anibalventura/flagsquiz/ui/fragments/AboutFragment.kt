@@ -11,9 +11,6 @@ import com.anibalventura.flagsquiz.databinding.FragmentAboutBinding
 
 class AboutFragment : Fragment() {
 
-    // Use DataBinding.
-    private lateinit var binding: FragmentAboutBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,9 +20,8 @@ class AboutFragment : Fragment() {
          * Inflate the layout for this fragment.
          */
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_about, container, false
-        )
+        val binding: FragmentAboutBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_about, container, false)
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates.
         binding.lifecycleOwner = viewLifecycleOwner

@@ -76,7 +76,7 @@ class QuizFragment : Fragment() {
      * Get selected continent from HomeFragment with SafeArgs.
      * And set title fragment.
      */
-    fun selectedContinent() {
+    private fun selectedContinent() {
         val args = QuizFragmentArgs.fromBundle(requireArguments())
         when (args.continent) {
             getString(R.string.continent_africa) -> {
@@ -110,7 +110,9 @@ class QuizFragment : Fragment() {
                     getString(R.string.continent_south_america)
             }
         }
+        // Set question from selected continent.
         setQuestion()
+        // Update answer view on user selection.
         selectedAnswerView()
     }
 
@@ -118,6 +120,7 @@ class QuizFragment : Fragment() {
      * Setting the question to UI components.
      */
     private fun setQuestion() {
+        // Get a random question.
         randomizeQuestions()
 
         // Randomize the answers into a copy of the mutableList and shuffle them.
@@ -149,10 +152,10 @@ class QuizFragment : Fragment() {
     }
 
     /*
-     * Get a random question and answer position.
+     * Get a random question.
      */
     private fun randomizeQuestions() {
-        // Change order.
+        // Set random order for questions.
         questions.shuffle()
         // Get question.
         currentQuestion = questions[indexQuestion]
@@ -197,7 +200,7 @@ class QuizFragment : Fragment() {
     }
 
     /*
-     * Highlight the answer for wrong or right.
+     * Highlight the answer selected for wrong or right.
      */
     private fun highlightAnswerView(answer: String, drawableView: Int) {
         for ((index) in answersView.withIndex()) {
@@ -213,22 +216,29 @@ class QuizFragment : Fragment() {
      */
     private fun submitAnswer(view: View) {
         val args = QuizFragmentArgs.fromBundle(requireArguments())
+
         when {
+            // When out of live, go to QuizOverFragment.
             lives <= 0 -> view.findNavController()
-                .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment())
+                .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment(args.continent))
 
             // Show a toast if trying to submit question without an option.
             !submitQuestion -> showToast(requireContext(), getString(R.string.quiz_select_option))
 
             // When pass to another question.
-            // The number 5 is used because there is no index 5, so can continue the quiz.
-            indexAnswer == 5 -> {
+            indexAnswer == 5 -> { // The number 5 have no value, is only used to continue the quiz.
+                // Update index to pass to another question.
                 indexQuestion++
+
                 when {
+                    // If number of questions answered not meet the total questions, continue the quiz.
                     indexQuestion < numQuestions -> {
+                        // Set a new question.
                         setQuestion()
+                        // Update selected answer view.
                         selectedAnswerView()
                     }
+                    // Go to QuizWonFragment when finish the quiz and pass arguments.
                     else -> view.findNavController().navigate(
                         QuizFragmentDirections.actionQuizFragmentToWonFragment(
                             correctAnswers,
@@ -248,6 +258,7 @@ class QuizFragment : Fragment() {
 
                     // Decrease lives.
                     lives--
+                    // Hide livesView when wrong answer.
                     when (lives) {
                         2 -> binding.ivLiveOne.visibility = View.GONE
                         1 -> binding.ivLiveTwo.visibility = View.GONE
@@ -258,21 +269,20 @@ class QuizFragment : Fragment() {
                 }
 
                 // Always check for correct answer.
-                highlightAnswerView(
-                    currentQuestion.answers[0],
-                    R.drawable.bg_correct_option_border
-                )
+                highlightAnswerView(currentQuestion.answers[0], R.drawable.bg_correct_option_border)
 
-                // When submit answer cannot change answersView.
+                // When answer is submit, user cannot change the answer.
                 for (answer in answersView) {
                     answer.isClickable = false
                 }
 
-                // When the questions are over, button Submit change to finish.
                 when {
+                    // When the questions are over, button Submit change to finish.
                     indexQuestion + 1 == numQuestions ->
                         binding.btnSubmit.text = getString(R.string.quiz_btn_finish)
+                    // When the user lose, button submit change to finish.
                     lives == 0 -> binding.btnSubmit.text = getString(R.string.quiz_btn_finish)
+                    // Or update button to next flag.
                     else -> binding.btnSubmit.text = getString(R.string.quiz_btn_next_flag)
                 }
 

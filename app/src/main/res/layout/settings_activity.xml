@@ -5,10 +5,11 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@id/toolbar"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:background="?attr/colorPrimary" />
+        android:theme="@style/ToolbarTheme" />
 
     <FrameLayout
         android:id="@+id/settings"

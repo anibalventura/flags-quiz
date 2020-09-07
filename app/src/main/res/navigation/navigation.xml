@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/quizOverFragment"
         android:name="com.anibalventura.flagsquiz.ui.fragments.QuizOverFragment"
-        android:label="Sorry You Lose!"
+        android:label="@string/quiz_you_lose"
         tools:layout="@layout/fragment_quiz_over">
         <action
             android:id="@+id/action_loseFragment_to_homeFragment"
@@ -68,6 +68,9 @@
             android:id="@+id/action_loseFragment_to_quizFragment"
             app:destination="@id/quizFragment"
             app:popUpTo="@id/homeFragment" />
+        <argument
+            android:name="selectedContinent"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/rulesFragment"

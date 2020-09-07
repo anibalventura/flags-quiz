@@ -16,8 +16,6 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
     Preference.SummaryProvider<ListPreference> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Set theme after splash screen.
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings_activity)
 
@@ -26,15 +24,20 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             .replace(R.id.settings, SettingsFragment())
             .commit()
 
+        // Set toolbar.
         setSupportActionBar(toolbar)
+        // Set navigateUp button.
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         PreferenceManager.getDefaultSharedPreferences(this)
             .registerOnSharedPreferenceChangeListener(this)
     }
 
+    /*
+     * Automatic implement changes on preferences.
+     */
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        // Update theme selected.
         Utils.setTheme()
     }
 
@@ -43,6 +46,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.settings_preferences, rootKey)
 
+            // Get preferences.
             bindSharedPrefSummary(findPreference(CONST.USER_NAME)!!)
             bindSharedPrefSummary(findPreference(CONST.THEME)!!)
         }

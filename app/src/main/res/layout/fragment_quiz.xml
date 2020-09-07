@@ -19,7 +19,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
             <ImageView
                 android:id="@+id/ivLiveOne"
                 android:layout_width="wrap_content"
@@ -63,27 +62,28 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tvProgressBar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:progress="50" />
 
             <TextView
                 android:id="@+id/tvProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/primaryTextColor"
+                android:textColor="@color/secondaryTextColor"
                 android:textColorHint="#7a8089"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="0/10" />
+                tools:text="5/10" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:contentDescription="@string/country_flag_content"
+            android:contentDescription="@string/quiz_flag_content"
             android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +107,7 @@
                     android:background="@drawable/bg_default_option_border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:textColor="@color/primaryTextColor"
+                    android:textColor="@color/secondaryTextColor"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerThree"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +123,7 @@
                     android:background="@drawable/bg_default_option_border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:textColor="@color/primaryTextColor"
+                    android:textColor="@color/secondaryTextColor"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -139,7 +139,7 @@
                     android:background="@drawable/bg_default_option_border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:textColor="@color/primaryTextColor"
+                    android:textColor="@color/secondaryTextColor"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerFour"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +151,7 @@
                     android:id="@+id/ivFlag"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:contentDescription="@string/country_flag_content"
+                    android:contentDescription="@string/quiz_flag_content"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerOne"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -167,7 +167,7 @@
                     android:background="@drawable/bg_default_option_border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:textColor="@color/primaryTextColor"
+                    android:textColor="@color/secondaryTextColor"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerTwo"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -182,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/quiz_btn_submit"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/primaryTextColor"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -196,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="@string/quiz_flag_question"
-                    android:textColor="@color/primaryTextColor"
+                    android:textColor="@color/secondaryTextColor"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toTopOf="@+id/ivFlag"
                     app:layout_constraintEnd_toEndOf="parent"

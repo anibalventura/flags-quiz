@@ -1,21 +1,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <EditTextPreference
-        android:dialogTitle="Change Name"
+        android:dialogTitle="@string/settings_change_name"
         android:key="user_name"
-        android:summary="Name selected"
-        android:title="Change Name"
+        android:summary="@string/settings_name_selected"
+        android:title="@string/settings_change_name"
         app:dialogIcon="@drawable/ic_person"
         app:icon="@drawable/ic_person" />
 
     <ListPreference
         android:defaultValue="0"
-        android:dialogTitle="Choose a theme"
+        android:dialogTitle="@string/theme_choose"
         android:entries="@array/settings_list_themes_titles"
         android:entryValues="@array/settings_list_themes_values"
         android:key="theme"
-        android:summary="Theme selected"
-        android:title="@string/theme_dialog_title"
+        android:summary="@string/settings_theme_selected"
+        android:title="@string/menu_theme"
         app:dialogIcon="@drawable/ic_theme"
         app:icon="@drawable/ic_theme" />
 </PreferenceScreen>

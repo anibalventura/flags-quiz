@@ -2,8 +2,9 @@
 <resources>
     <color name="primaryColor">#004ba0</color>
     <color name="primaryDarkColor">#004ba0</color>
-    <color name="primaryTextColor">#FFFFFF</color>
+    <color name="accentColor">#FFFFFF</color>
     <color name="secondaryTextColor">#FFFFFF</color>
-    <color name="quizBgRight">#B32B962F</color>
-    <color name="quizBgWrong">#B38D2D2D</color>
+    <color name="iconColor">#FFFFFF</color>
+    <color name="quizBgRight">#B32DAB32</color>
+    <color name="quizBgWrong">#B3BF3838</color>
 </resources>

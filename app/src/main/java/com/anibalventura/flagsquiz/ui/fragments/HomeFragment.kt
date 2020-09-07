@@ -20,7 +20,6 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     // Selected option.
-    private lateinit var optionsView: MutableList<CardView>
     private var selectedContinent: Int = 0
 
     override fun onCreateView(
@@ -32,9 +31,7 @@ class HomeFragment : Fragment() {
          * Inflate the layout for this fragment.
          */
         // Use DataBindingUtil.inflate to inflate and return the Fragment in onCreateView.
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_home, container, false
-        )
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates.
         binding.lifecycleOwner = viewLifecycleOwner
@@ -42,18 +39,10 @@ class HomeFragment : Fragment() {
         /*
          * SharedPreferences.
          */
-        // Get and set the current username.
+        // Get name from SharedPreferences.
         val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
+        // Update name view from SharedPreferences.
         binding.tvWelcome.text = getString(R.string.home_welcome, name)
-
-        optionsView = mutableListOf(
-            binding.cvAfrica,
-            binding.cvAsia,
-            binding.cvEurope,
-            binding.cvNorthAmerica,
-            binding.cvOceania,
-            binding.cvSouthAmerica
-        )
 
         // Get option selected.
         selectedOptionsView()
@@ -61,23 +50,26 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        // Get and set the current username.
-        val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
-        binding.tvWelcome.text = getString(R.string.home_welcome, name)
-    }
-
     /**
      * Set the option view to selected.
      */
     private fun selectedOptionsView() {
+        // Get views.
+        val optionsView: MutableList<CardView> =
+            mutableListOf(
+                binding.cvAfrica,
+                binding.cvAsia,
+                binding.cvEurope,
+                binding.cvNorthAmerica,
+                binding.cvOceania,
+                binding.cvSouthAmerica
+            )
+        // Set selected option from selected view.
         for ((index, option) in optionsView.withIndex()) {
             option.setOnClickListener {
-
-                // Get the selected option.
+                // Update selected option.
                 selectedContinent = index + 1
-
+                // Start quiz of selected option.
                 startQuiz(it)
             }
         }
@@ -121,5 +113,13 @@ class HomeFragment : Fragment() {
             }
             else -> showToast(requireContext(), getString(R.string.home_select_continent))
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Get current name from SharedPreferences.
+        val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
+        // Update name on view.
+        binding.tvWelcome.text = getString(R.string.home_welcome, name)
     }
 }

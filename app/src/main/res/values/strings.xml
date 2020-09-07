@@ -4,14 +4,14 @@
     <string name="quiz_flag_question">What is the country of this flag?</string>
     <string name="welcome_welcome">Welcome</string>
     <string name="welcome_name">Name</string>
-    <string name="country_flag_content">Country Flag.</string>
+    <string name="quiz_flag_content">Country Flag.</string>
     <string name="quiz_progress" translatable="false">%1$d/%2$d</string>
     <string name="quiz_btn_finish">Finish</string>
     <string name="quiz_btn_submit">Submit</string>
     <string name="quiz_btn_next_flag">Next Flag</string>
-    <string name="won_congrats">Congratulations %1$s!</string>
-    <string name="won_trophy_content">Trophy Image</string>
-    <string name="won_total_score">Your score is %1$d out of %2$d.</string>
+    <string name="quiz_congrats">Congratulations %1$s!</string>
+    <string name="quiz_trophy_content">Trophy Image</string>
+    <string name="quiz_score">Your score is %1$d out of %2$d.</string>
     <string name="welcome_btn_continue">Continue</string>
     <string name="option_rules">Rules</string>
     <string name="option_about">About</string>
@@ -223,12 +223,26 @@
     <string name="country_sa_venezuela" translatable="false">Venezuela</string>
     <string name="home_welcome">Welcome %1$s</string>
     <string name="home_select_start">Select a continent to start:</string>
-    <string name="theme_option">Theme</string>
-    <string name="about_option">About</string>
-    <string name="light_theme">Light</string>
-    <string name="dark_theme">Dark</string>
-    <string name="system_default_theme">System default</string>
-    <string name="theme_dialog_title">Theme</string>
-    <string name="cancel_dialog_option">Cancel</string>
+    <string name="menu_theme">Theme</string>
+    <string name="menu_about">About</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_theme_default">System default</string>
     <string name="quiz_play_again">Play Again</string>
+    <string name="quiz_sorry_lose">Sorry %1$s you lose!</string>
+    <string name="quiz_sad_face_content">Sad Emoji</string>
+    <string name="quiz_try_again">Try Again</string>
+    <string name="quiz_you_lose">You Lose!</string>
+    <string name="rules_one">1. Select the answer from the options given.</string>
+    <string name="rules_title">Flags Quiz will check how well you know the flags of the world!</string>
+    <string name="app_version">Version 1.0.0</string>
+    <string name="app_copyright" translatable="false">© 2020 Anibal Ventura</string>
+    <string name="theme_choose">Choose theme</string>
+    <string name="settings_change_name">Change name</string>
+    <string name="settings_name_selected">Name selected</string>
+    <string name="settings_theme_selected">Theme selected</string>
+    <string name="rules_two">2. Each time you get an answer correct, you advance to the next flag.</string>
+    <string name="rules_three">3. If you get 3 answers wrong, your quiz ends!</string>
+    <string name="rules_four">4. You can return to the home screen using up or back from within the quiz screen, and this will also end your quiz.</string>
+    <string name="rules_how_to_play">How to play?</string>
 </resources>

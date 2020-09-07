@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="@string/app_name"
-            android:textColor="@android:color/white"
+            android:textColor="@color/primaryTextColor"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/cvWelcome"
@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/welcome_welcome"
-                    android:textColor="@color/primaryTextColor"
+                    android:textColor="@color/secondaryTextColor"
                     android:textSize="30sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/welcome_enter_name"
-                    android:textColor="@color/primaryTextColor"
+                    android:textColor="@color/secondaryTextColor"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -86,9 +86,7 @@
                         android:id="@+id/etName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/welcome_name"
-                        android:textColor="#363A43"
-                        android:textColorHint="#7A8089" />
+                        android:hint="@string/welcome_name" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/welcome_btn_continue"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/primaryTextColor"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

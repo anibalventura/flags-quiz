@@ -2,8 +2,18 @@
 <resources>
     <color name="primaryColor">#1976d2</color>
     <color name="primaryDarkColor">#1976d2</color>
-    <color name="primaryTextColor">#000000</color>
+    <color name="accentColor">#1976d2</color>
+    <color name="primaryTextColor">#FFFFFF</color>
     <color name="secondaryTextColor">#000000</color>
+    <color name="iconColor">#1976d2</color>
     <color name="quizBgRight">#B300FF0A</color>
     <color name="quizBgWrong">#B3FF0000</color>
+
+    <!-- Continents Colors -->
+    <color name="continentAfrica">#FF9800</color>
+    <color name="continentAsia">#F44336</color>
+    <color name="continentEurope">#009688</color>
+    <color name="continentNorthAmerica">#5368DB</color>
+    <color name="continentOceania">#03A9F4</color>
+    <color name="continentSouthAmerica">#4CAF50</color>
 </resources>

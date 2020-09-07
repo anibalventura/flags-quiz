@@ -6,13 +6,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         tools:context=".ui.fragments.QuizWonFragment">
 
         <ImageView
             android:id="@+id/ivResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/won_trophy_content"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:contentDescription="@string/quiz_trophy_content"
             android:src="@drawable/ic_trophy"
             app:layout_constraintBottom_toTopOf="@+id/tvResultCongrats"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/won_congrats"
+            android:text="@string/quiz_congrats"
+            android:textAlignment="center"
+            android:textColor="@color/secondaryTextColor"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tvResultScore"
@@ -39,26 +42,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/secondaryTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/btnWonFinish"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvResultCongrats"
-            tools:text="@string/won_total_score" />
+            tools:text="@string/quiz_score" />
 
         <Button
             android:id="@+id/btnWonFinish"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/quiz_btn_finish"
+            android:textColor="@color/primaryTextColor"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/btnPlayAgain"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlayAgain"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvResultScore" />
 
@@ -66,15 +71,15 @@
             android:id="@+id/btnPlayAgain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
             android:text="@string/quiz_play_again"
+            android:textColor="@color/primaryTextColor"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnWonFinish"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnWonFinish" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnWonFinish" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

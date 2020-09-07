@@ -17,6 +17,9 @@ class QuizWonFragment : Fragment() {
     // Use DataBinding.
     private lateinit var binding: FragmentQuizWonBinding
 
+    // SafeArgs, get the arguments from the WonFragment, passed from QuizFragment.
+    private lateinit var args: QuizWonFragmentArgs
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,17 +41,19 @@ class QuizWonFragment : Fragment() {
          */
         // Get and set the current username.
         val username = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
-        binding.tvResultCongrats.text = getString(R.string.won_congrats, username)
+        binding.tvResultCongrats.text = getString(R.string.quiz_congrats, username)
 
         /*
          * SafeArgs.
          */
-        // Get the arguments from the WonFragment, passed from QuizFragment.
-        val args = QuizWonFragmentArgs.fromBundle(requireArguments())
         // Set the score view with the arguments.
+        args = QuizWonFragmentArgs.fromBundle(requireArguments())
         binding.tvResultScore.text =
-            getString(R.string.won_total_score, args.correntAnswers, args.totalQuestions)
+            getString(R.string.quiz_score, args.correntAnswers, args.totalQuestions)
 
+        /*
+         * Buttons.
+         */
         // Back to the HomeFragment.
         binding.btnWonFinish.setOnClickListener { view: View ->
             view.findNavController()
@@ -66,7 +71,6 @@ class QuizWonFragment : Fragment() {
      * Pass the selected continent via SafeArgs to QuizFragment.
      */
     private fun startQuiz(view: View) {
-        val args = QuizWonFragmentArgs.fromBundle(requireArguments())
         when (args.selectedContinent) {
             getString(R.string.continent_africa) -> view.findNavController()
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_africa)))

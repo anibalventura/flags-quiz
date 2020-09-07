@@ -1,6 +1,5 @@
 package com.anibalventura.flagsquiz.ui.activities
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -16,8 +15,6 @@ class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Set theme after splash screen.
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
 
         // Use DataBinding to set the activity view.
@@ -35,17 +32,16 @@ class WelcomeActivity : AppCompatActivity() {
         if (binding.etName.text.toString().isEmpty()) {
             showToast(this, getString(R.string.welcome_enter_name))
         } else {
-            // Get and save the userName on sharedPref.
+            // Get name input.
             val userName = binding.etName.text.toString()
+
+            // Put name input on sharedPref.
             Utils.sharedPref(this).edit().putString(CONST.USER_NAME, userName).apply()
+            // Update SharedPreferences to not show again this activity.
+            Utils.sharedPref(this).edit().putBoolean(CONST.SHOW_ACT, true).apply()
 
-            // Start the MainActivity and finish the WelcomeActivity.
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            // Finish WelcomeActivity to start the MainActivity.
             finish()
-
-            // Don't show more this activity.
-            Utils.sharedPref(this).edit().putBoolean(CONST.START_ACT, true).apply()
         }
     }
 }

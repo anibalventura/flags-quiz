@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
      * Start the WelcomeActivity when the user install the app.
      */
     private fun startWelcome() {
-        // Initialize SharedPreferences.
         when {
-            !sharedPref(this).getBoolean(CONST.START_ACT, false) -> {
+            // Get status from SharedPreferences.
+            !sharedPref(this).getBoolean(CONST.SHOW_ACT, false) -> {
                 val intent = Intent(this, WelcomeActivity::class.java)
                 startActivity(intent)
             }
