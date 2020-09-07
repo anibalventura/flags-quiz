@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         setupNavigation()
 
         // Setup theme.
-        Utils.setTheme()
+        Utils.setupTheme(this)
     }
 
     /*

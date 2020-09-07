@@ -7,14 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/primaryColor"
-        android:padding="16dp"
         tools:context=".ui.activities.WelcomeActivity">
 
         <TextView
             android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/app_name"
             android:textColor="@color/primaryTextColor"
             android:textSize="30sp"
@@ -30,9 +29,8 @@
             android:id="@+id/cvWelcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@android:color/white"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,10 +41,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="8dp">
+                android:padding="8dp">
 
                 <TextView
                     android:id="@+id/tvWelcome"
@@ -77,7 +72,11 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:boxStrokeColor="@color/editTextColor"
+                    app:hintTextColor="@color/editTextColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvEnterName">
@@ -92,16 +91,25 @@
 
                 <Button
                     android:id="@+id/btnContinue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/Button"
                     android:layout_marginTop="8dp"
                     android:text="@string/welcome_btn_continue"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tiName" />
+
+                <TextView
+                    android:id="@+id/tvSkip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/welcome_skip"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnContinue" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

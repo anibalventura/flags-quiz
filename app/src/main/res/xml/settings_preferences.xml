@@ -10,12 +10,12 @@
 
     <ListPreference
         android:defaultValue="0"
-        android:dialogTitle="@string/theme_choose"
+        android:dialogTitle="@string/settings_theme_choose"
         android:entries="@array/settings_list_themes_titles"
         android:entryValues="@array/settings_list_themes_values"
         android:key="theme"
         android:summary="@string/settings_theme_selected"
-        android:title="@string/menu_theme"
+        android:title="@string/settings_theme"
         app:dialogIcon="@drawable/ic_theme"
         app:icon="@drawable/ic_theme" />
 </PreferenceScreen>

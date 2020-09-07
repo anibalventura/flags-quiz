@@ -18,12 +18,19 @@ class Utils : Application() {
 
     companion object {
         /*
-         * Get app resourses anywhere in the app.
+         * Get app resources anywhere in the app.
          */
         var instance: Utils? = null
             private set
         var resourses: Resources? = null
             private set
+
+        /*
+         * SharedPreferences.
+         */
+        fun sharedPref(context: Context): SharedPreferences {
+            return PreferenceManager.getDefaultSharedPreferences(context)
+        }
 
         /*
          * Show Toast.
@@ -33,24 +40,15 @@ class Utils : Application() {
         }
 
         /*
-         * Setup the theme.
+         * Setup the current theme.
          */
-        fun setTheme() {
-            // Specify the context of the fragment for the shared preferences.
-            val sharedPref = PreferenceManager.getDefaultSharedPreferences(instance)
+        fun setupTheme(context: Context) {
             // Set the theme from the sharedPref value.
-            when (sharedPref.getString(CONST.THEME, "0")) {
+            when (sharedPref(context).getString(CONST.THEME, "0")) {
                 "1" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 "2" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 "0" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
-        }
-
-        /*
-         * SharedPreferences.
-         */
-        fun sharedPref(context: Context): SharedPreferences {
-            return PreferenceManager.getDefaultSharedPreferences(context)
         }
     }
 }

@@ -25,12 +25,19 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             .commit()
 
         // Set toolbar.
-        setSupportActionBar(toolbar)
-        // Set navigateUp button.
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setupToolbar()
 
         PreferenceManager.getDefaultSharedPreferences(this)
             .registerOnSharedPreferenceChangeListener(this)
+    }
+
+    private fun setupToolbar() {
+        // Set the toolbar.
+        setSupportActionBar(toolbar)
+        // Update toolbar title.
+        this.title = getString(R.string.menu_settings)
+        // Set navigateUp button.
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     /*
@@ -38,7 +45,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
      */
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         // Update theme selected.
-        Utils.setTheme()
+        Utils.setupTheme(this)
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {

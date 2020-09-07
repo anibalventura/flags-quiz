@@ -30,11 +30,11 @@ class QuizOverFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         /*
-         * SharedPreferences.
+         * Update name from SharedPreferences.
          */
-        // // Get name from SharedPreferences.
+        // // Get current name.
         val username = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
-        // Update name view from SharedPreferences.
+        // Update view with name.
         binding.tvResultSorry.text = getString(R.string.quiz_sorry_lose, username)
 
         /*

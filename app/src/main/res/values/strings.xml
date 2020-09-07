@@ -13,12 +13,11 @@
     <string name="quiz_trophy_content">Trophy Image</string>
     <string name="quiz_score">Your score is %1$d out of %2$d.</string>
     <string name="welcome_btn_continue">Continue</string>
-    <string name="option_rules">Rules</string>
-    <string name="option_about">About</string>
-    <string name="option_settings">Settings</string>
-    <string name="quiz_select_option">Please select an option.</string>
+    <string name="menu_rules">Rules</string>
+    <string name="menu_about">About</string>
+    <string name="menu_settings">Settings</string>
+    <string name="quiz_select_answer">Please select an answer.</string>
     <string name="quiz_heart_content">Heart Icon.</string>
-    <string name="home_select_continent">Please select a continent.</string>
     <string name="continent_africa">Africa</string>
     <string name="continent_asia" translatable="false">Asia</string>
     <string name="continent_europe">Europe</string>
@@ -223,8 +222,7 @@
     <string name="country_sa_venezuela" translatable="false">Venezuela</string>
     <string name="home_welcome">Welcome %1$s</string>
     <string name="home_select_start">Select a continent to start:</string>
-    <string name="menu_theme">Theme</string>
-    <string name="menu_about">About</string>
+    <string name="settings_theme">Theme</string>
     <string name="settings_theme_light">Light</string>
     <string name="settings_theme_dark">Dark</string>
     <string name="settings_theme_default">System default</string>
@@ -237,7 +235,7 @@
     <string name="rules_title">Flags Quiz will check how well you know the flags of the world!</string>
     <string name="app_version">Version 1.0.0</string>
     <string name="app_copyright" translatable="false">© 2020 Anibal Ventura</string>
-    <string name="theme_choose">Choose theme</string>
+    <string name="settings_theme_choose">Choose theme</string>
     <string name="settings_change_name">Change name</string>
     <string name="settings_name_selected">Name selected</string>
     <string name="settings_theme_selected">Theme selected</string>
@@ -245,4 +243,6 @@
     <string name="rules_three">3. If you get 3 answers wrong, your quiz ends!</string>
     <string name="rules_four">4. You can return to the home screen using up or back from within the quiz screen, and this will also end your quiz.</string>
     <string name="rules_how_to_play">How to play?</string>
+    <string name="quiz_you_won">You Won!</string>
+    <string name="welcome_skip">Skip</string>
 </resources>

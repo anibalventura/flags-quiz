@@ -21,6 +21,7 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="android:navigationBarColor">@color/primaryColor</item>
+        <item name="colorAccent">@color/primaryTextColor</item>
     </style>
 
     <style name="PreferenceTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -29,4 +30,65 @@
         <item name="colorControlActivated">@color/accentColor</item>
         <item name="android:navigationBarColor">@color/primaryColor</item>
     </style>
+
+    <style name="Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- HomeFragment -->
+    <style name="HomeText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="HomeContinentImage">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="HomeCardView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">5dp</item>
+        <item name="layout_constraintVertical_bias">0.0</item>
+        <item name="layout_constraintHorizontal_bias">0.5</item>
+        <item name="layout_constraintVertical_chainStyle">packed</item>
+    </style>
+
+    <!-- QuizFragment -->
+    <style name="QuizLive">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="srcCompat">@drawable/ic_heart</item>
+    </style>
+
+    <style name="QuizAnswer">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_default_option_border</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="WonOverText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>

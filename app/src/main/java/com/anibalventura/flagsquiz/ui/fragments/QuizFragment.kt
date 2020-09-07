@@ -12,7 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
-import com.anibalventura.flagsquiz.Utils.Companion.showToast
+import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.data.local.db.*
 import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
 
@@ -21,9 +21,6 @@ class QuizFragment : Fragment() {
     // Use DataBinding.
     private lateinit var binding: FragmentQuizBinding
 
-    /*
-     * Quiz.
-     */
     // Questions.
     private lateinit var questions: MutableList<Question> // Questions from database.
     private lateinit var currentQuestion: Question
@@ -64,8 +61,10 @@ class QuizFragment : Fragment() {
             binding.tvAnswerThree,
             binding.tvAnswerFour
         )
+
         // Get selected continent for questions.
         selectedContinent()
+
         // Submit the answer.
         binding.btnSubmit.setOnClickListener { submitAnswer(it) }
 
@@ -120,23 +119,19 @@ class QuizFragment : Fragment() {
      * Setting the question to UI components.
      */
     private fun setQuestion() {
-        // Get a random question.
-        randomizeQuestions()
-
-        // Randomize the answers into a copy of the mutableList and shuffle them.
-        answers = currentQuestion.answers.toMutableList()
-        answers.shuffle()
+        // Set random question and answer.
+        randomQuestionAndAnswer()
 
         // Reset the view to default.
         defaultAnswerView()
 
-        // Set the progress
+        // Update the progress bar.
         binding.progressBar.progress = indexQuestion.plus(1)
         binding.progressBar.max = numQuestions
         binding.tvProgressBar.text =
             getString(R.string.quiz_progress, indexQuestion.plus(1), numQuestions)
 
-        // Set the view to the current question.
+        // Update the view to the current question.
         binding.ivFlag.setImageResource(currentQuestion.image)
         for ((index, answer) in answersView.withIndex()) {
             answer.text = answers[index]
@@ -144,7 +139,7 @@ class QuizFragment : Fragment() {
             answer.isClickable = true
         }
 
-        // Reset the button to "Submit".
+        // Update button view to "Submit".
         binding.btnSubmit.text = getString(R.string.quiz_btn_submit)
 
         // Cannot submit question if a option is not selected.
@@ -152,18 +147,23 @@ class QuizFragment : Fragment() {
     }
 
     /*
-     * Get a random question.
+     * Random question and answers orders.
      */
-    private fun randomizeQuestions() {
+    private fun randomQuestionAndAnswer() {
         // Set random order for questions.
         questions.shuffle()
-        // Get question.
+        // Update current question.
         currentQuestion = questions[indexQuestion]
+        // Set answers into a copy of the mutableList.
+        answers = currentQuestion.answers.toMutableList()
+        // Set random order for answers.
+        answers.shuffle()
     }
 
     /*
-     * Set the view of answersView to default.
+     * Update answers view.
      */
+    // Set the view of answersView to default.
     private fun defaultAnswerView() {
         for (answer in answersView) {
             answer.typeface = Typeface.DEFAULT
@@ -173,9 +173,7 @@ class QuizFragment : Fragment() {
         }
     }
 
-    /**
-     * Get the selected index answer and set the view.
-     */
+    // Get the selected index answer and set the view.
     private fun selectedAnswerView() {
         for ((index, answer) in answersView.withIndex()) {
             answer.setOnClickListener {
@@ -199,9 +197,7 @@ class QuizFragment : Fragment() {
         }
     }
 
-    /*
-     * Highlight the answer selected for wrong or right.
-     */
+    // Highlight the answer selected for wrong or right.
     private fun highlightAnswerView(answer: String, drawableView: Int) {
         for ((index) in answersView.withIndex()) {
             when (answer) {
@@ -223,7 +219,10 @@ class QuizFragment : Fragment() {
                 .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment(args.continent))
 
             // Show a toast if trying to submit question without an option.
-            !submitQuestion -> showToast(requireContext(), getString(R.string.quiz_select_option))
+            !submitQuestion -> Utils.showToast(
+                requireContext(),
+                getString(R.string.quiz_select_answer)
+            )
 
             // When pass to another question.
             indexAnswer == 5 -> { // The number 5 have no value, is only used to continue the quiz.

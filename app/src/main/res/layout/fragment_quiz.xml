@@ -21,35 +21,27 @@
 
             <ImageView
                 android:id="@+id/ivLiveOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                style="@style/QuizLive"
                 android:contentDescription="@string/quiz_heart_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ivLiveTwo"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_heart" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/ivLiveTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                style="@style/QuizLive"
                 android:contentDescription="@string/quiz_heart_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ivLiveThree"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_heart" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/ivLiveThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/QuizLive"
                 android:contentDescription="@string/quiz_heart_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_heart" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -101,51 +93,33 @@
 
                 <TextView
                     android:id="@+id/tvAnswerTwo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_default_option_border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:textColor="@color/secondaryTextColor"
-                    android:textSize="18sp"
+                    style="@style/QuizAnswer"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerThree"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvAnswerOne"
-                    tools:text="Dominican Republic" />
+                    tools:text="@string/country_na_dominican_republic" />
 
                 <TextView
                     android:id="@+id/tvAnswerFour"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    style="@style/QuizAnswer"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_default_option_border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:textColor="@color/secondaryTextColor"
-                    android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvAnswerThree"
-                    tools:text="Austria" />
+                    tools:text="@string/country_oc_australia" />
 
                 <TextView
                     android:id="@+id/tvAnswerThree"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    style="@style/QuizAnswer"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_default_option_border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:textColor="@color/secondaryTextColor"
-                    android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerFour"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvAnswerTwo"
-                    tools:text="Armenia" />
+                    tools:text="@string/country_as_armenia" />
 
                 <ImageView
                     android:id="@+id/ivFlag"
@@ -161,30 +135,20 @@
 
                 <TextView
                     android:id="@+id/tvAnswerOne"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    style="@style/QuizAnswer"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/bg_default_option_border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:textColor="@color/secondaryTextColor"
-                    android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerTwo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ivFlag"
                     app:layout_constraintVertical_chainStyle="packed"
-                    tools:text="Argentina" />
+                    tools:text="@string/country_sa_argentina" />
 
                 <Button
                     android:id="@+id/btnSubmit"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    style="@style/Button"
+                    android:layout_marginTop="8dp"
                     android:text="@string/quiz_btn_submit"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -198,10 +162,12 @@
                     android:text="@string/quiz_flag_question"
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/ivFlag"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
                     app:layout_constraintVertical_chainStyle="spread" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 

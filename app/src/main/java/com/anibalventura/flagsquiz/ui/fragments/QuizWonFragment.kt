@@ -37,10 +37,11 @@ class QuizWonFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         /*
-         * SharedPreferences.
+         * Update name from SharedPreferences.
          */
-        // Get and set the current username.
+        // Get the current name.
         val username = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
+        // Update view with name.
         binding.tvResultCongrats.text = getString(R.string.quiz_congrats, username)
 
         /*

@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
-import com.anibalventura.flagsquiz.Utils.Companion.showToast
 import com.anibalventura.flagsquiz.data.local.CONST
 import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
 
@@ -36,18 +35,23 @@ class HomeFragment : Fragment() {
         // This is used so that the binding can observe LiveData updates.
         binding.lifecycleOwner = viewLifecycleOwner
 
-        /*
-         * SharedPreferences.
-         */
-        // Get name from SharedPreferences.
-        val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
-        // Update name view from SharedPreferences.
-        binding.tvWelcome.text = getString(R.string.home_welcome, name)
+        // Update name.
+        updateName()
 
         // Get option selected.
         selectedOptionsView()
 
         return binding.root
+    }
+
+    /*
+     * Update name from SharedPreferences.
+     */
+    private fun updateName() {
+        // Get current  name.
+        val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
+        // Update view with name.
+        binding.tvWelcome.text = getString(R.string.home_welcome, name)
     }
 
     /**
@@ -111,15 +115,11 @@ class HomeFragment : Fragment() {
                     .navigate(HomeFragmentDirections.actionHomeFragmentToQuizFragment(getString(R.string.continent_south_america)))
                 selectedContinent = 0
             }
-            else -> showToast(requireContext(), getString(R.string.home_select_continent))
         }
     }
 
     override fun onResume() {
         super.onResume()
-        // Get current name from SharedPreferences.
-        val name = Utils.sharedPref(requireContext()).getString(CONST.USER_NAME, "")
-        // Update name on view.
-        binding.tvWelcome.text = getString(R.string.home_welcome, name)
+        updateName()
     }
 }

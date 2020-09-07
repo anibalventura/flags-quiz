@@ -24,14 +24,9 @@
 
         <TextView
             android:id="@+id/tvResultCongrats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/WonOverText"
             android:layout_marginTop="16dp"
             android:text="@string/quiz_congrats"
-            android:textAlignment="center"
-            android:textColor="@color/secondaryTextColor"
-            android:textSize="24sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tvResultScore"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:textAlignment="center"
             android:textColor="@color/secondaryTextColor"
             android:textSize="24sp"
@@ -53,33 +49,23 @@
 
         <Button
             android:id="@+id/btnWonFinish"
+            style="@style/Button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/quiz_btn_finish"
-            android:textColor="@color/primaryTextColor"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnPlayAgain"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnPlayAgain"
+            app:layout_constraintEnd_toEndOf="@+id/btnPlayAgain"
+            app:layout_constraintStart_toStartOf="@+id/btnPlayAgain"
             app:layout_constraintTop_toBottomOf="@+id/tvResultScore" />
 
         <Button
             android:id="@+id/btnPlayAgain"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            style="@style/Button"
             android:text="@string/quiz_play_again"
-            android:textColor="@color/primaryTextColor"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/btnWonFinish"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnWonFinish" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnWonFinish" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

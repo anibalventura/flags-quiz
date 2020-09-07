@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/quizWonFragment"
         android:name="com.anibalventura.flagsquiz.ui.fragments.QuizWonFragment"
-        android:label="You Won!"
+        android:label="@string/quiz_you_won"
         tools:layout="@layout/fragment_quiz_won">
         <action
             android:id="@+id/action_wonFragment_to_quizFragment"
@@ -49,7 +49,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.anibalventura.flagsquiz.ui.fragments.HomeFragment"
-        android:label="Flags Quiz"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
@@ -75,7 +75,7 @@
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.anibalventura.flagsquiz.ui.fragments.RulesFragment"
-        android:label="Rules"
+        android:label="@string/menu_rules"
         tools:layout="@layout/fragment_rules">
         <action
             android:id="@+id/action_rulesFragment_to_homeFragment"
@@ -84,7 +84,7 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.anibalventura.flagsquiz.ui.fragments.AboutFragment"
-        android:label="About"
+        android:label="@string/menu_about"
         tools:layout="@layout/fragment_about">
         <action
             android:id="@+id/action_aboutFragment_to_homeFragment"
@@ -93,5 +93,6 @@
     <activity
         android:id="@+id/settingsActivity"
         android:name="com.anibalventura.flagsquiz.ui.activities.SettingsActivity"
-        android:label="@string/option_settings" />
+        android:label="@string/menu_settings"
+        tools:layout="@layout/settings_activity" />
 </navigation>

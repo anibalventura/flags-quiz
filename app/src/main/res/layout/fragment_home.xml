@@ -31,13 +31,10 @@
 
             <TextView
                 android:id="@+id/tvSelectContinent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/HomeText"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/home_select_start"
-                android:textColor="@color/secondaryTextColor"
-                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,13 +62,9 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvAfrica"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    style="@style/HomeCardView"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/cvEurope"
                     app:layout_constraintEnd_toStartOf="@+id/cvAsia"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -83,13 +76,9 @@
 
                         <TextView
                             android:id="@+id/tvAfrica"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/HomeText"
                             android:layout_marginTop="8dp"
-                            android:gravity="center"
                             android:text="@string/continent_africa"
-                            android:textColor="@color/secondaryTextColor"
-                            android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -97,28 +86,21 @@
 
                         <ImageView
                             android:id="@+id/ivAfrica"
-                            android:layout_width="80dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
+                            style="@style/HomeContinentImage"
+                            android:contentDescription="@string/continent_africa"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_continent_africa"
-                            android:contentDescription="@string/continent_africa" />
+                            app:srcCompat="@drawable/ic_continent_africa" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvAsia"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    style="@style/HomeCardView"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@android:color/white"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/cvNorthAmerica"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/cvAfrica"
                     app:layout_constraintTop_toTopOf="parent">
@@ -130,13 +112,9 @@
 
                         <TextView
                             android:id="@+id/tvAsia"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/HomeText"
                             android:layout_marginTop="8dp"
-                            android:gravity="center"
                             android:text="@string/continent_asia"
-                            android:textColor="@color/secondaryTextColor"
-                            android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -144,28 +122,21 @@
 
                         <ImageView
                             android:id="@+id/ivAsia"
-                            android:layout_width="80dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
+                            style="@style/HomeContinentImage"
+                            android:contentDescription="@string/continent_asia"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_continent_asia"
-                            android:contentDescription="@string/continent_asia" />
+                            app:srcCompat="@drawable/ic_continent_asia" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvEurope"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    style="@style/HomeCardView"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@android:color/white"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/cvOceania"
                     app:layout_constraintEnd_toStartOf="@+id/cvNorthAmerica"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cvAfrica">
@@ -177,13 +148,9 @@
 
                         <TextView
                             android:id="@+id/tvEurope"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/HomeText"
                             android:layout_marginTop="8dp"
-                            android:gravity="center"
                             android:text="@string/continent_europe"
-                            android:textColor="@color/secondaryTextColor"
-                            android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -191,28 +158,21 @@
 
                         <ImageView
                             android:id="@+id/ivEurope"
-                            android:layout_width="80dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
+                            style="@style/HomeContinentImage"
+                            android:contentDescription="@string/continent_europe"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_continent_europe"
-                            android:contentDescription="@string/continent_europe" />
+                            app:srcCompat="@drawable/ic_continent_europe" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvNorthAmerica"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    style="@style/HomeCardView"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@android:color/white"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/cvSouthAmerica"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/cvEurope"
                     app:layout_constraintTop_toBottomOf="@+id/cvAsia">
@@ -224,13 +184,9 @@
 
                         <TextView
                             android:id="@+id/tvNorthAmerica"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/HomeText"
                             android:layout_marginTop="8dp"
-                            android:gravity="center"
                             android:text="@string/continent_north_america"
-                            android:textColor="@color/secondaryTextColor"
-                            android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -238,28 +194,21 @@
 
                         <ImageView
                             android:id="@+id/ivNorthAmerica"
-                            android:layout_width="80dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
+                            style="@style/HomeContinentImage"
+                            android:contentDescription="@string/continent_north_america"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_continent_north_america"
-                            android:contentDescription="@string/continent_north_america" />
+                            app:srcCompat="@drawable/ic_continent_north_america" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvOceania"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    style="@style/HomeCardView"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@android:color/white"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cvSouthAmerica"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cvEurope">
@@ -271,13 +220,9 @@
 
                         <TextView
                             android:id="@+id/tvOceania"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/HomeText"
                             android:layout_marginTop="8dp"
-                            android:gravity="center"
                             android:text="@string/continent_oceania"
-                            android:textColor="@color/secondaryTextColor"
-                            android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -285,28 +230,21 @@
 
                         <ImageView
                             android:id="@+id/ivOceania"
-                            android:layout_width="80dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
+                            style="@style/HomeContinentImage"
+                            android:contentDescription="@string/continent_oceania"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_continent_oceania"
-                            android:contentDescription="@string/continent_oceania" />
+                            app:srcCompat="@drawable/ic_continent_oceania" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvSouthAmerica"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    style="@style/HomeCardView"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@android:color/white"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/cvOceania"
                     app:layout_constraintTop_toBottomOf="@+id/cvNorthAmerica">
@@ -318,13 +256,9 @@
 
                         <TextView
                             android:id="@+id/tvSouthAmerica"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            style="@style/HomeText"
                             android:layout_marginTop="8dp"
-                            android:gravity="center"
                             android:text="@string/continent_south_america"
-                            android:textColor="@color/secondaryTextColor"
-                            android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -332,14 +266,12 @@
 
                         <ImageView
                             android:id="@+id/ivSouthAmerica"
-                            android:layout_width="80dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
+                            style="@style/HomeContinentImage"
+                            android:contentDescription="@string/continent_south_america"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_continent_south_america"
-                            android:contentDescription="@string/continent_south_america" />
+                            app:srcCompat="@drawable/ic_continent_south_america" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>

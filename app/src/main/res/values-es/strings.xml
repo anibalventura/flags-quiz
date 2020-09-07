@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="welcome_enter_name">Por favor ingresa tu nombre.</string>
-    <string name="quiz_flag_question">Cual es la bandera de este país?</string>
+    <string name="quiz_flag_question">Cual es el país de esta bandera?</string>
     <string name="welcome_welcome">Bienvenido</string>
     <string name="welcome_name">Nombre</string>
     <string name="quiz_flag_content">Bandera del país.</string>
@@ -12,12 +12,11 @@
     <string name="quiz_trophy_content">Imagen de Trofeo</string>
     <string name="quiz_score">Tu puntuación es %1$d de %2$d.</string>
     <string name="welcome_btn_continue">Continuar</string>
-    <string name="option_rules">Reglas</string>
-    <string name="option_about">Acerca de</string>
-    <string name="option_settings">Configuraciones</string>
-    <string name="quiz_select_option">Por favor seleccionar una opción.</string>
+    <string name="menu_rules">Reglas</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="quiz_select_answer">Por favor selecciona una respuesta.</string>
     <string name="quiz_heart_content">Icono de Corazón.</string>
-    <string name="home_select_continent">Por favor seleccionar un continente.</string>
     <string name="continent_europe">Europa</string>
     <string name="continent_africa">África</string>
     <string name="continent_north_america">Norteamérica</string>
@@ -132,21 +131,20 @@
     <string name="country_sa_suriname">Surinam</string>
     <string name="country_sa_trinidad_and_tobago">Trinidad y Tobago</string>
     <string name="home_welcome">Bienvenido %1$s</string>
-    <string name="menu_theme">Tema</string>
-    <string name="menu_about">Acerca de</string>
+    <string name="settings_theme">Tema</string>
     <string name="settings_theme_light">Claro</string>
     <string name="settings_theme_dark">Oscuro</string>
     <string name="settings_theme_default">Predeterminado del sistema</string>
-    <string name="home_select_start">Seleccionar un continente para iniciar:</string>
+    <string name="home_select_start">Selecciona un continente para iniciar:</string>
     <string name="quiz_play_again">Jugar de Nuevo</string>
     <string name="quiz_sorry_lose">Lo siento %1$s has perdido!</string>
     <string name="quiz_sad_face_content">Emoji Triste</string>
     <string name="quiz_try_again">Inténta de Nuevo</string>
-    <string name="quiz_you_lose">Has pedido!</string>
+    <string name="quiz_you_lose">Has Perdido!</string>
     <string name="rules_title">¡Flags Quiz comprobará qué tan bien conoces las banderas del mundo!</string>
     <string name="rules_one">1. Selecciona la respuesta de las opciones dadas.</string>
     <string name="app_version">Versión 1.0.0</string>
-    <string name="theme_choose">Seleccionar tema</string>
+    <string name="settings_theme_choose">Seleccionar tema</string>
     <string name="settings_change_name">Cambiar nombre</string>
     <string name="settings_name_selected">Nombre seleccionado</string>
     <string name="settings_theme_selected">Tema seleccionado</string>
@@ -154,4 +152,6 @@
     <string name="rules_three">3. Si obtienes 3 respuestas incorrectas, ¡Tu quiz finaliza!</string>
     <string name="rules_four">4. Puedes volver a la pantalla de inicio usando el boton arriba o atras desde la pantalla del quiz, y esto también hara que el quiz finalice.</string>
     <string name="rules_how_to_play">Como jugar?</string>
+    <string name="quiz_you_won">Has Ganado!</string>
+    <string name="welcome_skip">Omitir</string>
 </resources>

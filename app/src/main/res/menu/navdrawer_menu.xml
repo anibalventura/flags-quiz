@@ -4,13 +4,13 @@
     <item
         android:id="@+id/rulesFragment"
         android:icon="@drawable/ic_rules"
-        android:title="@string/option_rules" />
+        android:title="@string/menu_rules" />
     <item
         android:id="@+id/aboutFragment"
         android:icon="@drawable/ic_about"
-        android:title="@string/option_about" />
+        android:title="@string/menu_about" />
     <item
         android:id="@+id/settingsActivity"
         android:icon="@drawable/ic_settings"
-        android:title="@string/option_settings" />
+        android:title="@string/menu_settings" />
 </menu>

@@ -8,6 +8,7 @@
     <color name="iconColor">#1976d2</color>
     <color name="quizBgRight">#B300FF0A</color>
     <color name="quizBgWrong">#B3FF0000</color>
+    <color name="editTextColor">@color/primaryColor</color>
 
     <!-- Continents Colors -->
     <color name="continentAfrica">#FF9800</color>
