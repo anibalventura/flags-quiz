@@ -7,6 +7,6 @@ class CONST {
         const val THEME = "theme"
 
         // Show WelcomeActivity.
-        const val SHOW_ACT = "start_act"
+        const val SHOW_ACT = "show_act"
     }
 }
