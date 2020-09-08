@@ -1,18 +1,26 @@
 package com.anibalventura.flagsquiz.data.local.db
 
-import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.R
+import com.anibalventura.flagsquiz.Utils
 
-// getString working.
+// Resources working.
 val utils = Utils.resourses!!
 
 /*
- * Contains all the data for the Africa continent.
+ * All the data for every question in the quiz.
+ */
+data class Flags(
+    val image: Int,
+    var answers: List<String>
+)
+
+/*
+ * Africa continent.
  */
 object Africa {
-    fun getQuestions(): MutableList<Question> {
+    fun getFlags(): MutableList<Flags> {
         return mutableListOf(
-            Question(
+            Flags(
                 R.drawable.af_algeria_flag,
                 listOf(
                     utils.getString(R.string.country_af_algeria),
@@ -21,7 +29,7 @@ object Africa {
                     utils.getString(R.string.country_af_tunisia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_angola_flag,
                 listOf(
                     utils.getString(R.string.country_af_angola),
@@ -30,7 +38,7 @@ object Africa {
                     utils.getString(R.string.country_af_south_sudan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_benin_flag,
                 listOf(
                     utils.getString(R.string.country_af_benin),
@@ -39,7 +47,7 @@ object Africa {
                     utils.getString(R.string.country_af_angola)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_botswana_flag,
                 listOf(
                     utils.getString(R.string.country_af_botswana),
@@ -48,7 +56,7 @@ object Africa {
                     utils.getString(R.string.country_af_south_sudan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_burkina_faso_flag,
                 listOf(
                     utils.getString(R.string.country_af_burkina_faso),
@@ -57,7 +65,7 @@ object Africa {
                     utils.getString(R.string.country_af_algeria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_burundi_flag,
                 listOf(
                     utils.getString(R.string.country_af_burundi),
@@ -66,7 +74,7 @@ object Africa {
                     utils.getString(R.string.country_af_libya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_cameroon_flag,
                 listOf(
                     utils.getString(R.string.country_af_cameroon),
@@ -75,7 +83,7 @@ object Africa {
                     utils.getString(R.string.country_af_tunisia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_cape_verde_flag,
                 listOf(
                     utils.getString(R.string.country_af_cape_verde),
@@ -84,7 +92,7 @@ object Africa {
                     utils.getString(R.string.country_af_senegal)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_central_african_republic_flag,
                 listOf(
                     utils.getString(R.string.country_af_central_african_republic),
@@ -93,7 +101,7 @@ object Africa {
                     utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_chad_flag,
                 listOf(
                     utils.getString(R.string.country_af_chad),
@@ -102,7 +110,7 @@ object Africa {
                     utils.getString(R.string.country_af_tanzania)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_comoros_flag,
                 listOf(
                     utils.getString(R.string.country_af_comoros),
@@ -111,7 +119,7 @@ object Africa {
                     utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_congo_democratic_republic_of_the_flag,
                 listOf(
                     utils.getString(R.string.country_af_democatic_republic_congo),
@@ -120,7 +128,7 @@ object Africa {
                     utils.getString(R.string.country_af_tunisia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_congo_republic_of_the_flag,
                 listOf(
                     utils.getString(R.string.country_af_republic_congo),
@@ -129,7 +137,7 @@ object Africa {
                     utils.getString(R.string.country_af_cote_d_ivoire)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_cote_d_ivoire_flag,
                 listOf(
                     utils.getString(R.string.country_af_cote_d_ivoire),
@@ -138,7 +146,7 @@ object Africa {
                     utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_djibouti_flag,
                 listOf(
                     utils.getString(R.string.country_af_djibouti),
@@ -147,7 +155,7 @@ object Africa {
                     utils.getString(R.string.country_af_angola)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_egypt_flag,
                 listOf(
                     utils.getString(R.string.country_af_egypt),
@@ -156,7 +164,7 @@ object Africa {
                     utils.getString(R.string.country_af_burkina_faso)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_equatorial_guinea_flag,
                 listOf(
                     utils.getString(R.string.country_af_equatorial_guinea),
@@ -165,7 +173,7 @@ object Africa {
                     utils.getString(R.string.country_af_tunisia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_eritrea_flag,
                 listOf(
                     utils.getString(R.string.country_af_eritrea),
@@ -174,7 +182,7 @@ object Africa {
                     utils.getString(R.string.country_af_tanzania)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_ethiopia_flag,
                 listOf(
                     utils.getString(R.string.country_af_ethiopia),
@@ -183,7 +191,7 @@ object Africa {
                     utils.getString(R.string.country_af_burkina_faso)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_gabon_flag,
                 listOf(
                     utils.getString(R.string.country_af_gabon),
@@ -192,7 +200,7 @@ object Africa {
                     utils.getString(R.string.country_af_botswana)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_gambia_flag,
                 listOf(
                     utils.getString(R.string.country_af_gambia),
@@ -201,7 +209,7 @@ object Africa {
                     utils.getString(R.string.country_af_ethiopia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_ghana_flag,
                 listOf(
                     utils.getString(R.string.country_af_ghana),
@@ -210,7 +218,7 @@ object Africa {
                     utils.getString(R.string.country_af_gambia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_guinea_bissau_flag,
                 listOf(
                     utils.getString(R.string.country_af_guinea_bissau),
@@ -219,7 +227,7 @@ object Africa {
                     utils.getString(R.string.country_af_zimbabwe)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_guinea_flag,
                 listOf(
                     utils.getString(R.string.country_af_guinea),
@@ -228,7 +236,7 @@ object Africa {
                     utils.getString(R.string.country_af_angola)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_kenya_flag,
                 listOf(
                     utils.getString(R.string.country_af_kenya),
@@ -237,7 +245,7 @@ object Africa {
                     utils.getString(R.string.country_af_gambia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_lesotho_flag,
                 listOf(
                     utils.getString(R.string.country_af_lesotho),
@@ -246,7 +254,7 @@ object Africa {
                     utils.getString(R.string.country_af_gambia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_liberia_flag,
                 listOf(
                     utils.getString(R.string.country_af_liberia),
@@ -255,7 +263,7 @@ object Africa {
                     utils.getString(R.string.country_af_algeria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_libya_flag,
                 listOf(
                     utils.getString(R.string.country_af_libya),
@@ -264,7 +272,7 @@ object Africa {
                     utils.getString(R.string.country_af_tanzania)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_madagascar_flag,
                 listOf(
                     utils.getString(R.string.country_af_madagascar),
@@ -273,7 +281,7 @@ object Africa {
                     utils.getString(R.string.country_af_kenya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_malawi_flag,
                 listOf(
                     utils.getString(R.string.country_af_malawi),
@@ -282,7 +290,7 @@ object Africa {
                     utils.getString(R.string.country_af_kenya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_mali_flag,
                 listOf(
                     utils.getString(R.string.country_af_mali),
@@ -291,7 +299,7 @@ object Africa {
                     utils.getString(R.string.country_af_algeria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_mauritania_flag,
                 listOf(
                     utils.getString(R.string.country_af_mauritania),
@@ -300,7 +308,7 @@ object Africa {
                     utils.getString(R.string.country_af_libya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_mauritius_flag,
                 listOf(
                     utils.getString(R.string.country_af_mauritius),
@@ -309,7 +317,7 @@ object Africa {
                     utils.getString(R.string.country_af_kenya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_morocco_flag,
                 listOf(
                     utils.getString(R.string.country_af_morocco),
@@ -318,7 +326,7 @@ object Africa {
                     utils.getString(R.string.country_af_cote_d_ivoire)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_mozambique_flag,
                 listOf(
                     utils.getString(R.string.country_af_mozambique),
@@ -327,7 +335,7 @@ object Africa {
                     utils.getString(R.string.country_af_kenya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_namibia_flag,
                 listOf(
                     utils.getString(R.string.country_af_namibia),
@@ -336,7 +344,7 @@ object Africa {
                     utils.getString(R.string.country_af_angola)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_niger_flag,
                 listOf(
                     utils.getString(R.string.country_af_niger),
@@ -345,7 +353,7 @@ object Africa {
                     utils.getString(R.string.country_af_niger)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_nigeria_flag,
                 listOf(
                     utils.getString(R.string.country_af_nigeria),
@@ -354,7 +362,7 @@ object Africa {
                     utils.getString(R.string.country_af_equatorial_guinea)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_rwanda_flag,
                 listOf(
                     utils.getString(R.string.country_af_rwanda),
@@ -363,7 +371,7 @@ object Africa {
                     utils.getString(R.string.country_af_angola)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_sao_tome_and_principe_flag,
                 listOf(
                     utils.getString(R.string.country_af_sao_tome_principe),
@@ -372,7 +380,7 @@ object Africa {
                     utils.getString(R.string.country_af_libya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_senegal_flag,
                 listOf(
                     utils.getString(R.string.country_af_senegal),
@@ -381,7 +389,7 @@ object Africa {
                     utils.getString(R.string.country_af_niger)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_seychelles_flag,
                 listOf(
                     utils.getString(R.string.country_af_seychelles),
@@ -390,7 +398,7 @@ object Africa {
                     utils.getString(R.string.country_af_angola)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_sierra_leone_flag,
                 listOf(
                     utils.getString(R.string.country_af_sierra_leone),
@@ -399,7 +407,7 @@ object Africa {
                     utils.getString(R.string.country_af_morocco)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_somalia_flag,
                 listOf(
                     utils.getString(R.string.country_af_somalia),
@@ -408,7 +416,7 @@ object Africa {
                     utils.getString(R.string.country_af_algeria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_south_africa_flag,
                 listOf(
                     utils.getString(R.string.country_af_south_africa),
@@ -417,7 +425,7 @@ object Africa {
                     utils.getString(R.string.country_af_niger)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_south_sudan_flag,
                 listOf(
                     utils.getString(R.string.country_af_south_sudan),
@@ -426,7 +434,7 @@ object Africa {
                     utils.getString(R.string.country_af_niger)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_sudan_flag,
                 listOf(
                     utils.getString(R.string.country_af_sudan),
@@ -435,7 +443,7 @@ object Africa {
                     utils.getString(R.string.country_af_morocco)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_swaziland_flag,
                 listOf(
                     utils.getString(R.string.country_af_swaziland),
@@ -444,7 +452,7 @@ object Africa {
                     utils.getString(R.string.country_af_botswana)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_tanzania_flag,
                 listOf(
                     utils.getString(R.string.country_af_tanzania),
@@ -453,7 +461,7 @@ object Africa {
                     utils.getString(R.string.country_af_swaziland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_togo_flag,
                 listOf(
                     utils.getString(R.string.country_af_togo),
@@ -462,7 +470,7 @@ object Africa {
                     utils.getString(R.string.country_af_libya)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_tunisia_flag,
                 listOf(
                     utils.getString(R.string.country_af_tunisia),
@@ -471,7 +479,7 @@ object Africa {
                     utils.getString(R.string.country_af_algeria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_uganda_flag,
                 listOf(
                     utils.getString(R.string.country_af_uganda),
@@ -480,7 +488,7 @@ object Africa {
                     utils.getString(R.string.country_af_equatorial_guinea)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_zambia_flag,
                 listOf(
                     utils.getString(R.string.country_af_zambia),
@@ -489,7 +497,7 @@ object Africa {
                     utils.getString(R.string.country_af_tunisia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.af_zimbabwe_flag,
                 listOf(
                     utils.getString(R.string.country_af_zimbabwe),
@@ -503,12 +511,12 @@ object Africa {
 }
 
 /*
- * Contains all the data for the Asia continent.
+ * Asia continent.
  */
 object Asia {
-    fun getQuestions(): MutableList<Question> {
+    fun getFlags(): MutableList<Flags> {
         return mutableListOf(
-            Question(
+            Flags(
                 R.drawable.as_afghanistan_flag,
                 listOf(
                     utils.getString(R.string.country_as_afghanistan),
@@ -517,7 +525,7 @@ object Asia {
                     utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_armenia_flag,
                 listOf(
                     utils.getString(R.string.country_as_armenia),
@@ -526,7 +534,7 @@ object Asia {
                     utils.getString(R.string.country_as_afghanistan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_azerbaijan_flag,
                 listOf(
                     utils.getString(R.string.country_as_azerbaijan),
@@ -535,7 +543,7 @@ object Asia {
                     utils.getString(R.string.country_as_iraq)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_bahrain_flag,
                 listOf(
                     utils.getString(R.string.country_as_bahrain),
@@ -544,7 +552,7 @@ object Asia {
                     utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_bangladesh_flag,
                 listOf(
                     utils.getString(R.string.country_as_bangladesh),
@@ -553,7 +561,7 @@ object Asia {
                     utils.getString(R.string.country_as_mongolia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_bhutan_flag,
                 listOf(
                     utils.getString(R.string.country_as_bhutan),
@@ -562,7 +570,7 @@ object Asia {
                     utils.getString(R.string.country_as_afghanistan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_brunei_flag,
                 listOf(
                     utils.getString(R.string.country_as_brunei),
@@ -571,7 +579,7 @@ object Asia {
                     utils.getString(R.string.country_as_bhutan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_cambodia_flag,
                 listOf(
                     utils.getString(R.string.country_as_cambodia),
@@ -580,7 +588,7 @@ object Asia {
                     utils.getString(R.string.country_as_turkey)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_china_flag,
                 listOf(
                     utils.getString(R.string.country_as_china),
@@ -589,7 +597,7 @@ object Asia {
                     utils.getString(R.string.country_as_cyprus)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_cyprus_flag,
                 listOf(
                     utils.getString(R.string.country_as_cyprus),
@@ -598,16 +606,16 @@ object Asia {
                     utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_india_flag,
                 listOf(
                     utils.getString(R.string.country_as_india),
                     utils.getString(R.string.country_as_turkey),
-                    utils.getString(R.string.country_as_india),
+                    utils.getString(R.string.country_as_cyprus),
                     utils.getString(R.string.country_as_mongolia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_indonesia_flag,
                 listOf(
                     utils.getString(R.string.country_as_indonesia),
@@ -616,7 +624,7 @@ object Asia {
                     utils.getString(R.string.country_as_kuwait)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_iran_flag,
                 listOf(
                     utils.getString(R.string.country_as_iran),
@@ -625,7 +633,7 @@ object Asia {
                     utils.getString(R.string.country_as_afghanistan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_iraq_flag,
                 listOf(
                     utils.getString(R.string.country_as_iraq),
@@ -634,7 +642,7 @@ object Asia {
                     utils.getString(R.string.country_as_kazakhstan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_israel_flag,
                 listOf(
                     utils.getString(R.string.country_as_israel),
@@ -643,7 +651,7 @@ object Asia {
                     utils.getString(R.string.country_as_uzbekistan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_japan_flag,
                 listOf(
                     utils.getString(R.string.country_as_japan),
@@ -652,7 +660,7 @@ object Asia {
                     utils.getString(R.string.country_as_sri_lanka)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_jordan_flag,
                 listOf(
                     utils.getString(R.string.country_as_jordan),
@@ -661,7 +669,7 @@ object Asia {
                     utils.getString(R.string.country_as_cyprus)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_kazakhstan_flag,
                 listOf(
                     utils.getString(R.string.country_as_kazakhstan),
@@ -670,7 +678,7 @@ object Asia {
                     utils.getString(R.string.country_as_iraq)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_kuwait_flag,
                 listOf(
                     utils.getString(R.string.country_as_kuwait),
@@ -679,7 +687,7 @@ object Asia {
                     utils.getString(R.string.country_as_japan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_kyrgyzstan_flag,
                 listOf(
                     utils.getString(R.string.country_as_kyrgyzstan),
@@ -688,7 +696,7 @@ object Asia {
                     utils.getString(R.string.country_as_japan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_laos_flag,
                 listOf(
                     utils.getString(R.string.country_as_laos),
@@ -697,7 +705,7 @@ object Asia {
                     utils.getString(R.string.country_as_japan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_lebanon_flag,
                 listOf(
                     utils.getString(R.string.country_as_lebanon),
@@ -706,7 +714,7 @@ object Asia {
                     utils.getString(R.string.country_as_japan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_malaysia_flag,
                 listOf(
                     utils.getString(R.string.country_as_malaysia),
@@ -715,7 +723,7 @@ object Asia {
                     utils.getString(R.string.country_as_japan)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_maldives_flag,
                 listOf(
                     utils.getString(R.string.country_as_maldives),
@@ -724,7 +732,7 @@ object Asia {
                     utils.getString(R.string.country_as_maldives)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_mongolia_flag,
                 listOf(
                     utils.getString(R.string.country_as_mongolia),
@@ -733,7 +741,7 @@ object Asia {
                     utils.getString(R.string.country_as_maldives)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_myanmar_flag,
                 listOf(
                     utils.getString(R.string.country_as_myanmar),
@@ -742,7 +750,7 @@ object Asia {
                     utils.getString(R.string.country_as_maldives)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_nepal_flag,
                 listOf(
                     utils.getString(R.string.country_as_nepal),
@@ -751,7 +759,7 @@ object Asia {
                     utils.getString(R.string.country_as_maldives)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_north_korea_flag,
                 listOf(
                     utils.getString(R.string.country_as_north_korea),
@@ -760,7 +768,7 @@ object Asia {
                     utils.getString(R.string.country_as_maldives)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_oman_flag,
                 listOf(
                     utils.getString(R.string.country_as_oman),
@@ -769,7 +777,7 @@ object Asia {
                     utils.getString(R.string.country_as_maldives)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_pakistan_flag,
                 listOf(
                     utils.getString(R.string.country_as_pakistan),
@@ -778,7 +786,7 @@ object Asia {
                     utils.getString(R.string.country_as_indonesia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_philippines_flag,
                 listOf(
                     utils.getString(R.string.country_as_philippines),
@@ -787,7 +795,7 @@ object Asia {
                     utils.getString(R.string.country_as_myanmar)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_qatar_flag,
                 listOf(
                     utils.getString(R.string.country_as_qatar),
@@ -796,7 +804,7 @@ object Asia {
                     utils.getString(R.string.country_as_indonesia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_russia_flag,
                 listOf(
                     utils.getString(R.string.country_as_russia),
@@ -805,7 +813,7 @@ object Asia {
                     utils.getString(R.string.country_as_iraq)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_saudi_arabia_flag,
                 listOf(
                     utils.getString(R.string.country_as_saudi_arabia),
@@ -814,7 +822,7 @@ object Asia {
                     utils.getString(R.string.country_as_indonesia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_singapore_flag,
                 listOf(
                     utils.getString(R.string.country_as_singapore),
@@ -823,7 +831,7 @@ object Asia {
                     utils.getString(R.string.country_as_myanmar)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_south_korea_flag,
                 listOf(
                     utils.getString(R.string.country_as_south_korea),
@@ -832,7 +840,7 @@ object Asia {
                     utils.getString(R.string.country_as_indonesia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_sri_lanka_flag,
                 listOf(
                     utils.getString(R.string.country_as_sri_lanka),
@@ -841,7 +849,7 @@ object Asia {
                     utils.getString(R.string.country_as_oman)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_syria_flag,
                 listOf(
                     utils.getString(R.string.country_as_syria),
@@ -850,7 +858,7 @@ object Asia {
                     utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_taiwan_flag,
                 listOf(
                     utils.getString(R.string.country_as_taiwan),
@@ -859,7 +867,7 @@ object Asia {
                     utils.getString(R.string.country_as_syria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_tajikistan_flag,
                 listOf(
                     utils.getString(R.string.country_as_tajikistan),
@@ -868,7 +876,7 @@ object Asia {
                     utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_thailand_flag,
                 listOf(
                     utils.getString(R.string.country_as_thailand),
@@ -877,7 +885,7 @@ object Asia {
                     utils.getString(R.string.country_as_syria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_turkey_flag,
                 listOf(
                     utils.getString(R.string.country_as_turkey),
@@ -886,7 +894,7 @@ object Asia {
                     utils.getString(R.string.country_as_sri_lanka)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_turkmenistan_flag,
                 listOf(
                     utils.getString(R.string.country_as_turkmenistan),
@@ -895,7 +903,7 @@ object Asia {
                     utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_united_arab_emirates_flag,
                 listOf(
                     utils.getString(R.string.country_as_united_arab_emirates),
@@ -904,7 +912,7 @@ object Asia {
                     utils.getString(R.string.country_as_saudi_arabia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_uzbekistan_flag,
                 listOf(
                     utils.getString(R.string.country_as_uzbekistan),
@@ -913,7 +921,7 @@ object Asia {
                     utils.getString(R.string.country_as_sri_lanka)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_vietnam_flag,
                 listOf(
                     utils.getString(R.string.country_as_vietnam),
@@ -922,7 +930,7 @@ object Asia {
                     utils.getString(R.string.country_as_iraq)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.as_yemen_flag,
                 listOf(
                     utils.getString(R.string.country_as_yemen),
@@ -936,12 +944,12 @@ object Asia {
 }
 
 /*
- * Contains all the data for the Europe continent.
+ * Europe continent.
  */
 object Europe {
-    fun getQuestions(): MutableList<Question> {
+    fun getFlags(): MutableList<Flags> {
         return mutableListOf(
-            Question(
+            Flags(
                 R.drawable.eu_albania_flag,
                 listOf(
                     utils.getString(R.string.country_eu_albania),
@@ -950,7 +958,7 @@ object Europe {
                     utils.getString(R.string.country_eu_latvia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_andorra_flag,
                 listOf(
                     utils.getString(R.string.country_eu_andorra),
@@ -959,7 +967,7 @@ object Europe {
                     utils.getString(R.string.country_eu_montenegro)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_austria_flag,
                 listOf(
                     utils.getString(R.string.country_eu_austria),
@@ -968,7 +976,7 @@ object Europe {
                     utils.getString(R.string.country_eu_norway)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_belarus_flag,
                 listOf(
                     utils.getString(R.string.country_eu_belarus),
@@ -977,7 +985,7 @@ object Europe {
                     utils.getString(R.string.country_eu_malta)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_belgium_flag,
                 listOf(
                     utils.getString(R.string.country_eu_belgium),
@@ -986,7 +994,7 @@ object Europe {
                     utils.getString(R.string.country_eu_vatican_city)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_bosnia_and_herzegovina_flag,
                 listOf(
                     utils.getString(R.string.country_eu_bosnia_and_herzegovina),
@@ -995,7 +1003,7 @@ object Europe {
                     utils.getString(R.string.country_eu_belarus)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_bulgaria_flag,
                 listOf(
                     utils.getString(R.string.country_eu_bulgaria),
@@ -1004,7 +1012,7 @@ object Europe {
                     utils.getString(R.string.country_eu_latvia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_croatia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_croatia),
@@ -1013,7 +1021,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_czech_republic_flag,
                 listOf(
                     utils.getString(R.string.country_eu_czech_republic),
@@ -1022,7 +1030,7 @@ object Europe {
                     utils.getString(R.string.country_eu_latvia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_denmark_flag,
                 listOf(
                     utils.getString(R.string.country_eu_denmark),
@@ -1031,7 +1039,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_estonia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_estonia),
@@ -1040,7 +1048,7 @@ object Europe {
                     utils.getString(R.string.country_eu_vatican_city)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_finland_flag,
                 listOf(
                     utils.getString(R.string.country_eu_finland),
@@ -1049,7 +1057,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_france_flag,
                 listOf(
                     utils.getString(R.string.country_eu_france),
@@ -1058,7 +1066,7 @@ object Europe {
                     utils.getString(R.string.country_eu_belarus)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_georgia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_georgia),
@@ -1067,7 +1075,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_germany_flag,
                 listOf(
                     utils.getString(R.string.country_eu_germany),
@@ -1076,7 +1084,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_greece_flag,
                 listOf(
                     utils.getString(R.string.country_eu_greece),
@@ -1085,7 +1093,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bulgaria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_hungary_flag,
                 listOf(
                     utils.getString(R.string.country_eu_hungary),
@@ -1094,7 +1102,7 @@ object Europe {
                     utils.getString(R.string.country_eu_spain)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_iceland_flag,
                 listOf(
                     utils.getString(R.string.country_eu_iceland),
@@ -1103,7 +1111,7 @@ object Europe {
                     utils.getString(R.string.country_eu_vatican_city)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_ireland_flag,
                 listOf(
                     utils.getString(R.string.country_eu_ireland),
@@ -1112,7 +1120,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_italy_flag,
                 listOf(
                     utils.getString(R.string.country_eu_italy),
@@ -1121,7 +1129,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_kosovo_flag,
                 listOf(
                     utils.getString(R.string.country_eu_kosovo),
@@ -1130,7 +1138,7 @@ object Europe {
                     utils.getString(R.string.country_eu_latvia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_latvia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_latvia),
@@ -1139,7 +1147,7 @@ object Europe {
                     utils.getString(R.string.country_eu_kosovo)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_liechtenstein_flag,
                 listOf(
                     utils.getString(R.string.country_eu_liechtenstein),
@@ -1148,7 +1156,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_lithuania_flag,
                 listOf(
                     utils.getString(R.string.country_eu_lithuania),
@@ -1157,7 +1165,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_luxembourg_flag,
                 listOf(
                     utils.getString(R.string.country_eu_luxembourg),
@@ -1166,7 +1174,7 @@ object Europe {
                     utils.getString(R.string.country_eu_kosovo)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_macedonia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_macedonia),
@@ -1175,7 +1183,7 @@ object Europe {
                     utils.getString(R.string.country_eu_belarus)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_malta_flag,
                 listOf(
                     utils.getString(R.string.country_eu_malta),
@@ -1184,7 +1192,7 @@ object Europe {
                     utils.getString(R.string.country_eu_bosnia_and_herzegovina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_moldova_flag,
                 listOf(
                     utils.getString(R.string.country_eu_moldova),
@@ -1193,7 +1201,7 @@ object Europe {
                     utils.getString(R.string.country_eu_lithuania)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_monaco_flag,
                 listOf(
                     utils.getString(R.string.country_eu_monaco),
@@ -1202,7 +1210,7 @@ object Europe {
                     utils.getString(R.string.country_eu_lithuania)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_montenegro_flag,
                 listOf(
                     utils.getString(R.string.country_eu_montenegro),
@@ -1211,7 +1219,7 @@ object Europe {
                     utils.getString(R.string.country_eu_poland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_netherlands_flag,
                 listOf(
                     utils.getString(R.string.country_eu_netherlands),
@@ -1220,7 +1228,7 @@ object Europe {
                     utils.getString(R.string.country_eu_malta)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_norway_flag,
                 listOf(
                     utils.getString(R.string.country_eu_norway),
@@ -1229,7 +1237,7 @@ object Europe {
                     utils.getString(R.string.country_eu_ireland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_poland_flag,
                 listOf(
                     utils.getString(R.string.country_eu_poland),
@@ -1238,7 +1246,7 @@ object Europe {
                     utils.getString(R.string.country_eu_lithuania)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_portugal_flag,
                 listOf(
                     utils.getString(R.string.country_eu_portugal),
@@ -1247,7 +1255,7 @@ object Europe {
                     utils.getString(R.string.country_eu_poland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_romania_flag,
                 listOf(
                     utils.getString(R.string.country_eu_romania),
@@ -1256,7 +1264,7 @@ object Europe {
                     utils.getString(R.string.country_eu_ireland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_san_marino_flag,
                 listOf(
                     utils.getString(R.string.country_eu_san_marino),
@@ -1265,7 +1273,7 @@ object Europe {
                     utils.getString(R.string.country_eu_austria)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_serbia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_serbia),
@@ -1274,7 +1282,7 @@ object Europe {
                     utils.getString(R.string.country_eu_malta)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_slovakia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_slovakia),
@@ -1283,7 +1291,7 @@ object Europe {
                     utils.getString(R.string.country_eu_norway)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_slovenia_flag,
                 listOf(
                     utils.getString(R.string.country_eu_slovenia),
@@ -1292,7 +1300,7 @@ object Europe {
                     utils.getString(R.string.country_eu_poland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_spain_flag,
                 listOf(
                     utils.getString(R.string.country_eu_spain),
@@ -1301,7 +1309,7 @@ object Europe {
                     utils.getString(R.string.country_eu_kosovo)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_sweden_flag,
                 listOf(
                     utils.getString(R.string.country_eu_sweden),
@@ -1310,7 +1318,7 @@ object Europe {
                     utils.getString(R.string.country_eu_latvia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_switzerland_flag,
                 listOf(
                     utils.getString(R.string.country_eu_switzerland),
@@ -1319,7 +1327,7 @@ object Europe {
                     utils.getString(R.string.country_eu_ireland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_ukraine_flag,
                 listOf(
                     utils.getString(R.string.country_eu_ukraine),
@@ -1328,7 +1336,7 @@ object Europe {
                     utils.getString(R.string.country_eu_norway)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_united_kingdom_flag,
                 listOf(
                     utils.getString(R.string.country_eu_united_kingdom),
@@ -1337,7 +1345,7 @@ object Europe {
                     utils.getString(R.string.country_eu_poland)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.eu_vatican_city_flag,
                 listOf(
                     utils.getString(R.string.country_eu_vatican_city),
@@ -1351,12 +1359,12 @@ object Europe {
 }
 
 /*
- * Contains all the data for the North America continent.
+ * North America continent.
  */
 object NorthAmerica {
-    fun getQuestions(): MutableList<Question> {
+    fun getFlags(): MutableList<Flags> {
         return mutableListOf(
-            Question(
+            Flags(
                 R.drawable.na_antigua_and_barbuda_flag,
                 listOf(
                     utils.getString(R.string.country_na_antigua_and_barbuda),
@@ -1365,7 +1373,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_el_salvador)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_bahamas_flag,
                 listOf(
                     utils.getString(R.string.country_na_bahamas),
@@ -1374,7 +1382,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_grenada)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_barbados_flag,
                 listOf(
                     utils.getString(R.string.country_na_barbados),
@@ -1383,7 +1391,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_honduras)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_belize_flag,
                 listOf(
                     utils.getString(R.string.country_na_belize),
@@ -1392,7 +1400,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_el_salvador)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_canada_flag,
                 listOf(
                     utils.getString(R.string.country_na_canada),
@@ -1401,7 +1409,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_antigua_and_barbuda)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_costa_rica_flag,
                 listOf(
                     utils.getString(R.string.country_na_costa_rica),
@@ -1410,7 +1418,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_cuba)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_cuba_flag,
                 listOf(
                     utils.getString(R.string.country_na_cuba),
@@ -1419,7 +1427,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_el_salvador)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_dominica_flag,
                 listOf(
                     utils.getString(R.string.country_na_dominica),
@@ -1428,7 +1436,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_honduras)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_dominican_republic_flag,
                 listOf(
                     utils.getString(R.string.country_na_dominican_republic),
@@ -1437,7 +1445,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_costa_rica)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_el_salvador_flag,
                 listOf(
                     utils.getString(R.string.country_na_el_salvador),
@@ -1446,7 +1454,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_dominica)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_grenada_flag,
                 listOf(
                     utils.getString(R.string.country_na_grenada),
@@ -1455,7 +1463,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_costa_rica)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_guatemala_flag,
                 listOf(
                     utils.getString(R.string.country_na_guatemala),
@@ -1464,7 +1472,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_antigua_and_barbuda)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_haiti_flag,
                 listOf(
                     utils.getString(R.string.country_na_haiti),
@@ -1473,7 +1481,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_el_salvador)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_honduras_flag,
                 listOf(
                     utils.getString(R.string.country_na_honduras),
@@ -1482,7 +1490,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_usa)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_jamaica_flag,
                 listOf(
                     utils.getString(R.string.country_na_jamaica),
@@ -1491,7 +1499,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_el_salvador)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_mexico_flag,
                 listOf(
                     utils.getString(R.string.country_na_mexico),
@@ -1500,7 +1508,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_dominica)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_nicaragua_flag,
                 listOf(
                     utils.getString(R.string.country_na_nicaragua),
@@ -1509,7 +1517,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_el_salvador)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_saint_kitts_and_nevis_flag,
                 listOf(
                     utils.getString(R.string.country_na_saint_kitts_and_nevis),
@@ -1518,7 +1526,7 @@ object NorthAmerica {
                     utils.getString(R.string.country_na_usa)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.na_united_states_of_america_flag,
                 listOf(
                     utils.getString(R.string.country_na_usa),
@@ -1532,12 +1540,12 @@ object NorthAmerica {
 }
 
 /*
- * Contains all the data for the Oceania continent.
+ * Oceania continent.
  */
 object Oceania {
-    fun getQuestions(): MutableList<Question> {
+    fun getFlags(): MutableList<Flags> {
         return mutableListOf(
-            Question(
+            Flags(
                 R.drawable.oc_australia_flag,
                 listOf(
                     utils.getString(R.string.country_oc_australia),
@@ -1546,7 +1554,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_tonga)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_east_timor_flag,
                 listOf(
                     utils.getString(R.string.country_oc_east_timor),
@@ -1555,7 +1563,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_papua_new_guinea)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_fiji_flag,
                 listOf(
                     utils.getString(R.string.country_oc_fiji),
@@ -1564,7 +1572,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_niue)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_kiribati_flag,
                 listOf(
                     utils.getString(R.string.country_oc_kiribati),
@@ -1573,7 +1581,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_nauru)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_marshall_islands_flag,
                 listOf(
                     utils.getString(R.string.country_oc_marshall_islands),
@@ -1582,7 +1590,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_fiji)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_micronesia_flag,
                 listOf(
                     utils.getString(R.string.country_oc_micronesia),
@@ -1591,7 +1599,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_nauru)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_nauru_flag,
                 listOf(
                     utils.getString(R.string.country_oc_nauru),
@@ -1600,7 +1608,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_east_timor)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_new_zealand_flag,
                 listOf(
                     utils.getString(R.string.country_oc_new_zealand),
@@ -1609,7 +1617,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_fiji)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_niue_flag,
                 listOf(
                     utils.getString(R.string.country_oc_niue),
@@ -1618,7 +1626,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_palau)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_palau_flag,
                 listOf(
                     utils.getString(R.string.country_oc_palau),
@@ -1627,7 +1635,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_new_zealand)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_papua_new_guinea_flag,
                 listOf(
                     utils.getString(R.string.country_oc_papua_new_guinea),
@@ -1636,7 +1644,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_australia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_samoa_flag,
                 listOf(
                     utils.getString(R.string.country_oc_samoa),
@@ -1645,7 +1653,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_papua_new_guinea)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_solomon_islands_flag,
                 listOf(
                     utils.getString(R.string.country_oc_solomon_islands),
@@ -1654,7 +1662,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_palau)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_tonga_flag,
                 listOf(
                     utils.getString(R.string.country_oc_tonga),
@@ -1663,7 +1671,7 @@ object Oceania {
                     utils.getString(R.string.country_oc_fiji)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.oc_tuvalu_flag,
                 listOf(
                     utils.getString(R.string.country_oc_tuvalu),
@@ -1677,12 +1685,12 @@ object Oceania {
 }
 
 /*
- * Contains all the data for the South America continent.
+ * South America continent.
  */
 object SouthAmerica {
-    fun getQuestions(): MutableList<Question> {
+    fun getFlags(): MutableList<Flags> {
         return mutableListOf(
-            Question(
+            Flags(
                 R.drawable.sa_argentina_flag,
                 listOf(
                     utils.getString(R.string.country_sa_argentina),
@@ -1691,7 +1699,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_uruguay)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_bolivia_flag,
                 listOf(
                     utils.getString(R.string.country_sa_bolivia),
@@ -1700,7 +1708,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_colombia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_brazil_flag,
                 listOf(
                     utils.getString(R.string.country_sa_brazil),
@@ -1709,7 +1717,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_argentina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_chile_flag,
                 listOf(
                     utils.getString(R.string.country_sa_chile),
@@ -1718,7 +1726,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_brazil)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_colombia_flag,
                 listOf(
                     utils.getString(R.string.country_sa_colombia),
@@ -1727,7 +1735,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_chile)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_ecuador_flag,
                 listOf(
                     utils.getString(R.string.country_sa_ecuador),
@@ -1736,7 +1744,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_uruguay)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_guyana_flag,
                 listOf(
                     utils.getString(R.string.country_sa_guyana),
@@ -1745,7 +1753,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_argentina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_panama_flag,
                 listOf(
                     utils.getString(R.string.country_sa_panama),
@@ -1754,7 +1762,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_uruguay)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_paraguay_flag,
                 listOf(
                     utils.getString(R.string.country_sa_paraguay),
@@ -1763,7 +1771,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_venezuela)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_peru_flag,
                 listOf(
                     utils.getString(R.string.country_sa_peru),
@@ -1772,7 +1780,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_brazil)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_saint_lucia_flag,
                 listOf(
                     utils.getString(R.string.country_sa_saint_lucia),
@@ -1781,7 +1789,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_argentina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_saint_vincent_and_the_grenadines_flag,
                 listOf(
                     utils.getString(R.string.country_sa_saint_vicente_and_grenadines),
@@ -1790,7 +1798,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_brazil)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_suriname_flag,
                 listOf(
                     utils.getString(R.string.country_sa_suriname),
@@ -1799,7 +1807,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_saint_lucia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_trinidad_and_tobago_flag,
                 listOf(
                     utils.getString(R.string.country_sa_trinidad_and_tobago),
@@ -1808,7 +1816,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_argentina)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_uruguay_flag,
                 listOf(
                     utils.getString(R.string.country_sa_uruguay),
@@ -1817,7 +1825,7 @@ object SouthAmerica {
                     utils.getString(R.string.country_sa_saint_lucia)
                 )
             ),
-            Question(
+            Flags(
                 R.drawable.sa_venezuela_flag,
                 listOf(
                     utils.getString(R.string.country_sa_venezuela),

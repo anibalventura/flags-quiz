@@ -93,8 +93,8 @@
 
                 <TextView
                     android:id="@+id/tvAnswerTwo"
-                    android:layout_marginTop="8dp"
                     style="@style/QuizAnswer"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerThree"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -124,8 +124,14 @@
                 <ImageView
                     android:id="@+id/ivFlag"
                     android:layout_width="wrap_content"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/bg_default_answer_border"
                     android:contentDescription="@string/quiz_flag_content"
+                    android:maxWidth="200dp"
+                    android:maxHeight="200dp"
+                    android:padding="4dp"
+                    android:scaleType="fitXY"
                     app:layout_constraintBottom_toTopOf="@+id/tvAnswerOne"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

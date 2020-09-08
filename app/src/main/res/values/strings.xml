@@ -245,4 +245,7 @@
     <string name="rules_how_to_play">How to play?</string>
     <string name="quiz_you_won">You Won!</string>
     <string name="welcome_skip">Skip</string>
+    <string name="share_score">I got a score %1$s out of %2$s on the Flags Quiz!\n\n
+        Check how many correct answers you can get doing the quiz https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz</string>
+    <string name="option_share">Share</string>
 </resources>

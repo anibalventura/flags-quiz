@@ -130,7 +130,7 @@
     <string name="country_sa_saint_vicente_and_grenadines">San Vicente y las Granadinas</string>
     <string name="country_sa_suriname">Surinam</string>
     <string name="country_sa_trinidad_and_tobago">Trinidad y Tobago</string>
-    <string name="home_welcome">Bienvenido %1$s</string>
+    <string name="home_welcome">Hola %1$s</string>
     <string name="settings_theme">Tema</string>
     <string name="settings_theme_light">Claro</string>
     <string name="settings_theme_dark">Oscuro</string>
@@ -154,4 +154,7 @@
     <string name="rules_how_to_play">Como jugar?</string>
     <string name="quiz_you_won">Has Ganado!</string>
     <string name="welcome_skip">Omitir</string>
+    <string name="share_score">¡Obtuve una puntuación %1$i de %2$i en el Flags Quiz!.\n\n
+        Chequea que tantas respuestas correctas puedes obtener haciendo el quiz https://play.google.com/store/apps/details?id=com.anibalventura.agecalculator</string>
+    <string name="option_share">Compartir</string>
 </resources>

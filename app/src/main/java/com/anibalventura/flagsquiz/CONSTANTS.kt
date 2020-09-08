@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.data.local
+package com.anibalventura.flagsquiz
 
 class CONST {
     companion object {

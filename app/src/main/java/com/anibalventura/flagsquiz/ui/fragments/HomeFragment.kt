@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
-import com.anibalventura.flagsquiz.data.local.CONST
+import com.anibalventura.flagsquiz.CONST
 import com.anibalventura.flagsquiz.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

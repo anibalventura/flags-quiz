@@ -9,7 +9,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
-import com.anibalventura.flagsquiz.data.local.CONST
+import com.anibalventura.flagsquiz.CONST
 import kotlinx.android.synthetic.main.settings_activity.*
 
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener,

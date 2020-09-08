@@ -21,12 +21,12 @@ class QuizFragment : Fragment() {
     // Use DataBinding.
     private lateinit var binding: FragmentQuizBinding
 
-    // Questions.
-    private lateinit var questions: MutableList<Question> // Questions from database.
-    private lateinit var currentQuestion: Question
-    private var indexQuestion: Int = 0
-    private var submitQuestion: Boolean = false
-    private val numQuestions = 3
+    // Flags.
+    private lateinit var flags: MutableList<Flags> // Flags from database.
+    private lateinit var currentFlag: Flags
+    private var indexFlag: Int = 0
+    private var submitFlag: Boolean = false
+    private val numFlags = 3
 
     // Answers.
     private lateinit var answers: MutableList<String>
@@ -62,7 +62,7 @@ class QuizFragment : Fragment() {
             binding.tvAnswerFour
         )
 
-        // Get selected continent for questions.
+        // Get selected continent for flags.
         selectedContinent()
 
         // Submit the answer.
@@ -79,83 +79,83 @@ class QuizFragment : Fragment() {
         val args = QuizFragmentArgs.fromBundle(requireArguments())
         when (args.continent) {
             getString(R.string.continent_africa) -> {
-                questions = Africa.getQuestions()
+                flags = Africa.getFlags()
                 (activity as AppCompatActivity).supportActionBar?.title =
                     getString(R.string.continent_africa)
             }
             getString(R.string.continent_asia) -> {
-                questions = Asia.getQuestions()
+                flags = Asia.getFlags()
                 (activity as AppCompatActivity).supportActionBar?.title =
                     getString(R.string.continent_asia)
             }
             getString(R.string.continent_europe) -> {
-                questions = Europe.getQuestions()
+                flags = Europe.getFlags()
                 (activity as AppCompatActivity).supportActionBar?.title =
                     getString(R.string.continent_europe)
             }
             getString(R.string.continent_north_america) -> {
-                questions = NorthAmerica.getQuestions()
+                flags = NorthAmerica.getFlags()
                 (activity as AppCompatActivity).supportActionBar?.title =
                     getString(R.string.continent_north_america)
             }
             getString(R.string.continent_oceania) -> {
-                questions = Oceania.getQuestions()
+                flags = Oceania.getFlags()
                 (activity as AppCompatActivity).supportActionBar?.title =
                     getString(R.string.continent_oceania)
             }
             getString(R.string.continent_south_america) -> {
-                questions = SouthAmerica.getQuestions()
+                flags = SouthAmerica.getFlags()
                 (activity as AppCompatActivity).supportActionBar?.title =
                     getString(R.string.continent_south_america)
             }
         }
-        // Set question from selected continent.
-        setQuestion()
+        // Set flag from selected continent.
+        setFlag()
         // Update answer view on user selection.
         selectedAnswerView()
     }
 
     /**
-     * Setting the question to UI components.
+     * Setting the flag to UI components.
      */
-    private fun setQuestion() {
-        // Set random question and answer.
-        randomQuestionAndAnswer()
+    private fun setFlag() {
+        // Set random flag and answer.
+        randomFlagAndAnswer()
 
         // Reset the view to default.
         defaultAnswerView()
 
         // Update the progress bar.
-        binding.progressBar.progress = indexQuestion.plus(1)
-        binding.progressBar.max = numQuestions
+        binding.progressBar.progress = indexFlag.plus(1)
+        binding.progressBar.max = numFlags
         binding.tvProgressBar.text =
-            getString(R.string.quiz_progress, indexQuestion.plus(1), numQuestions)
+            getString(R.string.quiz_progress, indexFlag.plus(1), numFlags)
 
-        // Update the view to the current question.
-        binding.ivFlag.setImageResource(currentQuestion.image)
+        // Update the view to the current flag.
+        binding.ivFlag.setImageResource(currentFlag.image)
         for ((index, answer) in answersView.withIndex()) {
             answer.text = answers[index]
-            // Enable to select an option.
+            // Enable to select an answer.
             answer.isClickable = true
         }
 
         // Update button view to "Submit".
         binding.btnSubmit.text = getString(R.string.quiz_btn_submit)
 
-        // Cannot submit question if a option is not selected.
-        submitQuestion = false
+        // Cannot submit flag if a answer is not selected.
+        submitFlag = false
     }
 
     /*
-     * Random question and answers orders.
+     * Random flag and answers orders.
      */
-    private fun randomQuestionAndAnswer() {
-        // Set random order for questions.
-        questions.shuffle()
-        // Update current question.
-        currentQuestion = questions[indexQuestion]
+    private fun randomFlagAndAnswer() {
+        // Set random order for flags.
+        flags.shuffle()
+        // Update current flag.
+        currentFlag = flags[indexFlag]
         // Set answers into a copy of the mutableList.
-        answers = currentQuestion.answers.toMutableList()
+        answers = currentFlag.answers.toMutableList()
         // Set random order for answers.
         answers.shuffle()
     }
@@ -168,7 +168,7 @@ class QuizFragment : Fragment() {
         for (answer in answersView) {
             answer.typeface = Typeface.DEFAULT
             answer.background = ContextCompat.getDrawable(
-                requireContext(), R.drawable.bg_default_option_border
+                requireContext(), R.drawable.bg_default_answer_border
             )
         }
     }
@@ -179,20 +179,20 @@ class QuizFragment : Fragment() {
             answer.setOnClickListener {
                 defaultAnswerView()
 
-                // Set the option view to selected.
+                // Set the answer view to selected.
                 answer.setTypeface(answer.typeface, Typeface.BOLD)
                 answer.background =
                     ContextCompat.getDrawable(
                         requireContext(),
-                        R.drawable.bg_selected_option_border
+                        R.drawable.bg_selected_answer_border
                     )
 
-                // Get the selected option.
+                // Get the selected answer.
                 indexAnswer = index
-                // Enable to select an option.
+                // Enable to select an answer.
                 answer.isClickable = true
-                // Can pass to another question.
-                submitQuestion = true
+                // Can pass to another flag.
+                submitFlag = true
             }
         }
     }
@@ -218,22 +218,22 @@ class QuizFragment : Fragment() {
             lives <= 0 -> view.findNavController()
                 .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment(args.continent))
 
-            // Show a toast if trying to submit question without an option.
-            !submitQuestion -> Utils.showToast(
+            // Show a toast if trying to submit flag without an answer.
+            !submitFlag -> Utils.showToast(
                 requireContext(),
                 getString(R.string.quiz_select_answer)
             )
 
-            // When pass to another question.
+            // When pass to another flag.
             indexAnswer == 5 -> { // The number 5 have no value, is only used to continue the quiz.
-                // Update index to pass to another question.
-                indexQuestion++
+                // Update index to pass to another flag.
+                indexFlag++
 
                 when {
-                    // If number of questions answered not meet the total questions, continue the quiz.
-                    indexQuestion < numQuestions -> {
-                        // Set a new question.
-                        setQuestion()
+                    // If number of flags answered not meet the total flags, continue the quiz.
+                    indexFlag < numFlags -> {
+                        // Set a new flag.
+                        setFlag()
                         // Update selected answer view.
                         selectedAnswerView()
                     }
@@ -241,19 +241,19 @@ class QuizFragment : Fragment() {
                     else -> view.findNavController().navigate(
                         QuizFragmentDirections.actionQuizFragmentToWonFragment(
                             correctAnswers,
-                            numQuestions,
+                            numFlags,
                             args.continent
                         )
                     )
                 }
             }
 
-            // When option selected check for correct or wrong answer.
+            // When answer selected check for correct or wrong answer.
             else -> {
-                // If option wrong.
-                if (answers[indexAnswer] != currentQuestion.answers[0]) {
+                // If answer wrong.
+                if (answers[indexAnswer] != currentFlag.answers[0]) {
                     // Mark selected view to wrong.
-                    highlightAnswerView(answers[indexAnswer], R.drawable.bg_wrong_option_border)
+                    highlightAnswerView(answers[indexAnswer], R.drawable.bg_wrong_answer_border)
 
                     // Decrease lives.
                     lives--
@@ -268,7 +268,7 @@ class QuizFragment : Fragment() {
                 }
 
                 // Always check for correct answer.
-                highlightAnswerView(currentQuestion.answers[0], R.drawable.bg_correct_option_border)
+                highlightAnswerView(currentFlag.answers[0], R.drawable.bg_correct_answer_border)
 
                 // When answer is submit, user cannot change the answer.
                 for (answer in answersView) {
@@ -276,8 +276,8 @@ class QuizFragment : Fragment() {
                 }
 
                 when {
-                    // When the questions are over, button Submit change to finish.
-                    indexQuestion + 1 == numQuestions ->
+                    // When the flags are over, button Submit change to finish.
+                    indexFlag + 1 == numFlags ->
                         binding.btnSubmit.text = getString(R.string.quiz_btn_finish)
                     // When the user lose, button submit change to finish.
                     lives == 0 -> binding.btnSubmit.text = getString(R.string.quiz_btn_finish)
@@ -285,7 +285,7 @@ class QuizFragment : Fragment() {
                     else -> binding.btnSubmit.text = getString(R.string.quiz_btn_next_flag)
                 }
 
-                // Reset selected option for pass to another question.
+                // Reset selected answer for pass to another flag.
                 indexAnswer = 5
             }
         }

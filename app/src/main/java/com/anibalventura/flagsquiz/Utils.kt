@@ -7,7 +7,6 @@ import android.content.res.Resources
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
-import com.anibalventura.flagsquiz.data.local.CONST
 
 class Utils : Application() {
     override fun onCreate() {

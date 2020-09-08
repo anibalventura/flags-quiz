@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.Utils.Companion.sharedPref
-import com.anibalventura.flagsquiz.data.local.CONST
+import com.anibalventura.flagsquiz.CONST
 import com.anibalventura.flagsquiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

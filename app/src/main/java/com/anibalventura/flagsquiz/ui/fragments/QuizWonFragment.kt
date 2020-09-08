@@ -1,16 +1,16 @@
 package com.anibalventura.flagsquiz.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.anibalventura.flagsquiz.CONST
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
-import com.anibalventura.flagsquiz.data.local.CONST
 import com.anibalventura.flagsquiz.databinding.FragmentQuizWonBinding
+import kotlinx.coroutines.Dispatchers
 
 class QuizWonFragment : Fragment() {
 
@@ -64,6 +64,9 @@ class QuizWonFragment : Fragment() {
         // Back to the QuizFragment
         binding.btnPlayAgain.setOnClickListener { startQuiz(it) }
 
+        // Set the options menu.
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -85,6 +88,42 @@ class QuizWonFragment : Fragment() {
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_oceania)))
             getString(R.string.continent_south_america) -> view.findNavController()
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_south_america)))
+        }
+    }
+
+    /*
+     * Sharing option.
+     */
+    // Showing the Share Menu.
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.share_menu, menu)
+    }
+
+    // Sharing from the Menu.
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.shareScore -> shareScore()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    // Share the results of the score with a intent.
+    private fun shareScore() {
+        // Create the intent to send.
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(
+                Intent.EXTRA_TEXT,
+                getString(R.string.share_score, args.correntAnswers, args.totalQuestions)
+            )
+            type = "text/plain"
+        }
+
+        // Send the intent.
+        requireContext().let {
+            Intent(it, Dispatchers.Main::class.java)
+            it.startActivity(Intent.createChooser(sendIntent, null))
         }
     }
 }
