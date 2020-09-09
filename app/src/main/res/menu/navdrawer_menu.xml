@@ -17,13 +17,13 @@
     <item android:title="@string/menu_group_app">
         <menu>
             <item
-                android:id="@+id/aboutFragment"
-                android:icon="@drawable/ic_about"
-                android:title="@string/menu_about" />
-            <item
                 android:id="@+id/shareAppFragment"
                 android:icon="@drawable/ic_share_app"
                 android:title="@string/menu_share" />
+            <item
+                android:id="@+id/aboutFragment"
+                android:icon="@drawable/ic_about"
+                android:title="@string/menu_about" />
             <item
                 android:id="@+id/settingsActivity"
                 android:icon="@drawable/ic_settings"
