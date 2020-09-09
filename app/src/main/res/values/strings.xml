@@ -228,7 +228,7 @@
     <string name="settings_theme_default">System default</string>
     <string name="quiz_play_again">Play Again</string>
     <string name="quiz_sorry_lose">Sorry %1$s you lose!</string>
-    <string name="quiz_sad_face_content">Sad Emoji</string>
+    <string name="quiz_sad_face_content">Sad Emoji You Lose</string>
     <string name="quiz_try_again">Try Again</string>
     <string name="quiz_you_lose">You Lose!</string>
     <string name="rules_one">1. Select the answer from the options given.</string>
@@ -245,9 +245,9 @@
     <string name="rules_how_to_play">How to play?</string>
     <string name="quiz_you_won">You Won!</string>
     <string name="welcome_skip">Skip</string>
-    <string name="share_score">I got a score %1$s out of %2$s on the Flags Quiz!\n\n
+    <string name="share_score">I got a score %1$d out of %2$d on Flags Quiz!\n\n
         Check how many correct answers you can get doing the quiz https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz</string>
-    <string name="option_share">Share</string>
+    <string name="menu_share">Share</string>
     <string name="delete_dialog_title">Are You Sure?</string>
     <string name="delete_dialog_message">Your quiz history will be deleted.</string>
     <string name="delete_dialog_confirmation">Yes</string>
@@ -256,4 +256,6 @@
     <string name="menu_history">History</string>
     <string name="history_score">Score: %1$d out of %2$d</string>
     <string name="history_continent">Continent: %1$s</string>
+    <string name="share_app">Test your knowledge about the flags of the world with Flag Quiz. Download it now!\n\n
+        https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz</string>
 </resources>

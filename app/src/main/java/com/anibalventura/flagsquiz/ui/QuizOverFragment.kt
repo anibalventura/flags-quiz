@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.anibalventura.flagsquiz.CONST
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
-import com.anibalventura.flagsquiz.CONST
 import com.anibalventura.flagsquiz.databinding.FragmentQuizOverBinding
 
 class QuizOverFragment : Fragment() {
@@ -41,12 +41,12 @@ class QuizOverFragment : Fragment() {
          * Buttons.
          */
         // Back to the HomeFragment.
-        binding.btnWonFinish.setOnClickListener { view: View ->
-            view.findNavController()
+        binding.btnWonFinish.setOnClickListener {
+            findNavController()
                 .navigate(QuizOverFragmentDirections.actionLoseFragmentToHomeFragment())
         }
         // Back to the QuizFragment
-        binding.btnTryAgain.setOnClickListener { startQuiz(it) }
+        binding.btnTryAgain.setOnClickListener { startQuiz() }
 
         return binding.root
     }
@@ -55,21 +55,21 @@ class QuizOverFragment : Fragment() {
      * Start quiz on selected continent.
      * Pass the selected continent via SafeArgs to QuizFragment.
      */
-    private fun startQuiz(view: View) {
+    private fun startQuiz() {
         val args = QuizWonFragmentArgs.fromBundle(requireArguments())
 
         when (args.selectedContinent) {
-            getString(R.string.continent_africa) -> view.findNavController()
+            getString(R.string.continent_africa) -> findNavController()
                 .navigate(QuizOverFragmentDirections.actionLoseFragmentToQuizFragment(getString(R.string.continent_africa)))
-            getString(R.string.continent_asia) -> view.findNavController()
+            getString(R.string.continent_asia) -> findNavController()
                 .navigate(QuizOverFragmentDirections.actionLoseFragmentToQuizFragment(getString(R.string.continent_asia)))
-            getString(R.string.continent_europe) -> view.findNavController()
+            getString(R.string.continent_europe) -> findNavController()
                 .navigate(QuizOverFragmentDirections.actionLoseFragmentToQuizFragment(getString(R.string.continent_europe)))
-            getString(R.string.continent_north_america) -> view.findNavController()
+            getString(R.string.continent_north_america) -> findNavController()
                 .navigate(QuizOverFragmentDirections.actionLoseFragmentToQuizFragment(getString(R.string.continent_north_america)))
-            getString(R.string.continent_oceania) -> view.findNavController()
+            getString(R.string.continent_oceania) -> findNavController()
                 .navigate(QuizOverFragmentDirections.actionLoseFragmentToQuizFragment(getString(R.string.continent_oceania)))
-            getString(R.string.continent_south_america) -> view.findNavController()
+            getString(R.string.continent_south_america) -> findNavController()
                 .navigate(QuizOverFragmentDirections.actionLoseFragmentToQuizFragment(getString(R.string.continent_south_america)))
         }
     }

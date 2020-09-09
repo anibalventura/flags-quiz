@@ -1,16 +1,14 @@
 package com.anibalventura.flagsquiz.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.anibalventura.flagsquiz.CONST
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.databinding.FragmentQuizWonBinding
-import kotlinx.coroutines.Dispatchers
 
 class QuizWonFragment : Fragment() {
 
@@ -56,13 +54,12 @@ class QuizWonFragment : Fragment() {
          * Buttons.
          */
         // Back to the HomeFragment.
-        binding.btnWonFinish.setOnClickListener { view: View ->
-            view.findNavController()
-                .navigate(QuizWonFragmentDirections.actionWonFragmentToHomeFragment())
+        binding.btnWonFinish.setOnClickListener {
+            findNavController().navigate(QuizWonFragmentDirections.actionWonFragmentToHomeFragment())
         }
 
         // Back to the QuizFragment
-        binding.btnPlayAgain.setOnClickListener { startQuiz(it) }
+        binding.btnPlayAgain.setOnClickListener { startQuiz() }
 
         return binding.root
     }
@@ -71,19 +68,20 @@ class QuizWonFragment : Fragment() {
      * Start quiz on selected continent.
      * Pass the selected continent via SafeArgs to QuizFragment.
      */
-    private fun startQuiz(view: View) {
+    private fun startQuiz() {
         when (args.selectedContinent) {
-            getString(R.string.continent_africa) -> view.findNavController()
-                .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_africa)))
-            getString(R.string.continent_asia) -> view.findNavController()
+            getString(R.string.continent_africa) -> findNavController().navigate(
+                QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_africa))
+            )
+            getString(R.string.continent_asia) -> findNavController()
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_asia)))
-            getString(R.string.continent_europe) -> view.findNavController()
+            getString(R.string.continent_europe) -> findNavController()
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_europe)))
-            getString(R.string.continent_north_america) -> view.findNavController()
+            getString(R.string.continent_north_america) -> findNavController()
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_north_america)))
-            getString(R.string.continent_oceania) -> view.findNavController()
+            getString(R.string.continent_oceania) -> findNavController()
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_oceania)))
-            getString(R.string.continent_south_america) -> view.findNavController()
+            getString(R.string.continent_south_america) -> findNavController()
                 .navigate(QuizWonFragmentDirections.actionWonFragmentToQuizFragment(getString(R.string.continent_south_america)))
         }
     }
@@ -106,29 +104,13 @@ class QuizWonFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.shareScore -> {
-                shareScore()
+                Utils.shareText(
+                    requireContext(),
+                    getString(R.string.share_score, args.correntAnswers, args.totalQuestions)
+                )
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    // Share the results of the score with a intent.
-    private fun shareScore() {
-        // Create the intent to send.
-        val sendIntent: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(
-                Intent.EXTRA_TEXT,
-                getString(R.string.share_score, args.correntAnswers, args.totalQuestions)
-            )
-            type = "text/plain"
-        }
-
-        // Send the intent.
-        requireContext().let {
-            Intent(it, Dispatchers.Main::class.java)
-            it.startActivity(Intent.createChooser(sendIntent, null))
         }
     }
 }

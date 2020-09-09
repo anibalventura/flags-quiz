@@ -54,6 +54,18 @@
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizOverFragment"
@@ -76,20 +88,12 @@
         android:id="@+id/rulesFragment"
         android:name="com.anibalventura.flagsquiz.ui.RulesFragment"
         android:label="@string/menu_rules"
-        tools:layout="@layout/fragment_rules">
-        <action
-            android:id="@+id/action_rulesFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_rules" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.anibalventura.flagsquiz.ui.AboutFragment"
         android:label="@string/menu_about"
-        tools:layout="@layout/fragment_about">
-        <action
-            android:id="@+id/action_aboutFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_about" />
     <activity
         android:id="@+id/settingsActivity"
         android:name="com.anibalventura.flagsquiz.ui.SettingsActivity"
@@ -99,9 +103,5 @@
         android:id="@+id/historyFragment"
         android:name="com.anibalventura.flagsquiz.ui.history.HistoryFragment"
         android:label="@string/menu_history"
-        tools:layout="@layout/fragment_history">
-        <action
-            android:id="@+id/action_historyFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_history" />
 </navigation>

@@ -12,7 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.data.local.*
@@ -99,7 +99,7 @@ class QuizFragment : Fragment() {
         selectedContinent()
 
         // Submit the answer.
-        binding.btnSubmit.setOnClickListener { submitAnswer(it) }
+        binding.btnSubmit.setOnClickListener { submitAnswer() }
 
         return binding.root
     }
@@ -255,7 +255,7 @@ class QuizFragment : Fragment() {
     /*
      * Submit the answer.
      */
-    private fun submitAnswer(view: View) {
+    private fun submitAnswer() {
         val args = QuizFragmentArgs.fromBundle(requireArguments())
 
         when {
@@ -271,7 +271,7 @@ class QuizFragment : Fragment() {
                     )
                 insert(historyLose)
 
-                view.findNavController()
+                findNavController()
                     .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment(args.continent))
             }
 
@@ -306,7 +306,7 @@ class QuizFragment : Fragment() {
                         insert(historyWon)
 
                         // Go to QuizWonFragment when finish the quiz and pass arguments.
-                        view.findNavController().navigate(
+                        findNavController().navigate(
                             QuizFragmentDirections.actionQuizFragmentToWonFragment(
                                 correctAnswers, numFlags, args.continent
                             )
