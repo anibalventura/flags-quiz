@@ -51,7 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            tools:context=".ui.fragments.QuizFragment">
+            tools:context=".ui.QuizFragment">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/titleConstraint"

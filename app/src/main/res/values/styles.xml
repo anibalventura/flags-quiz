@@ -91,4 +91,21 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <!-- RulesFragment -->
+    <style name="RulesText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- HistoryFragment -->
+    <style name="HistoryText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginStart">16dp</item>
+    </style>
+
 </resources>

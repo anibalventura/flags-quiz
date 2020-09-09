@@ -14,7 +14,7 @@
         android:versionName="1.0.0">
         <!-- MainActivity -->
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -24,7 +24,7 @@
         </activity>
         <!-- WelcomeActivity -->
         <activity
-            android:name=".ui.activities.WelcomeActivity"
+            android:name=".ui.WelcomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="stateHidden|adjustResize">
@@ -34,13 +34,13 @@
         </activity>
         <!-- SettingsActivity -->
         <activity
-            android:name=".ui.activities.SettingsActivity"
-            android:parentActivityName=".ui.activities.MainActivity"
+            android:name=".ui.SettingsActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/PreferenceTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.anibalventura.flagsquiz.ui.activities.MainActivity" />
+                android:value="com.anibalventura.flagsquiz.ui.MainActivity" />
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

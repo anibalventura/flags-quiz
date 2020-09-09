@@ -7,11 +7,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        tools:context=".ui.fragments.QuizWonFragment">
+        tools:context=".ui.QuizWonFragment">
 
         <ImageView
             android:id="@+id/ivOver"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:contentDescription="@string/quiz_sad_face_content"

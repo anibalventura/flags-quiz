@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.fragments
+package com.anibalventura.flagsquiz.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

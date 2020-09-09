@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.activities
+package com.anibalventura.flagsquiz.ui
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -10,14 +10,14 @@ import androidx.preference.PreferenceManager
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.CONST
-import kotlinx.android.synthetic.main.settings_activity.*
+import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener,
     Preference.SummaryProvider<ListPreference> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.settings_activity)
+        setContentView(R.layout.activity_settings)
 
         supportFragmentManager
             .beginTransaction()

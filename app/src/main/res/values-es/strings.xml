@@ -157,4 +157,12 @@
     <string name="share_score">¡Obtuve una puntuación %1$i de %2$i en el Flags Quiz!.\n\n
         Chequea que tantas respuestas correctas puedes obtener haciendo el quiz https://play.google.com/store/apps/details?id=com.anibalventura.agecalculator</string>
     <string name="option_share">Compartir</string>
+    <string name="delete_dialog_title">Estas seguro?</string>
+    <string name="delete_dialog_message">El historial será eliminado.</string>
+    <string name="delete_dialog_confirmation">Si</string>
+    <string name="delete_dialog_negative">Cancelar</string>
+    <string name="menu_delete">Eliminiar</string>
+    <string name="menu_history">Historial</string>
+    <string name="history_score">Puntaje: %1$d de %2$d</string>
+    <string name="history_continent">Continente: %1$s</string>
 </resources>

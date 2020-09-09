@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.fragments
+package com.anibalventura.flagsquiz.ui
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -10,11 +10,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
-import com.anibalventura.flagsquiz.data.local.db.*
+import com.anibalventura.flagsquiz.data.local.*
+import com.anibalventura.flagsquiz.data.local.db.History
+import com.anibalventura.flagsquiz.data.local.db.HistoryDatabase
+import com.anibalventura.flagsquiz.data.local.repository.HistoryRepository
 import com.anibalventura.flagsquiz.databinding.FragmentQuizBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class QuizFragment : Fragment() {
 
@@ -26,7 +33,7 @@ class QuizFragment : Fragment() {
     private lateinit var currentFlag: Flags
     private var indexFlag: Int = 0
     private var submitFlag: Boolean = false
-    private val numFlags = 3
+    private val numFlags = 10
 
     // Answers.
     private lateinit var answers: MutableList<String>
@@ -36,6 +43,32 @@ class QuizFragment : Fragment() {
 
     // Lives count.
     private var lives: Int = 3
+
+    /**
+     * Using LiveData and caching what getHistory returns has several benefits:
+     * 1. Put an observer on the data (instead of polling for changes) and only update the
+     *    the UI when the data actually changes.
+     * 2. Repository is completely separated from the UI through the ViewModel.
+     */
+    private lateinit var allHistory: LiveData<List<History>>
+    private lateinit var repository: HistoryRepository
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        /*
+         * Get Room Database.
+         */
+        val historyDao = HistoryDatabase.getDatabase(requireContext()).historyDao()
+        repository = HistoryRepository(historyDao)
+        allHistory = repository.allHistory
+    }
+
+    /**
+     * Launching a new coroutine to insert the data in a non-blocking way.
+     */
+    private fun insert(history: History) = lifecycleScope.launch(Dispatchers.IO) {
+        repository.insert(history)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -166,6 +199,7 @@ class QuizFragment : Fragment() {
     // Set the view of answersView to default.
     private fun defaultAnswerView() {
         for (answer in answersView) {
+            answer.setTextColor(ContextCompat.getColor(answer.context, R.color.secondaryTextColor))
             answer.typeface = Typeface.DEFAULT
             answer.background = ContextCompat.getDrawable(
                 requireContext(), R.drawable.bg_default_answer_border
@@ -201,8 +235,19 @@ class QuizFragment : Fragment() {
     private fun highlightAnswerView(answer: String, drawableView: Int) {
         for ((index) in answersView.withIndex()) {
             when (answer) {
-                answers[index] -> answersView[index].background =
-                    ContextCompat.getDrawable(requireContext(), drawableView)
+                answers[index] -> {
+                    // Set text color.
+                    answersView[index].setTextColor(
+                        ContextCompat.getColor(
+                            answersView[index].context,
+                            R.color.primaryTextColor
+                        )
+                    )
+
+                    // Set background.
+                    answersView[index].background =
+                        ContextCompat.getDrawable(requireContext(), drawableView)
+                }
             }
         }
     }
@@ -215,8 +260,20 @@ class QuizFragment : Fragment() {
 
         when {
             // When out of live, go to QuizOverFragment.
-            lives <= 0 -> view.findNavController()
-                .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment(args.continent))
+            lives <= 0 -> {
+                // Insert data to database.
+                val historyLose =
+                    History(
+                        getString(R.string.quiz_you_lose),
+                        correctAnswers,
+                        numFlags,
+                        args.continent
+                    )
+                insert(historyLose)
+
+                view.findNavController()
+                    .navigate(QuizFragmentDirections.actionQuizFragmentToLoseFragment(args.continent))
+            }
 
             // Show a toast if trying to submit flag without an answer.
             !submitFlag -> Utils.showToast(
@@ -237,14 +294,24 @@ class QuizFragment : Fragment() {
                         // Update selected answer view.
                         selectedAnswerView()
                     }
-                    // Go to QuizWonFragment when finish the quiz and pass arguments.
-                    else -> view.findNavController().navigate(
-                        QuizFragmentDirections.actionQuizFragmentToWonFragment(
-                            correctAnswers,
-                            numFlags,
-                            args.continent
+                    else -> {
+                        // Insert data to database.
+                        val historyWon =
+                            History(
+                                getString(R.string.quiz_you_won),
+                                correctAnswers,
+                                numFlags,
+                                args.continent
+                            )
+                        insert(historyWon)
+
+                        // Go to QuizWonFragment when finish the quiz and pass arguments.
+                        view.findNavController().navigate(
+                            QuizFragmentDirections.actionQuizFragmentToWonFragment(
+                                correctAnswers, numFlags, args.continent
+                            )
                         )
-                    )
+                    }
                 }
             }
 

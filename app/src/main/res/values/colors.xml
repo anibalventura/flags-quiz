@@ -6,7 +6,7 @@
     <color name="primaryTextColor">#FFFFFF</color>
     <color name="secondaryTextColor">#000000</color>
     <color name="iconColor">#1976d2</color>
-    <color name="quizBgRight">#B300FF0A</color>
+    <color name="quizBgRight">#B32DAB32</color>
     <color name="quizBgWrong">#B3FF0000</color>
     <color name="editTextColor">@color/primaryColor</color>
 

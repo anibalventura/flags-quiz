@@ -6,6 +6,10 @@
         android:icon="@drawable/ic_rules"
         android:title="@string/menu_rules" />
     <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/ic_history"
+        android:title="@string/menu_history" />
+    <item
         android:id="@+id/aboutFragment"
         android:icon="@drawable/ic_about"
         android:title="@string/menu_about" />

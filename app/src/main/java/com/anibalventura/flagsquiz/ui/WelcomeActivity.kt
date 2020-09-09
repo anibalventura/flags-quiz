@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.activities
+package com.anibalventura.flagsquiz.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.ui.fragments
+package com.anibalventura.flagsquiz.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -64,9 +64,6 @@ class QuizWonFragment : Fragment() {
         // Back to the QuizFragment
         binding.btnPlayAgain.setOnClickListener { startQuiz(it) }
 
-        // Set the options menu.
-        setHasOptionsMenu(true)
-
         return binding.root
     }
 
@@ -94,6 +91,11 @@ class QuizWonFragment : Fragment() {
     /*
      * Sharing option.
      */
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     // Showing the Share Menu.
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -102,10 +104,13 @@ class QuizWonFragment : Fragment() {
 
     // Sharing from the Menu.
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.shareScore -> shareScore()
+        return when (item.itemId) {
+            R.id.shareScore -> {
+                shareScore()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
     }
 
     // Share the results of the score with a intent.

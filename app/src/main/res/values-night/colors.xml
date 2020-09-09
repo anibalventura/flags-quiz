@@ -5,7 +5,6 @@
     <color name="accentColor">#FFFFFF</color>
     <color name="secondaryTextColor">#FFFFFF</color>
     <color name="iconColor">#FFFFFF</color>
-    <color name="quizBgRight">#B32DAB32</color>
     <color name="quizBgWrong">#B3BF3838</color>
     <color name="editTextColor">#FFFFFF</color>
 </resources>

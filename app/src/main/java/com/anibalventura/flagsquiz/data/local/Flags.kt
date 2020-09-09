@@ -1,4 +1,4 @@
-package com.anibalventura.flagsquiz.data.local.db
+package com.anibalventura.flagsquiz.data.local
 
 import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
