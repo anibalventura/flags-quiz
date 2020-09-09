@@ -258,4 +258,6 @@
     <string name="history_continent">Continent: %1$s</string>
     <string name="share_app">Test your knowledge about the flags of the world with Flag Quiz. Download it now!\n\n
         https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz</string>
+    <string name="menu_group_quiz" translatable="false">Quiz</string>
+    <string name="menu_group_app" translatable="false">App</string>
 </resources>

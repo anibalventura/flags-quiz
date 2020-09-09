@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/historyFragment"
-        android:icon="@drawable/ic_history"
-        android:title="@string/menu_history" />
-    <item
-        android:id="@+id/rulesFragment"
-        android:icon="@drawable/ic_rules"
-        android:title="@string/menu_rules" />
-    <item
-        android:id="@+id/aboutFragment"
-        android:icon="@drawable/ic_about"
-        android:title="@string/menu_about" />
-    <item
-        android:id="@+id/shareAppFragment"
-        android:icon="@drawable/ic_share_app"
-        android:title="@string/menu_share" />
-    <item
-        android:id="@+id/settingsActivity"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/menu_settings" />
+    <item android:title="@string/menu_group_quiz">
+        <menu>
+            <item
+                android:id="@+id/rulesFragment"
+                android:icon="@drawable/ic_rules"
+                android:title="@string/menu_rules" />
+            <item
+                android:id="@+id/historyFragment"
+                android:icon="@drawable/ic_history"
+                android:title="@string/menu_history" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menu_group_app">
+        <menu>
+            <item
+                android:id="@+id/aboutFragment"
+                android:icon="@drawable/ic_about"
+                android:title="@string/menu_about" />
+            <item
+                android:id="@+id/shareAppFragment"
+                android:icon="@drawable/ic_share_app"
+                android:title="@string/menu_share" />
+            <item
+                android:id="@+id/settingsActivity"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/menu_settings" />
+        </menu>
+    </item>
 </menu>
