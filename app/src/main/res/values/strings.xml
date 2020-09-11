@@ -233,7 +233,7 @@
     <string name="quiz_you_lose">You Lose!</string>
     <string name="rules_one">1. Select the answer from the options given.</string>
     <string name="rules_title">Flags Quiz will check how well you know the flags of the world!</string>
-    <string name="app_version">Version 1.0.0</string>
+    <string name="app_version">Version 1.0.1</string>
     <string name="app_copyright" translatable="false">© 2020 Anibal Ventura</string>
     <string name="settings_theme_choose">Choose theme</string>
     <string name="settings_change_name">Change name</string>
