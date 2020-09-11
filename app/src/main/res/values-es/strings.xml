@@ -167,4 +167,5 @@
     <string name="history_continent">Continente: %1$s</string>
     <string name="share_app">Prueba tus conocimientos sobre las banderas del mundo con Flag Quiz. Descargala ya!\n\n
         https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz</string>
+    <string name="menu_home">Inicio</string>
 </resources>

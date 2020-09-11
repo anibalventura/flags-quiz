@@ -2,9 +2,7 @@ package com.anibalventura.flagsquiz.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -16,9 +14,8 @@ import com.anibalventura.flagsquiz.R
 import com.anibalventura.flagsquiz.Utils
 import com.anibalventura.flagsquiz.Utils.Companion.sharedPref
 import com.anibalventura.flagsquiz.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
     // Use DataBinding.
     private lateinit var binding: ActivityMainBinding
@@ -80,19 +77,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // Setup the left drawer (called a NavigationView).
         binding.navigationView.setupWithNavController(navController)
-        binding.navigationView.setNavigationItemSelectedListener(this)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.historyFragment -> navController.navigate(HomeFragmentDirections.actionHomeFragmentToHistoryFragment())
-            R.id.rulesFragment -> navController.navigate(HomeFragmentDirections.actionHomeFragmentToRulesFragment())
-            R.id.aboutFragment -> navController.navigate(HomeFragmentDirections.actionHomeFragmentToAboutFragment())
-            R.id.shareAppFragment -> Utils.shareText(this, getString(R.string.share_app))
-            R.id.settingsActivity -> startActivity(Intent(this, SettingsActivity::class.java))
-        }
-        binding.drawerLayout.closeDrawer(GravityCompat.START)
-        return true
     }
 }
 

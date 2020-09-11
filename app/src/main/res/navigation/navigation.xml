@@ -104,4 +104,13 @@
         android:name="com.anibalventura.flagsquiz.ui.history.HistoryFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/shareAppFragment"
+        android:name="com.anibalventura.flagsquiz.ui.ShareAppFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share_app">
+        <action
+            android:id="@+id/action_shareAppFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

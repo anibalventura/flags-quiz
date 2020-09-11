@@ -260,4 +260,5 @@
         https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz</string>
     <string name="menu_group_quiz" translatable="false">Quiz</string>
     <string name="menu_group_app" translatable="false">App</string>
+    <string name="menu_home">Home</string>
 </resources>
