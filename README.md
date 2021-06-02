@@ -4,7 +4,7 @@
 
 Flags Quiz is a quiz game (trivia) application that tests the user’s ability to correctly identify flags from around the world based on modern Android application tech-stacks and MVVM architecture.
 
-<a href="https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75"></a>
+<!-- <a href="https://play.google.com/store/apps/details?id=com.anibalventura.flagsquiz"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75"></a> -->
 
 ## Features
 * More than 180 flags, categorized by continent.
